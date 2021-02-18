@@ -72,7 +72,7 @@
   --theme-success-h: 130;
   --theme-success-s: 80;
   --theme-success-l: 50;
-  --theme-success-l-mod: 90;
+  --theme-success-l-mod: 60;
   --theme-success-s-mod: 0;
 }
 
@@ -80,7 +80,7 @@
   --theme-danger-h: 340;
   --theme-danger-s: 80;
   --theme-danger-l: 50;
-  --theme-danger-l-mod: 90;
+  --theme-danger-l-mod: 60;
   --theme-danger-s-mod: 0;
 }
 

@@ -4,11 +4,11 @@
 }
 
 .formula {
-  background-color: hsl(var(--theme-secondary-800));
+  background-color: hsl(var(--theme-secondary-900));
   font-size: 1rem;
   border-radius: calc(var(--theme-radius) * 4);
   position: relative;
-  /* box-shadow: 0 2em 4em rgba(0, 0, 0, 0.15); */
+  box-shadow: 0 2em 4em rgba(0, 0, 0, 0.2);
   transition: background-color var(--layout-transition-extra-fast);
 }
 
@@ -34,12 +34,12 @@
 }
 
 .formula__set:not(:last-child):not(:only-child) {
-  border-bottom: 1px solid hsl(var(--theme-secondary-700));
+  border-bottom: 1px solid hsl(var(--theme-secondary-800));
   transition: border-bottom var(--layout-transition-extra-fast);
 }
 
 .formula__set:not(:last-child):not(:only-child):after {
-  background-color: hsl(var(--theme-secondary-800));
+  background-color: hsl(var(--theme-secondary-900));
   padding: 0 var(--layout-gutter);
   content: "AND";
   position: absolute;
@@ -103,7 +103,12 @@
 
 .formula__size-text {
   text-align: center;
-  padding-left: 0.75em;
+}
+
+@media (min-width: 1000px) {
+  .formula__size-text {
+    padding-left: 0.75em;
+  }
 }
 
 .formula__size-icon {
@@ -112,11 +117,26 @@
 
 .formula__count-input,
 .formula__count-input[type=number],
-.formula__count-input[type=text],
+.formula__count-input[type=text] {
+  padding: 0 0.25em 0 0;
+}
+
 .formula__modifier-input,
 .formula__modifier-input[type=number],
 .formula__modifier-input[type=text] {
-  padding: 0 0.5em;
+  padding: 0 0 0 0.25em;
+}
+
+@media (min-width: 1000px) {
+
+  .formula__count-input,
+  .formula__count-input[type=number],
+  .formula__count-input[type=text],
+  .formula__modifier-input,
+  .formula__modifier-input[type=number],
+  .formula__modifier-input[type=text] {
+    padding: 0 0.5em;
+  }
 }
 
 .formula__count-input,

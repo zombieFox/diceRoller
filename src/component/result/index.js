@@ -29,6 +29,7 @@ result.clear = () => {
 };
 
 result.render = () => {
+  result.update();
   return result.element;
 };
 
@@ -37,73 +38,80 @@ result.update = () => {
 
   const resultToRender = JSON.parse(JSON.stringify(result.state.history)).reverse().slice(0, result.state.count.max);
 
-  resultToRender.forEach((item, i) => {
-    const resultItem = node('div|class:result__item');
-
-    const resultTotal = node(`div:${item.total}|class:result__total`);
-
-    const resultBody = node('div|class:result__details');
-
-    const resultTimestamp = node('div|class:result__timestamp');
-
-    resultTimestamp.textContent = `${item.timestamp.hours}:${item.timestamp.minutes}:${item.timestamp.seconds} ${item.timestamp.date}/${item.timestamp.monthString}/${item.timestamp.year}`;
-
-    item.formula.forEach((item, i) => {
-      const formula = node('div|class:result__formula');
-
-      const formulaDice = node('div|class:result__formula-dice');
-
-      let diceString = '';
-      if (item.dice.count > 0) {
-        diceString = diceString + item.dice.count;
-      };
-      diceString = diceString + ' d' + item.dice.size;
-      if (item.dice.modifier > 0) {
-        diceString = diceString + ' +' + item.dice.modifier;
-      } else if (item.dice.modifier < 0) {
-        diceString = diceString + ' ' + item.dice.modifier;
-      };
-      formulaDice.textContent = diceString;
-
-      formula.appendChild(formulaDice);
-
-      const formulaRolls = node('div|class:result__rolls');
-
-      const formulaRollsTitle = node('div:Rolled\\:|class:result__rolls-title');
-
-      const rollsList = node('ul|class:result__rolls-list list__inline list__unstyled');
-
-      item.result.rolls.all.forEach((resultItem, i) => {
-        const rollsListItem = node(`li:${resultItem}|class:result__rolls-list-item`);
-
-        if (item.dice.size === 20 && resultItem === 20) {
-          rollsListItem.classList.add('result__critical-success');
-        } else if (item.dice.size === 20 && resultItem === 1) {
-          rollsListItem.classList.add('result__critical-failure');
-        };
-
-        // if (i != (item.result.rolls.all.length - 1)) {
-        //   rollsListItem.textContent = rollsListItem.textContent + ',';
-        // };
-
-        rollsList.appendChild(rollsListItem);
+  if (resultToRender.length > 0) {
+    if (window.innerWidth > 800) {
+      resultToRender.forEach((item, i) => {
+        result.element.appendChild(result.resultItem(item));
       });
+    } else {
+      result.element.appendChild(result.resultItem(resultToRender[0]));
+    };
+  };
+};
 
-      formulaRolls.appendChild(formulaRollsTitle);
 
-      formulaRolls.appendChild(rollsList);
+result.resultItem = (resultData) => {
+  const resultItem = node('div|class:result__item');
 
-      formula.appendChild(formulaRolls);
+  const resultTotal = node(`div:${resultData.total}|class:result__total`);
 
-      resultBody.appendChild(formula);
+  const resultBody = node('div|class:result__details');
+
+  const resultTimestamp = node('div|class:result__timestamp');
+
+  resultTimestamp.textContent = `${resultData.timestamp.hours}:${resultData.timestamp.minutes}:${resultData.timestamp.seconds} ${resultData.timestamp.date}/${resultData.timestamp.monthString}/${resultData.timestamp.year}`;
+
+  resultData.formula.forEach((item, i) => {
+    const formula = node('div|class:result__formula');
+
+    const formulaDice = node('div|class:result__formula-dice');
+
+    let diceString = '';
+    if (item.dice.count > 0) {
+      diceString = diceString + item.dice.count;
+    };
+    diceString = diceString + ' d' + item.dice.size;
+    if (item.dice.modifier > 0) {
+      diceString = diceString + ' +' + item.dice.modifier;
+    } else if (item.dice.modifier < 0) {
+      diceString = diceString + ' ' + item.dice.modifier;
+    };
+    formulaDice.textContent = diceString;
+
+    formula.appendChild(formulaDice);
+
+    const formulaRolls = node('div|class:result__rolls');
+
+    const formulaRollsTitle = node('div:Rolled\\:|class:result__rolls-title');
+
+    const rollsList = node('ul|class:result__rolls-list list__inline list__unstyled');
+
+    item.result.rolls.all.forEach((resultItem, i) => {
+      const rollsListItem = node(`li:${resultItem}|class:result__rolls-list-item`);
+
+      if (item.dice.size === 20 && resultItem === 20) {
+        rollsListItem.classList.add('result__critical-success');
+      } else if (item.dice.size === 20 && resultItem === 1) {
+        rollsListItem.classList.add('result__critical-failure');
+      };
+
+      rollsList.appendChild(rollsListItem);
     });
 
-    resultBody.appendChild(resultTimestamp);
+    formulaRolls.appendChild(formulaRollsTitle);
 
-    resultItem.appendChild(resultTotal);
+    formulaRolls.appendChild(rollsList);
 
-    resultItem.appendChild(resultBody);
+    formula.appendChild(formulaRolls);
 
-    result.element.appendChild(resultItem);
+    resultBody.appendChild(formula);
   });
+
+  resultBody.appendChild(resultTimestamp);
+
+  resultItem.appendChild(resultTotal);
+
+  resultItem.appendChild(resultBody);
+
+  return resultItem;
 };

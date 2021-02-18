@@ -1,13 +1,24 @@
 .result {
+  height: 100%;
   font-size: 1rem;
   display: grid;
+  align-items: center;
   gap: 2em;
 }
 
 .result__item {
   position: relative;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 2em;
+}
+
+@media (min-width: 800px) {
+  .result__item {
+    grid-template-rows: 1fr;
+    grid-template-columns: auto 1fr;
+    gap: 0;
+  }
 }
 
 .result__item:not(:last-child):not(:only-child):after {
@@ -28,6 +39,13 @@
   font-family: var(--font-display-name);
   font-weight: var(--font-weight-extra-light);
   font-style: var(--font-display-style);
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+  .result__total {
+    text-align: left;
+  }
 }
 
 .result__details {
@@ -36,20 +54,19 @@
   font-weight: var(--font-weight-bold);
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.25em;
+  gap: 0.5em;
 }
 
 .result__formula {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5em;
 }
 
 .result__formula-dice {
-  white-space: nowrap;
-  color: hsl(var(--theme-primary-200));
-  text-align: right;
   min-width: 8em;
+  color: hsl(var(--theme-primary-200));
+  white-space: nowrap;
 }
 
 .result__rolls {
@@ -67,7 +84,6 @@
 
 .result__timestamp {
   font-size: 0.8em;
-  text-align: right;
   color: hsl(var(--theme-secondary-500));
 }
 

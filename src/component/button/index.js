@@ -2,7 +2,7 @@ import './index.css';
 import { node } from '../../utilities/node';
 import { icon } from '../icon';
 
-const Button = function({ text = false, type = 'primary', round = false, block = false, size = false, style = [], ring = false, title = false, classList = [], iconName = false, func = false } = {}) {
+const Button = function({ text = false, type = false, round = false, block = false, size = false, style = [], ring = false, title = false, classList = [], iconName = false, func = false } = {}) {
   this.button = node('button|class:button,tabindex:1,type:button');
 
   if (text) {
@@ -11,7 +11,23 @@ const Button = function({ text = false, type = 'primary', round = false, block =
     this.button.appendChild(buttonText);
   };
 
-  this.button.classList.add('button__' + type);
+  switch (type) {
+    case 'secondary':
+      this.button.classList.add('button__secondary');
+      break;
+
+    case 'success':
+      this.button.classList.add('button__success');
+      break;
+
+    case 'danger':
+      this.button.classList.add('button__danger');
+      break;
+
+    default:
+      this.button.classList.add('button__primary');
+      break;
+  };
 
   if (iconName) {
     const buttonIcon = node('span|class:button-icon', [

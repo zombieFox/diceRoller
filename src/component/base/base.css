@@ -19,13 +19,13 @@
 }
 
 html {
-  background-color: hsl(var(--theme-secondary-900));
+  background-color: hsl(var(--theme-secondary-800));
   font-size: var(--font-size);
   transition: background-color var(--layout-transition-extra-fast);
 }
 
 body {
-  background-color: hsl(var(--theme-secondary-900));
+  background-color: hsl(var(--theme-secondary-800));
   font-size: 1rem;
   line-height: 1.6;
   min-width: 100vw;
