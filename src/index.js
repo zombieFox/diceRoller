@@ -48,6 +48,7 @@ document.querySelector('body').addEventListener(events.key.diceRolled, (event) =
 });
 
 // init app
+component.data.state.load();
 component.theme.style.render();
 component.theme.keyboard.bind();
 component.global.render();
