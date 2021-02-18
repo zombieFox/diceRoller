@@ -118,9 +118,9 @@
 }
 
 .result__critical-success {
-  background-color: hsl(var(--theme-success-200));
+  background-color: hsl(var(--theme-success-300));
 }
 
 .result__critical-failure {
-  background-color: hsl(var(--theme-danger-200));
+  background-color: hsl(var(--theme-danger-300));
 }
