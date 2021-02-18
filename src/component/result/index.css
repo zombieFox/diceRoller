@@ -17,7 +17,7 @@
   .result__item {
     grid-template-rows: 1fr;
     grid-template-columns: auto 1fr;
-    gap: 0;
+    gap: 0.5em;
   }
 }
 
@@ -59,13 +59,13 @@
 
 .result__formula {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto 1fr;
   gap: 0.5em;
 }
 
 .result__formula-dice {
-  min-width: 8em;
   color: hsl(var(--theme-primary-200));
+  min-width: 7em;
   white-space: nowrap;
 }
 
