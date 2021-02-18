@@ -1,6 +1,8 @@
 import { Button } from './button';
 import { ControlSet } from './ControlSet';
+import { global } from './global';
 import { base } from './base';
+import { data } from './data';
 import { theme } from './theme';
 import { layout } from './layout';
 import { icon } from './icon';
@@ -17,7 +19,9 @@ import { styleguide } from './styleguide';
 export const component = {
   Button,
   ControlSet,
+  global,
   base,
+  data,
   theme,
   layout,
   icon,
