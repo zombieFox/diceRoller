@@ -6,19 +6,21 @@ import { dice } from '../dice';
 
 export const result = {};
 
+result.state = {};
+
+result.state.history = [];
+
+result.state.count = {
+  max: 50
+};
+
 result.history = {};
 
-result.history.all = [];
-
 result.history.add = (data) => {
-  result.history.all.push(JSON.parse(JSON.stringify(data)));
+  result.state.history.push(JSON.parse(JSON.stringify(data)));
 };
 
 result.element = node('div|class:result');
-
-result.count = {
-  max: 50
-};
 
 result.clear = () => {
   while (result.element.lastChild) {
@@ -33,7 +35,7 @@ result.render = () => {
 result.update = () => {
   result.clear();
 
-  const resultToRender = JSON.parse(JSON.stringify(result.history.all)).reverse().slice(0, result.count.max);
+  const resultToRender = JSON.parse(JSON.stringify(result.state.history)).reverse().slice(0, result.state.count.max);
 
   resultToRender.forEach((item, i) => {
     const resultItem = node('div|class:result__item');

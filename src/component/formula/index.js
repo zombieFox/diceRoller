@@ -1,20 +1,12 @@
 import './index.css';
 import { events } from '../../events';
 import { node } from '../../utilities/node';
+import { data } from '../data';
 import { icon } from '../icon';
 import { ControlSet } from '../ControlSet';
 import { Button } from '../button';
 
 export const formula = {};
-
-formula.element = node('div|class:formula');
-
-formula.delay = 100;
-
-formula.default = {
-  dice: { count: 1, size: 20, modifier: 0 },
-  rules: { dropLowest: false }
-};
 
 formula.state = {};
 
@@ -26,14 +18,23 @@ formula.state.current = [{
   rules: { dropLowest: false }
 }];
 
-formula.state.add = () => {
+formula.element = node('div|class:formula');
+
+formula.delay = 100;
+
+formula.default = {
+  dice: { count: 1, size: 20, modifier: 0 },
+  rules: { dropLowest: false }
+};
+
+formula.add = () => {
   formula.state.current.push(JSON.parse(JSON.stringify(formula.default)));
 };
 
-formula.state.remove = (index) => {
+formula.remove = (index) => {
   formula.state.current.splice(index, 1);
   if (formula.state.current.length === 0) {
-    formula.state.add();
+    formula.add();
   };
 };
 
@@ -67,8 +68,9 @@ formula.update = () => {
       func: () => {
 
         delay = window.setTimeout(function() {
-          formula.state.remove(i);
+          formula.remove(i);
           formula.update();
+          data.state.save();
         }, formula.delay);
 
       }
@@ -99,8 +101,9 @@ formula.update = () => {
     func: () => {
 
       delay = window.setTimeout(function() {
-        formula.state.add();
+        formula.add();
         formula.update();
+        data.state.save();
       }, formula.delay);
 
     }

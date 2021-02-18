@@ -43,6 +43,7 @@ app.update = () => {
 
 document.querySelector('body').addEventListener(events.key.diceRolled, (event) => {
   component.result.history.add(component.dice.roll(component.formula.state.current));
+  component.data.state.save();
   component.result.update();
 });
 

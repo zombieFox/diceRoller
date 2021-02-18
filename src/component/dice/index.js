@@ -9,8 +9,8 @@ dice.reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 dice.roll = (allFormula) => {
   const result = {
+    formula: JSON.parse(JSON.stringify(allFormula)),
     total: 0,
-    formula: allFormula,
     timestamp: null
   };
 
