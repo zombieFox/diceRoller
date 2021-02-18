@@ -83,7 +83,6 @@
 }
 
 .result__timestamp {
-  font-size: 0.8em;
   color: hsl(var(--theme-secondary-500));
 }
 
