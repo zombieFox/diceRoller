@@ -1,0 +1,358 @@
+:root {
+  --form-label: var(--theme-text);
+  --form-label-hover: var(--theme-text);
+  --form-label-focus-active: var(--theme-text);
+  --form-label-checked: var(--theme-text);
+  --form-label-disabled: var(--theme-secondary-700);
+}
+
+:root {
+  --form-input-background: var(--theme-secondary-900);
+  --form-input-background-hover: var(--theme-secondary-900);
+  --form-input-background-focus-active: var(--theme-secondary-900);
+  --form-input-background-disabled: var(--theme-secondary-800);
+  --form-input-text: var(--theme-secondary-100);
+  --form-input-text-hover: var(--theme-text);
+  --form-input-text-focus-active: var(--theme-text);
+  --form-input-text-disabled: var(--theme-secondary-700);
+}
+
+:root {
+  --form-placeholder: var(--theme-secondary-300);
+  --form-placeholder-focus-hover: var(--theme-secondary-400);
+  --form-placeholder-disabled: var(--theme-secondary-700);
+}
+
+:root {
+  --form-feedback-background: var(--theme-secondary-900);
+  --form-feedback-background-disabled: var(--theme-secondary-900);
+  --form-feedback-border: var(--theme-secondary-500);
+  --form-feedback-border-disabled: var(--theme-secondary-800);
+  --form-feedback-text: var(--theme-text);
+  --form-feedback-text-muted: var(--theme-secondary-400);
+  --form-feedback-text-disabled: var(--theme-secondary-700);
+}
+
+:root {
+  --form-wrap-space: 1em;
+}
+
+fieldset:not(:only-child):not(:last-child),
+.fieldset:not(:only-child):not(:last-child) {
+  border-bottom: var(--layout-horizontal-rule-small);
+  position: relative;
+  width: 100%;
+  display: block;
+  transition: border-color var(--layout-transition-extra-fast);
+}
+
+fieldset:not(:first-child),
+.fieldset:not(:first-child) {
+  padding-top: calc(var(--form-wrap-space) * 2);
+}
+
+fieldset:not(:last-child),
+.fieldset:not(:last-child) {
+  padding-bottom: calc(var(--form-wrap-space) * 2);
+}
+
+.form__wrap {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.form__wrap:not(:first-child) {
+  margin-top: var(--form-wrap-space);
+}
+
+.form__wrap:not(:last-child) {
+  margin-bottom: var(--form-wrap-space);
+}
+
+.form__inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--form-wrap-space);
+}
+
+.form__inline>* {
+  flex-grow: 0;
+  width: initial;
+  display: inline-block;
+}
+
+.form__inline>.form__wrap:not(:first-child),
+.form__inline>.form__wrap:not(:last-child) {
+  margin: 0;
+}
+
+.form__align-bottom {
+  align-items: flex-end;
+}
+
+.form__item-shrink,
+.form__inline>.form__item-shrink {
+  flex-grow: 0;
+}
+
+.form__item-grow,
+.form__inline>.form__item-grow {
+  flex-grow: 1;
+}
+
+label {
+  padding: 0;
+  margin-bottom: 0;
+  color: hsl(var(--form-label));
+  font-size: 1em;
+  display: block;
+}
+
+label:not(:only-child):not(:last-child) {
+  padding-bottom: calc(var(--form-wrap-space) / 2);
+}
+
+label.disabled {
+  color: hsl(var(--form-label-disabled));
+}
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"] {
+  /* background-color: hsl(var(--form-input-background)); */
+  background-color: transparent;
+  padding: 0 1.25em;
+  margin: 0;
+  color: hsl(var(--form-input-text));
+  font-size: 1em;
+  font-family: var(--font-ui-name);
+  font-weight: var(--font-weight-bold);
+  font-style: var(--font-ui-style);
+  line-height: 1.6;
+  height: 2.5em;
+  min-width: 0;
+  width: 100%;
+  border-width: 0;
+  border-radius: calc(var(--theme-radius) / 2);
+  cursor: text;
+  transition: background-color var(--layout-transition-extra-fast), color var(--layout-transition-extra-fast), border-color var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
+  -moz-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="email"]:hover,
+input[type="number"]:hover,
+input[type="password"]:hover,
+input[type="search"]:hover,
+input[type="tel"]:hover,
+input[type="text"]:hover {
+  /* background-color: hsl(var(--form-input-background-hover)); */
+  background-color: transparent;
+  color: hsl(var(--form-input-text-hover));
+  outline: none;
+}
+
+input[type="email"]:focus,
+input[type="email"]:active,
+input[type="number"]:focus,
+input[type="number"]:active,
+input[type="password"]:focus,
+input[type="password"]:active,
+input[type="search"]:focus,
+input[type="search"]:active,
+input[type="tel"]:focus,
+input[type="tel"]:active,
+input[type="text"]:focus,
+input[type="text"]:active {
+  /* background-color: hsl(var(--form-input-background-focus-active)); */
+  background-color: transparent;
+  color: hsl(var(--form-input-text-focus-active));
+  outline: none;
+  z-index: 2;
+  box-shadow: var(--theme-focus-primary);
+}
+
+input[type="email"]:disabled,
+input[type="number"]:disabled,
+input[type="password"]:disabled,
+input[type="search"]:disabled,
+input[type="tel"]:disabled,
+input[type="text"]:disabled {
+  background-color: hsl(var(--form-input-background-disabled));
+  color: hsl(var(--form-input-text-disabled));
+  cursor: default;
+  box-shadow: none;
+}
+
+input[type="email"]:disabled:hover,
+input[type="email"]:disabled:focus,
+input[type="number"]:disabled:hover,
+input[type="number"]:disabled:focus,
+input[type="password"]:disabled:hover,
+input[type="password"]:disabled:focus,
+input[type="search"]:disabled:hover,
+input[type="search"]:disabled:focus,
+input[type="tel"]:disabled:hover,
+input[type="tel"]:disabled:focus,
+input[type="text"]:disabled:hover,
+input[type="text"]:disabled:focus {
+  color: hsl(var(--form-input-text-disabled));
+}
+
+input[type="email"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder,
+input[type="search"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="text"]::placeholder {
+  color: hsl(var(--form-placeholder));
+  transition: color var(--layout-transition-extra-fast);
+}
+
+input[type="email"]:hover::placeholder,
+input[type="number"]:hover::placeholder,
+input[type="password"]:hover::placeholder,
+input[type="search"]:hover::placeholder,
+input[type="tel"]:hover::placeholder,
+input[type="text"]:hover::placeholder {
+  color: hsl(var(--form-placeholder-focus-hover));
+}
+
+input[type="email"]:focus::placeholder,
+input[type="number"]:focus::placeholder,
+input[type="password"]:focus::placeholder,
+input[type="search"]:focus::placeholder,
+input[type="tel"]:focus::placeholder,
+input[type="text"]:focus::placeholder {
+  color: hsl(var(--form-placeholder-focus-hover));
+}
+
+input[type="email"]:disabled::placeholder,
+input[type="email"]:disabled:hover::placeholder,
+input[type="email"]:disabled:focus::placeholder,
+input[type="number"]:disabled::placeholder,
+input[type="number"]:disabled:hover::placeholder,
+input[type="number"]:disabled:focus::placeholder,
+input[type="password"]:disabled::placeholder,
+input[type="password"]:disabled:hover::placeholder,
+input[type="password"]:disabled:focus::placeholder,
+input[type="search"]:disabled::placeholder,
+input[type="search"]:disabled:hover::placeholder,
+input[type="search"]:disabled:focus::placeholder,
+input[type="tel"]:disabled::placeholder,
+input[type="tel"]:disabled:hover::placeholder,
+input[type="tel"]:disabled:focus::placeholder,
+input[type="text"]:disabled::placeholder,
+input[type="text"]:disabled:hover::placeholder,
+input[type="text"]:disabled:focus::placeholder {
+  color: hsl(var(--form-placeholder-disabled));
+}
+
+select {
+  background-color: rgb(var(--form-input-background));
+  padding: 0;
+  margin: 0;
+  color: rgb(var(--form-label));
+  font-size: 1em;
+  font-family: var(--font-ui-name);
+  font-weight: var(--font-weight-bold);
+  font-style: var(--font-ui-style);
+  line-height: 2.5;
+  min-height: 2.5em;
+  min-width: 0;
+  width: 100%;
+  border-width: 0;
+  border-radius: var(--theme-radius);
+  cursor: pointer;
+  transition: background-color var(--layout-transition-extra-fast), border-color var(--layout-transition-extra-fast), color var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+select:hover {
+  background-image:
+    linear-gradient(45deg, transparent 60%, rgb(var(--form-label-hover)) 60%),
+    linear-gradient(135deg, rgb(var(--form-label-hover)) 40%, transparent 40%);
+  background-color: rgb(var(--form-input-background-hover));
+  color: rgb(var(--form-label-hover));
+  outline: none;
+}
+
+select:focus,
+select:active {
+  background-image:
+    linear-gradient(45deg, transparent 60%, rgb(var(--form-label-focus-active)) 60%),
+    linear-gradient(135deg, rgb(var(--form-label-focus-active)) 40%, transparent 40%);
+  background-color: rgb(var(--form-input-background-border-focus-active));
+  color: rgb(var(--form-label-focus-active));
+  outline: none;
+  z-index: 2;
+  box-shadow: var(--theme-focus-primary);
+}
+
+select:disabled,
+select:disabled:hover,
+select:disabled:focus,
+select:disabled:active {
+  background-color: rgb(var(--form-input-background-disabled));
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgb(var(--form-input-text-disabled)) 50%),
+    linear-gradient(135deg, rgb(var(--form-input-text-disabled)) 50%, transparent 50%);
+  color: rgb(var(--form-input-text-disabled));
+  cursor: default;
+  box-shadow: none;
+}
+
+.form__feedback {
+  padding: 0.75em 1.25em;
+  background-color: hsl(var(--form-feedback-background));
+  border-width: 0;
+  border-left-width: 4px;
+  border-style: solid;
+  border-color: hsl(var(--form-feedback-border));
+  border-top-right-radius: var(--theme-radius-base);
+  border-bottom-right-radius: var(--theme-radius-base);
+  width: 100%;
+  transition: background-color var(--layout-transition-extra-fast), border-color var(--layout-transition-extra-fast);
+}
+
+.form__feedback p {
+  color: hsl(var(--form-feedback-text));
+}
+
+.form__feedback p.text__muted {
+  color: hsl(var(--form-feedback-text-muted));
+}
+
+.form__feedback.disabled {
+  background-color: hsl(var(--form-feedback-background-disabled));
+  border-color: hsl(var(--form-feedback-border-disabled));
+}
+
+.form__feedback.disabled p {
+  color: hsl(var(--form-feedback-text-disabled));
+}

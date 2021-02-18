@@ -1,0 +1,503 @@
+:root {
+  --theme-black: 10, 10, 10;
+  --theme-white: 250, 250, 250;
+  --theme-background: var(--theme-secondary-900);
+}
+
+:root {
+  --theme-radius-size: 40;
+  --theme-radius: calc(calc(var(--theme-radius-size) / 100) * 1em);
+}
+
+:root {
+  --theme-shadow: 50;
+  --theme-shadow-size-small: calc(calc(var(--theme-shadow) / 100) * 1);
+  --theme-shadow-size-medium: calc(calc(var(--theme-shadow) / 100) * 2);
+  --theme-shadow-size-large: calc(calc(var(--theme-shadow) / 100) * 3);
+  --theme-shadow-offset-base: 20;
+  --theme-shadow-offset-y: calc(calc(var(--theme-shadow-offset-base) / 1000) * 1em);
+  --theme-shadow-blur-base: 20;
+  --theme-shadow-blur: calc(calc(var(--theme-shadow-blur-base) / 1000) * 1em);
+  --theme-shadow-opacity-base: 20;
+  --theme-shadow-opacity: calc(var(--theme-shadow-opacity-base) / 1000);
+  --theme-shadow-bottom-small:
+    0 calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-offset-y) * 2)) calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-blur) * 4)) rgba(0, 0, 0, calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-opacity) * 1))),
+    0 calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-offset-y) * 4)) calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-blur) * 8)) rgba(0, 0, 0, calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-opacity) * 2))),
+    0 calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-offset-y) * 8)) calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-blur) * 16)) rgba(0, 0, 0, calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-opacity) * 3))),
+    0 calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-offset-y) * 16)) calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-blur) * 32)) rgba(0, 0, 0, calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-opacity) * 4)));
+  --theme-shadow-bottom-medium:
+    0 calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-offset-y) * 2)) calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-blur) * 4)) rgba(0, 0, 0, calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-opacity) * 1))),
+    0 calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-offset-y) * 4)) calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-blur) * 8)) rgba(0, 0, 0, calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-opacity) * 2))),
+    0 calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-offset-y) * 8)) calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-blur) * 16)) rgba(0, 0, 0, calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-opacity) * 3))),
+    0 calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-offset-y) * 16)) calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-blur) * 32)) rgba(0, 0, 0, calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-opacity) * 4)));
+  --theme-shadow-bottom-large:
+    0 calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-offset-y) * 2)) calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-blur) * 4)) rgba(0, 0, 0, calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-opacity) * 1))),
+    0 calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-offset-y) * 4)) calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-blur) * 8)) rgba(0, 0, 0, calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-opacity) * 2))),
+    0 calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-offset-y) * 8)) calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-blur) * 16)) rgba(0, 0, 0, calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-opacity) * 3))),
+    0 calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-offset-y) * 16)) calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-blur) * 32)) rgba(0, 0, 0, calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-opacity) * 4)));
+  --theme-shadow-top-small:
+    0 calc(var(--theme-shadow-size-small) * calc(calc(var(--theme-shadow-offset-y) * -1) * 2)) calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-blur) * 4)) rgba(0, 0, 0, calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-opacity) * 1))),
+    0 calc(var(--theme-shadow-size-small) * calc(calc(var(--theme-shadow-offset-y) * -1) * 4)) calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-blur) * 8)) rgba(0, 0, 0, calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-opacity) * 2))),
+    0 calc(var(--theme-shadow-size-small) * calc(calc(var(--theme-shadow-offset-y) * -1) * 8)) calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-blur) * 16)) rgba(0, 0, 0, calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-opacity) * 3))),
+    0 calc(var(--theme-shadow-size-small) * calc(calc(var(--theme-shadow-offset-y) * -1) * 16)) calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-blur) * 32)) rgba(0, 0, 0, calc(var(--theme-shadow-size-small) * calc(var(--theme-shadow-opacity) * 4)));
+  --theme-shadow-top-medium:
+    0 calc(var(--theme-shadow-size-medium) * calc(calc(var(--theme-shadow-offset-y) * -1) * 2)) calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-blur) * 4)) rgba(0, 0, 0, calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-opacity) * 1))),
+    0 calc(var(--theme-shadow-size-medium) * calc(calc(var(--theme-shadow-offset-y) * -1) * 4)) calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-blur) * 8)) rgba(0, 0, 0, calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-opacity) * 2))),
+    0 calc(var(--theme-shadow-size-medium) * calc(calc(var(--theme-shadow-offset-y) * -1) * 8)) calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-blur) * 16)) rgba(0, 0, 0, calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-opacity) * 3))),
+    0 calc(var(--theme-shadow-size-medium) * calc(calc(var(--theme-shadow-offset-y) * -1) * 16)) calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-blur) * 32)) rgba(0, 0, 0, calc(var(--theme-shadow-size-medium) * calc(var(--theme-shadow-opacity) * 4)));
+  --theme-shadow-top-large:
+    0 calc(var(--theme-shadow-size-large) * calc(calc(var(--theme-shadow-offset-y) * -1) * 2)) calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-blur) * 4)) rgba(0, 0, 0, calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-opacity) * 1))),
+    0 calc(var(--theme-shadow-size-large) * calc(calc(var(--theme-shadow-offset-y) * -1) * 4)) calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-blur) * 8)) rgba(0, 0, 0, calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-opacity) * 2))),
+    0 calc(var(--theme-shadow-size-large) * calc(calc(var(--theme-shadow-offset-y) * -1) * 8)) calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-blur) * 16)) rgba(0, 0, 0, calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-opacity) * 3))),
+    0 calc(var(--theme-shadow-size-large) * calc(calc(var(--theme-shadow-offset-y) * -1) * 16)) calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-blur) * 32)) rgba(0, 0, 0, calc(var(--theme-shadow-size-large) * calc(var(--theme-shadow-opacity) * 4)));
+}
+
+:root {
+  --theme-primary-h: 210;
+  --theme-primary-s: 90;
+  --theme-primary-l: 50;
+  --theme-primary-l-mod: 90;
+  --theme-primary-s-mod: 0;
+}
+
+:root {
+  --theme-secondary-h: 210;
+  --theme-secondary-s: 10;
+  --theme-secondary-l: 50;
+  --theme-secondary-l-mod: 110;
+  --theme-secondary-s-mod: 0;
+}
+
+:root {
+  --theme-success-h: 130;
+  --theme-success-s: 80;
+  --theme-success-l: 50;
+  --theme-success-l-mod: 90;
+  --theme-success-s-mod: 0;
+}
+
+:root {
+  --theme-danger-h: 340;
+  --theme-danger-s: 80;
+  --theme-danger-l: 50;
+  --theme-danger-l-mod: 90;
+  --theme-danger-s-mod: 0;
+}
+
+:root {
+  --theme-primary-l-step-1: calc(calc(var(--theme-primary-l-mod) / 10) * 1);
+  --theme-primary-l-step-2: calc(calc(var(--theme-primary-l-mod) / 10) * 2);
+  --theme-primary-l-step-3: calc(calc(var(--theme-primary-l-mod) / 10) * 3);
+  --theme-primary-l-step-4: calc(calc(var(--theme-primary-l-mod) / 10) * 4);
+  --theme-primary-s-step-1: calc(calc(var(--theme-primary-s-mod) / 10) * 1);
+  --theme-primary-s-step-2: calc(calc(var(--theme-primary-s-mod) / 10) * 2);
+  --theme-primary-s-step-3: calc(calc(var(--theme-primary-s-mod) / 10) * 3);
+  --theme-primary-s-step-4: calc(calc(var(--theme-primary-s-mod) / 10) * 4);
+  --theme-primary-light-04:
+    var(--theme-primary-h),
+    calc(calc(var(--theme-primary-s) - var(--theme-primary-s-step-4)) * 1%),
+    calc(calc(var(--theme-primary-l) - var(--theme-primary-l-step-4)) * 1%);
+  --theme-primary-light-03:
+    var(--theme-primary-h),
+    calc(calc(var(--theme-primary-s) - var(--theme-primary-s-step-3)) * 1%),
+    calc(calc(var(--theme-primary-l) - var(--theme-primary-l-step-3)) * 1%);
+  --theme-primary-light-02:
+    var(--theme-primary-h),
+    calc(calc(var(--theme-primary-s) - var(--theme-primary-s-step-2)) * 1%),
+    calc(calc(var(--theme-primary-l) - var(--theme-primary-l-step-2)) * 1%);
+  --theme-primary-light-01:
+    var(--theme-primary-h),
+    calc(calc(var(--theme-primary-s) - var(--theme-primary-s-step-1)) * 1%),
+    calc(calc(var(--theme-primary-l) - var(--theme-primary-l-step-1)) * 1%);
+  --theme-primary:
+    var(--theme-primary-h),
+    calc(var(--theme-primary-s) * 1%),
+    calc(var(--theme-primary-l) * 1%);
+  --theme-primary-dark-01:
+    var(--theme-primary-h),
+    calc(calc(var(--theme-primary-s) + var(--theme-primary-s-step-1)) * 1%),
+    calc(calc(var(--theme-primary-l) + var(--theme-primary-l-step-1)) * 1%);
+  --theme-primary-dark-02:
+    var(--theme-primary-h),
+    calc(calc(var(--theme-primary-s) + var(--theme-primary-s-step-2)) * 1%),
+    calc(calc(var(--theme-primary-l) + var(--theme-primary-l-step-2)) * 1%);
+  --theme-primary-dark-03:
+    var(--theme-primary-h),
+    calc(calc(var(--theme-primary-s) + var(--theme-primary-s-step-3)) * 1%),
+    calc(calc(var(--theme-primary-l) + var(--theme-primary-l-step-3)) * 1%);
+  --theme-primary-dark-04:
+    var(--theme-primary-h),
+    calc(calc(var(--theme-primary-s) + var(--theme-primary-s-step-4)) * 1%),
+    calc(calc(var(--theme-primary-l) + var(--theme-primary-l-step-4)) * 1%);
+}
+
+:root {
+  --theme-secondary-l-step-1: calc(calc(var(--theme-secondary-l-mod) / 10) * 1);
+  --theme-secondary-l-step-2: calc(calc(var(--theme-secondary-l-mod) / 10) * 2);
+  --theme-secondary-l-step-3: calc(calc(var(--theme-secondary-l-mod) / 10) * 3);
+  --theme-secondary-l-step-4: calc(calc(var(--theme-secondary-l-mod) / 10) * 4);
+  --theme-secondary-s-step-1: calc(calc(var(--theme-secondary-s-mod) / 10) * 1);
+  --theme-secondary-s-step-2: calc(calc(var(--theme-secondary-s-mod) / 10) * 2);
+  --theme-secondary-s-step-3: calc(calc(var(--theme-secondary-s-mod) / 10) * 3);
+  --theme-secondary-s-step-4: calc(calc(var(--theme-secondary-s-mod) / 10) * 4);
+  --theme-secondary-light-04:
+    var(--theme-secondary-h),
+    calc(calc(var(--theme-secondary-s) - var(--theme-secondary-s-step-4)) * 1%),
+    calc(calc(var(--theme-secondary-l) - var(--theme-secondary-l-step-4)) * 1%);
+  --theme-secondary-light-03:
+    var(--theme-secondary-h),
+    calc(calc(var(--theme-secondary-s) - var(--theme-secondary-s-step-3)) * 1%),
+    calc(calc(var(--theme-secondary-l) - var(--theme-secondary-l-step-3)) * 1%);
+  --theme-secondary-light-02:
+    var(--theme-secondary-h),
+    calc(calc(var(--theme-secondary-s) - var(--theme-secondary-s-step-2)) * 1%),
+    calc(calc(var(--theme-secondary-l) - var(--theme-secondary-l-step-2)) * 1%);
+  --theme-secondary-light-01:
+    var(--theme-secondary-h),
+    calc(calc(var(--theme-secondary-s) - var(--theme-secondary-s-step-1)) * 1%),
+    calc(calc(var(--theme-secondary-l) - var(--theme-secondary-l-step-1)) * 1%);
+  --theme-secondary:
+    var(--theme-secondary-h),
+    calc(var(--theme-secondary-s) * 1%),
+    calc(var(--theme-secondary-l) * 1%);
+  --theme-secondary-dark-01:
+    var(--theme-secondary-h),
+    calc(calc(var(--theme-secondary-s) + var(--theme-secondary-s-step-1)) * 1%),
+    calc(calc(var(--theme-secondary-l) + var(--theme-secondary-l-step-1)) * 1%);
+  --theme-secondary-dark-02:
+    var(--theme-secondary-h),
+    calc(calc(var(--theme-secondary-s) + var(--theme-secondary-s-step-2)) * 1%),
+    calc(calc(var(--theme-secondary-l) + var(--theme-secondary-l-step-2)) * 1%);
+  --theme-secondary-dark-03:
+    var(--theme-secondary-h),
+    calc(calc(var(--theme-secondary-s) + var(--theme-secondary-s-step-3)) * 1%),
+    calc(calc(var(--theme-secondary-l) + var(--theme-secondary-l-step-3)) * 1%);
+  --theme-secondary-dark-04:
+    var(--theme-secondary-h),
+    calc(calc(var(--theme-secondary-s) + var(--theme-secondary-s-step-4)) * 1%),
+    calc(calc(var(--theme-secondary-l) + var(--theme-secondary-l-step-4)) * 1%);
+}
+
+:root {
+  --theme-success-l-step-1: calc(calc(var(--theme-success-l-mod) / 10) * 1);
+  --theme-success-l-step-2: calc(calc(var(--theme-success-l-mod) / 10) * 2);
+  --theme-success-l-step-3: calc(calc(var(--theme-success-l-mod) / 10) * 3);
+  --theme-success-l-step-4: calc(calc(var(--theme-success-l-mod) / 10) * 4);
+  --theme-success-s-step-1: calc(calc(var(--theme-success-s-mod) / 10) * 1);
+  --theme-success-s-step-2: calc(calc(var(--theme-success-s-mod) / 10) * 2);
+  --theme-success-s-step-3: calc(calc(var(--theme-success-s-mod) / 10) * 3);
+  --theme-success-s-step-4: calc(calc(var(--theme-success-s-mod) / 10) * 4);
+  --theme-success-light-04:
+    var(--theme-success-h),
+    calc(calc(var(--theme-success-s) - var(--theme-success-s-step-4)) * 1%),
+    calc(calc(var(--theme-success-l) - var(--theme-success-l-step-4)) * 1%);
+  --theme-success-light-03:
+    var(--theme-success-h),
+    calc(calc(var(--theme-success-s) - var(--theme-success-s-step-3)) * 1%),
+    calc(calc(var(--theme-success-l) - var(--theme-success-l-step-3)) * 1%);
+  --theme-success-light-02:
+    var(--theme-success-h),
+    calc(calc(var(--theme-success-s) - var(--theme-success-s-step-2)) * 1%),
+    calc(calc(var(--theme-success-l) - var(--theme-success-l-step-2)) * 1%);
+  --theme-success-light-01:
+    var(--theme-success-h),
+    calc(calc(var(--theme-success-s) - var(--theme-success-s-step-1)) * 1%),
+    calc(calc(var(--theme-success-l) - var(--theme-success-l-step-1)) * 1%);
+  --theme-success:
+    var(--theme-success-h),
+    calc(var(--theme-success-s) * 1%),
+    calc(var(--theme-success-l) * 1%);
+  --theme-success-dark-01:
+    var(--theme-success-h),
+    calc(calc(var(--theme-success-s) + var(--theme-success-s-step-1)) * 1%),
+    calc(calc(var(--theme-success-l) + var(--theme-success-l-step-1)) * 1%);
+  --theme-success-dark-02:
+    var(--theme-success-h),
+    calc(calc(var(--theme-success-s) + var(--theme-success-s-step-2)) * 1%),
+    calc(calc(var(--theme-success-l) + var(--theme-success-l-step-2)) * 1%);
+  --theme-success-dark-03:
+    var(--theme-success-h),
+    calc(calc(var(--theme-success-s) + var(--theme-success-s-step-3)) * 1%),
+    calc(calc(var(--theme-success-l) + var(--theme-success-l-step-3)) * 1%);
+  --theme-success-dark-04:
+    var(--theme-success-h),
+    calc(calc(var(--theme-success-s) + var(--theme-success-s-step-4)) * 1%),
+    calc(calc(var(--theme-success-l) + var(--theme-success-l-step-4)) * 1%);
+}
+
+:root {
+  --theme-danger-l-step-1: calc(calc(var(--theme-danger-l-mod) / 10) * 1);
+  --theme-danger-l-step-2: calc(calc(var(--theme-danger-l-mod) / 10) * 2);
+  --theme-danger-l-step-3: calc(calc(var(--theme-danger-l-mod) / 10) * 3);
+  --theme-danger-l-step-4: calc(calc(var(--theme-danger-l-mod) / 10) * 4);
+  --theme-danger-s-step-1: calc(calc(var(--theme-danger-s-mod) / 10) * 1);
+  --theme-danger-s-step-2: calc(calc(var(--theme-danger-s-mod) / 10) * 2);
+  --theme-danger-s-step-3: calc(calc(var(--theme-danger-s-mod) / 10) * 3);
+  --theme-danger-s-step-4: calc(calc(var(--theme-danger-s-mod) / 10) * 4);
+  --theme-danger-light-04:
+    var(--theme-danger-h),
+    calc(calc(var(--theme-danger-s) - var(--theme-danger-s-step-4)) * 1%),
+    calc(calc(var(--theme-danger-l) - var(--theme-danger-l-step-4)) * 1%);
+  --theme-danger-light-03:
+    var(--theme-danger-h),
+    calc(calc(var(--theme-danger-s) - var(--theme-danger-s-step-3)) * 1%),
+    calc(calc(var(--theme-danger-l) - var(--theme-danger-l-step-3)) * 1%);
+  --theme-danger-light-02:
+    var(--theme-danger-h),
+    calc(calc(var(--theme-danger-s) - var(--theme-danger-s-step-2)) * 1%),
+    calc(calc(var(--theme-danger-l) - var(--theme-danger-l-step-2)) * 1%);
+  --theme-danger-light-01:
+    var(--theme-danger-h),
+    calc(calc(var(--theme-danger-s) - var(--theme-danger-s-step-1)) * 1%),
+    calc(calc(var(--theme-danger-l) - var(--theme-danger-l-step-1)) * 1%);
+  --theme-danger:
+    var(--theme-danger-h),
+    calc(var(--theme-danger-s) * 1%),
+    calc(var(--theme-danger-l) * 1%);
+  --theme-danger-dark-01:
+    var(--theme-danger-h),
+    calc(calc(var(--theme-danger-s) + var(--theme-danger-s-step-1)) * 1%),
+    calc(calc(var(--theme-danger-l) + var(--theme-danger-l-step-1)) * 1%);
+  --theme-danger-dark-02:
+    var(--theme-danger-h),
+    calc(calc(var(--theme-danger-s) + var(--theme-danger-s-step-2)) * 1%),
+    calc(calc(var(--theme-danger-l) + var(--theme-danger-l-step-2)) * 1%);
+  --theme-danger-dark-03:
+    var(--theme-danger-h),
+    calc(calc(var(--theme-danger-s) + var(--theme-danger-s-step-3)) * 1%),
+    calc(calc(var(--theme-danger-l) + var(--theme-danger-l-step-3)) * 1%);
+  --theme-danger-dark-04:
+    var(--theme-danger-h),
+    calc(calc(var(--theme-danger-s) + var(--theme-danger-s-step-4)) * 1%),
+    calc(calc(var(--theme-danger-l) + var(--theme-danger-l-step-4)) * 1%);
+}
+
+:root {
+  --theme-focus-primary: 0 0 0 3px hsla(var(--theme-primary-500), 1), 0 0 0 6px hsla(var(--theme-primary-500), 0.5);
+  --theme-focus-secondary: 0 0 0 3px hsla(var(--theme-secondary-500), 1), 0 0 0 6px hsla(var(--theme-secondary-500), 0.5);
+  --theme-focus-danger: 0 0 0 3px hsla(var(--theme-danger-500), 1), 0 0 0 6px hsla(var(--theme-danger-500), 0.5);
+  --theme-focus-success: 0 0 0 3px hsla(var(--theme-success-500), 1), 0 0 0 6px hsla(var(--theme-success-500), 0.5);
+}
+
+.is-theme-light {
+  --theme-primary-100: var(--theme-primary-light-04);
+  --theme-primary-200: var(--theme-primary-light-03);
+  --theme-primary-300: var(--theme-primary-light-02);
+  --theme-primary-400: var(--theme-primary-light-01);
+  --theme-primary-500: var(--theme-primary);
+  --theme-primary-600: var(--theme-primary-dark-01);
+  --theme-primary-700: var(--theme-primary-dark-02);
+  --theme-primary-800: var(--theme-primary-dark-03);
+  --theme-primary-900: var(--theme-primary-dark-04);
+}
+
+.is-theme-dark {
+  --theme-primary-100: var(--theme-primary-dark-04);
+  --theme-primary-200: var(--theme-primary-dark-03);
+  --theme-primary-300: var(--theme-primary-dark-02);
+  --theme-primary-400: var(--theme-primary-dark-01);
+  --theme-primary-500: var(--theme-primary);
+  --theme-primary-600: var(--theme-primary-light-01);
+  --theme-primary-700: var(--theme-primary-light-02);
+  --theme-primary-800: var(--theme-primary-light-03);
+  --theme-primary-900: var(--theme-primary-light-04);
+}
+
+.is-theme-light {
+  --theme-secondary-100: var(--theme-secondary-light-04);
+  --theme-secondary-200: var(--theme-secondary-light-03);
+  --theme-secondary-300: var(--theme-secondary-light-02);
+  --theme-secondary-400: var(--theme-secondary-light-01);
+  --theme-secondary-500: var(--theme-secondary);
+  --theme-secondary-600: var(--theme-secondary-dark-01);
+  --theme-secondary-700: var(--theme-secondary-dark-02);
+  --theme-secondary-800: var(--theme-secondary-dark-03);
+  --theme-secondary-900: var(--theme-secondary-dark-04);
+}
+
+.is-theme-dark {
+  --theme-secondary-100: var(--theme-secondary-dark-04);
+  --theme-secondary-200: var(--theme-secondary-dark-03);
+  --theme-secondary-300: var(--theme-secondary-dark-02);
+  --theme-secondary-400: var(--theme-secondary-dark-01);
+  --theme-secondary-500: var(--theme-secondary);
+  --theme-secondary-600: var(--theme-secondary-light-01);
+  --theme-secondary-700: var(--theme-secondary-light-02);
+  --theme-secondary-800: var(--theme-secondary-light-03);
+  --theme-secondary-900: var(--theme-secondary-light-04);
+}
+
+.is-theme-light {
+  --theme-success-100: var(--theme-success-light-04);
+  --theme-success-200: var(--theme-success-light-03);
+  --theme-success-300: var(--theme-success-light-02);
+  --theme-success-400: var(--theme-success-light-01);
+  --theme-success-500: var(--theme-success);
+  --theme-success-600: var(--theme-success-dark-01);
+  --theme-success-700: var(--theme-success-dark-02);
+  --theme-success-800: var(--theme-success-dark-03);
+  --theme-success-900: var(--theme-success-dark-04);
+}
+
+.is-theme-dark {
+  --theme-success-100: var(--theme-success-dark-04);
+  --theme-success-200: var(--theme-success-dark-03);
+  --theme-success-300: var(--theme-success-dark-02);
+  --theme-success-400: var(--theme-success-dark-01);
+  --theme-success-500: var(--theme-success);
+  --theme-success-600: var(--theme-success-light-01);
+  --theme-success-700: var(--theme-success-light-02);
+  --theme-success-800: var(--theme-success-light-03);
+  --theme-success-900: var(--theme-success-light-04);
+}
+
+.is-theme-light {
+  --theme-danger-100: var(--theme-danger-light-04);
+  --theme-danger-200: var(--theme-danger-light-03);
+  --theme-danger-300: var(--theme-danger-light-02);
+  --theme-danger-400: var(--theme-danger-light-01);
+  --theme-danger-500: var(--theme-danger);
+  --theme-danger-600: var(--theme-danger-dark-01);
+  --theme-danger-700: var(--theme-danger-dark-02);
+  --theme-danger-800: var(--theme-danger-dark-03);
+  --theme-danger-900: var(--theme-danger-dark-04);
+}
+
+.is-theme-dark {
+  --theme-danger-100: var(--theme-danger-dark-04);
+  --theme-danger-200: var(--theme-danger-dark-03);
+  --theme-danger-300: var(--theme-danger-dark-02);
+  --theme-danger-400: var(--theme-danger-dark-01);
+  --theme-danger-500: var(--theme-danger);
+  --theme-danger-600: var(--theme-danger-light-01);
+  --theme-danger-700: var(--theme-danger-light-02);
+  --theme-danger-800: var(--theme-danger-light-03);
+  --theme-danger-900: var(--theme-danger-light-04);
+}
+
+:root {
+  --theme-text: var(--theme-secondary-100);
+}
+
+:root {
+  --theme-toggle-size: 20px;
+  --theme-toggle-border: 3px;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --theme-toggle-size: 24px;
+  }
+}
+
+.theme__style-toggle {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.theme__style-input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  display: block;
+  font-size: 1em;
+  line-height: 1;
+  cursor: pointer;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.theme__style-label {
+  padding: 0 var(--theme-toggle-size);
+  margin: 0;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--font-ui-name);
+  font-weight: var(--font-weight-bold);
+  color: hsl(var(--theme-success-300));
+  transform: rotate(0);
+  transition: transform var(--layout-duration-04) var(--layout-timing-bounce);
+}
+
+.theme__style-text {
+  position: relative;
+  font-size: 0.8em;
+  opacity: 0;
+  transition: opacity var(--layout-duration-04) var(--layout-timing-bounce), left var(--layout-duration-02) var(--layout-timing-bounce);
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .theme__style-text {
+    display: block;
+  }
+}
+
+.theme__style-text-dark {
+  padding-right: 0.5em;
+  left: calc(var(--theme-toggle-size) / 2);
+}
+
+.theme__style-text-light {
+  padding-left: 0.5em;
+  left: calc(calc(var(--theme-toggle-size) / 2) * -1);
+}
+
+.theme__style-input:not(:checked)+.theme__style-label:hover .theme__style-text-light {
+  opacity: 1;
+  left: 0;
+}
+
+.theme__style-input:checked+.theme__style-label:hover .theme__style-text-dark {
+  opacity: 1;
+  left: 0;
+}
+
+.theme__style-icon {
+  background-color: hsl(var(--theme-success-300));
+  border-radius: 100%;
+  width: var(--theme-toggle-size);
+  height: var(--theme-toggle-size);
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--layout-transition-extra-fast);
+}
+
+.theme__style-icon:before {
+  content: "";
+  background-color: hsl(var(--theme-background));
+  border-radius: 100%;
+  width: calc(var(--theme-toggle-size) - calc(var(--theme-toggle-border) * 2));
+  height: calc(var(--theme-toggle-size) - calc(var(--theme-toggle-border) * 2));
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color var(--layout-transition-extra-fast);
+  z-index: 2;
+}
+
+.theme__style-icon:after {
+  content: "";
+  background-color: hsl(var(--theme-success-300));
+  width: var(--theme-toggle-size);
+  height: var(--theme-toggle-size);
+  position: absolute;
+  top: 0;
+  left: -60%;
+  transition: left var(--layout-duration-08) var(--layout-timing-bounce), background-color var(--layout-transition-extra-fast);
+  z-index: 3;
+}
+
+.theme__style-input:checked+.theme__style-label .theme__style-icon:after {
+  left: 60%;
+}

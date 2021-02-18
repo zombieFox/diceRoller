@@ -1,0 +1,110 @@
+.result {
+  font-size: 1rem;
+  display: grid;
+  gap: 2em;
+}
+
+.result__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.result__item:not(:last-child):not(:only-child):after {
+  content: "";
+  position: absolute;
+  bottom: -1em;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid hsl(var(--theme-secondary-600));
+  transition: border-bottom var(--layout-transition-extra-fast);
+}
+
+.result__total {
+  font-size: 2.5em;
+  line-height: 1;
+  font-family: var(--font-display-name);
+  font-weight: var(--font-weight-extra-light);
+  font-style: var(--font-display-style);
+}
+
+.result__details {
+  font-size: 0.75em;
+  color: hsl(var(--theme-secondary-300));
+  font-weight: var(--font-weight-bold);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25em;
+}
+
+.result__formula {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.result__formula-dice {
+  white-space: nowrap;
+  color: hsl(var(--theme-primary-200));
+  text-align: right;
+  min-width: 8em;
+}
+
+.result__rolls {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.result__details,
+.result__rolls-list,
+.result__rolls-list-item,
+.result__timestamp {
+  line-height: 2em;
+}
+
+.result__timestamp {
+  font-size: 0.8em;
+  text-align: right;
+  color: hsl(var(--theme-secondary-500));
+}
+
+.result__rolls-list {
+  gap: 0.25em;
+}
+
+.result__rolls-list-item {
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result__critical-success,
+.result__critical-failure {
+  font-family: var(--font-display-name);
+  font-weight: var(--font-weight-bold);
+  font-style: var(--font-display-style);
+}
+
+.is-theme-light .result__critical-success,
+.is-theme-light .result__critical-failure {
+  color: rgb(var(--theme-white));
+}
+
+.is-theme-dark .result__critical-success,
+.is-theme-dark .result__critical-failure {
+  color: rgb(var(--theme-black));
+}
+
+.result__critical-success {
+  background-color: hsl(var(--theme-success-200));
+}
+
+.result__critical-failure {
+  background-color: hsl(var(--theme-danger-200));
+}

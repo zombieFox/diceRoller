@@ -1,0 +1,48 @@
+.is-theme-light ::selection {
+  background-color: hsl(var(--theme-danger-600));
+  color: rgb(var(--theme-white));
+}
+
+.is-theme-dark ::selection {
+  background-color: hsl(var(--theme-primary-600));
+  color: rgb(var(--theme-white));
+}
+
+:root {
+  --font-size: 16px;
+}
+
+@media (min-width: 1000px) {
+  :root {
+    --font-size: 18px;
+  }
+}
+
+html {
+  background-color: hsl(var(--theme-secondary-900));
+  font-size: var(--font-size);
+  transition: background-color var(--layout-transition-extra-fast);
+}
+
+body {
+  background-color: hsl(var(--theme-secondary-900));
+  font-size: 1rem;
+  line-height: 1.6;
+  min-width: 100vw;
+  color: hsl(var(--theme-text));
+  font-family: var(--font-ui-name);
+  font-weight: var(--font-weight-medium);
+  font-style: var(--font-ui-style);
+  transition: background-color var(--layout-transition-extra-fast), color var(--layout-transition-extra-fast);
+}
+
+.app {
+  min-width: 100vw;
+  max-width: 100vw;
+  width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+  height: 100vh;
+}
+
+@media (min-width: 800px) {}

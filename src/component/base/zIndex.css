@@ -1,0 +1,5 @@
+:root {
+  --z-index-footer: 1000;
+  --z-index-content: 2000;
+  --z-index-header: 3000;
+}
