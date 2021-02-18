@@ -34,7 +34,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60vh 2em 2em 4fr;
+  grid-template-rows: auto 60vh 2em 2em 4fr;
 }
 
 @media (min-width: 800px) {
@@ -77,16 +77,25 @@
 
 .layout__toolbar {
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
+}
+
+@media (min-width: 800px) {
+  .layout__toolbar {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
 }
 
 .layout__formula {
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 4;
   z-index: 1;
   overflow-y: auto;
   display: grid;
@@ -106,8 +115,8 @@
 .layout__roll {
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 5;
   z-index: 2;
   justify-self: center;
   align-self: center;
@@ -130,8 +139,8 @@
   overflow-y: auto;
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 3;
-  grid-row-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 6;
   z-index: 1;
   display: grid;
   justify-items: stretch;
