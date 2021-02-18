@@ -161,23 +161,23 @@
 .formula__set:first-child .formula__count-input,
 .formula__set[type=number]:first-child .formula__count-input,
 .formula__set[type=text]:first-child .formula__count-input {
-  border-top-left-radius: calc(var(--theme-radius) * 1.5);
+  border-top-left-radius: calc(var(--theme-radius) * 1.6);
 }
 
 .formula__set:last-child .formula__count-input,
 .formula__set[type=number]:last-child .formula__count-input,
 .formula__set[type=text]:last-child .formula__count-input {
-  border-bottom-left-radius: calc(var(--theme-radius) * 1.5);
+  border-bottom-left-radius: calc(var(--theme-radius) * 1.6);
 }
 
 .formula__set:first-child .formula__modifier-input,
 .formula__set[type=number]:first-child .formula__modifier-input,
 .formula__set[type=text]:first-child .formula__modifier-input {
-  border-top-right-radius: calc(var(--theme-radius) * 1.5);
+  border-top-right-radius: calc(var(--theme-radius) * 1.6);
 }
 
 .formula__set:last-child .formula__modifier-input,
 .formula__set[type=number]:last-child .formula__modifier-input,
 .formula__set[type=text]:last-child .formula__modifier-input {
-  border-bottom-right-radius: calc(var(--theme-radius) * 1.5);
+  border-bottom-right-radius: calc(var(--theme-radius) * 1.6);
 }
