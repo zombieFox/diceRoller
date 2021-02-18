@@ -20,6 +20,10 @@ result.history.add = (data) => {
   result.state.history.push(JSON.parse(JSON.stringify(data)));
 };
 
+result.history.clear = (data) => {
+  result.state.history = [];
+};
+
 result.element = node('div|class:result');
 
 result.clear = () => {

@@ -1,77 +1,72 @@
 .button__primary {
-  --button-background: var(--theme-primary-400);
-  --button-background-focus-hover: var(--theme-primary-300);
-  --button-background-active: var(--theme-primary-200);
+  --button-background: var(--theme-primary-300);
+  --button-background-focus-hover: var(--theme-primary-500);
+  --button-background-active: var(--theme-primary-600);
   --button-background-disabled: var(--theme-secondary-600);
-  --button-border: var(--theme-primary-900);
-  --button-border-focus-hover: var(--theme-primary-900);
-  --button-border-active: var(--theme-primary-400);
-  --button-border-disabled: var(--theme-secondary-600);
-  --button-link-text: var(--theme-primary-900);
-  --button-link-text-focus-hover: var(--theme-primary-900);
-  --button-link-text-active: var(--theme-primary-900);
-  --button-link-text-disabled: var(--theme-secondary-400);
-  --button-text-disabled: var(--theme-secondary-400);
+  --button-text: var(--theme-secondary-900);
+  --button-text-focus-hover: var(--theme-text);
+  --button-text-active: var(--theme-text);
+  --button-text-disabled: var(--theme-secondary-500);
 }
 
 .button__secondary {
-  --button-background: var(--theme-secondary-400);
-  --button-background-focus-hover: var(--theme-secondary-300);
-  --button-background-active: var(--theme-secondary-200);
+  --button-background: var(--theme-secondary-300);
+  --button-background-focus-hover: var(--theme-secondary-500);
+  --button-background-active: var(--theme-secondary-600);
   --button-background-disabled: var(--theme-secondary-600);
-  --button-border: var(--theme-secondary-900);
-  --button-border-focus-hover: var(--theme-secondary-900);
-  --button-border-active: var(--theme-secondary-400);
-  --button-border-disabled: var(--theme-secondary-600);
-  --button-link-text: var(--theme-secondary-900);
-  --button-link-text-focus-hover: var(--theme-secondary-900);
-  --button-link-text-active: var(--theme-secondary-900);
-  --button-link-text-disabled: var(--theme-secondary-400);
-  --button-text-disabled: var(--theme-secondary-400);
-}
-
-.button__danger {
-  --button-background: var(--theme-danger-400);
-  --button-background-focus-hover: var(--theme-danger-300);
-  --button-background-active: var(--theme-danger-200);
-  --button-background-disabled: var(--theme-secondary-600);
-  --button-border: var(--theme-danger-900);
-  --button-border-focus-hover: var(--theme-danger-900);
-  --button-border-active: var(--theme-danger-400);
-  --button-border-disabled: var(--theme-secondary-600);
-  --button-link-text: var(--theme-danger-900);
-  --button-link-text-focus-hover: var(--theme-danger-900);
-  --button-link-text-active: var(--theme-danger-900);
-  --button-link-text-disabled: var(--theme-secondary-400);
-  --button-text-disabled: var(--theme-secondary-400);
+  --button-text: var(--theme-secondary-900);
+  --button-text-focus-hover: var(--theme-text);
+  --button-text-active: var(--theme-text);
+  --button-text-disabled: var(--theme-secondary-500);
 }
 
 .button__success {
-  --button-background: var(--theme-success-400);
-  --button-background-focus-hover: var(--theme-success-300);
-  --button-background-active: var(--theme-success-200);
+  --button-background: var(--theme-success-300);
+  --button-background-focus-hover: var(--theme-success-500);
+  --button-background-active: var(--theme-success-600);
   --button-background-disabled: var(--theme-secondary-600);
-  --button-border: var(--theme-success-900);
-  --button-border-focus-hover: var(--theme-success-900);
-  --button-border-active: var(--theme-success-400);
-  --button-border-disabled: var(--theme-secondary-600);
-  --button-link-text: var(--theme-success-900);
-  --button-link-text-focus-hover: var(--theme-success-900);
-  --button-link-text-active: var(--theme-success-900);
-  --button-link-text-disabled: var(--theme-secondary-400);
-  --button-text-disabled: var(--theme-secondary-400);
+  --button-text: var(--theme-success-900);
+  --button-text-focus-hover: var(--theme-text);
+  --button-text-active: var(--theme-text);
+  --button-text-disabled: var(--theme-secondary-500);
 }
 
-.is-theme-light {
-  --button-text: var(--theme-white);
-  --button-text-focus-hover: var(--theme-white);
-  --button-text-active: var(--theme-white);
+.button__danger {
+  --button-background: var(--theme-danger-300);
+  --button-background-focus-hover: var(--theme-danger-500);
+  --button-background-active: var(--theme-danger-600);
+  --button-background-disabled: var(--theme-secondary-600);
+  --button-text: var(--theme-danger-900);
+  --button-text-focus-hover: var(--theme-text);
+  --button-text-active: var(--theme-text);
+  --button-text-disabled: var(--theme-secondary-500);
 }
 
-.is-theme-dark {
-  --button-text: var(--theme-black);
-  --button-text-focus-hover: var(--theme-black);
-  --button-text-active: var(--theme-black);
+.button__link {
+  /* --button-background: var(--theme-danger-300); */
+  --button-background-focus-hover: var(--theme-secondary-700);
+  --button-background-active: var(--theme-secondary-600);
+  --button-background-disabled: var(--theme-secondary-600);
+  --button-text: var(--theme-secondary-300);
+  --button-text-focus-hover: var(--theme-secondary-100);
+  --button-text-active: var(--theme-secondary-100);
+  --button-text-disabled: var(--theme-secondary-500);
+}
+
+.is-theme-light .button__primary,
+.is-theme-light .button__secondary,
+.is-theme-light .button__danger,
+.is-theme-light .button__success,
+.is-theme-light .button__link {
+  --theme-text: var(--theme-white);
+}
+
+.is-theme-dark .button__primary,
+.is-theme-dark .button__secondary,
+.is-theme-dark .button__danger,
+.is-theme-dark .button__success,
+.is-theme-dark .button__link {
+  --theme-text: var(--theme-black);
 }
 
 button,
@@ -82,7 +77,7 @@ input[type="submit"] {
   background-color: hsl(var(--button-background));
   padding: 0.25em 1.5em;
   margin: 0;
-  color: rgb(var(--button-text));
+  color: hsl(var(--button-text));
   font-size: 1em;
   font-family: var(--font-ui-name);
   font-weight: var(--font-weight-bold);
@@ -99,7 +94,7 @@ input[type="submit"] {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  transition: background-color var(--layout-transition-extra-fast), border-color var(--layout-transition-extra-fast), color var(--layout-transition-extra-fast);
+  transition: background-color var(--layout-transition-extra-fast), color var(--layout-transition-extra-fast);
 }
 
 button:focus,
@@ -132,7 +127,7 @@ input[type="submit"]:active {
 
 button.active,
 .button.active {
-  color: rgb(var(--button-text-focus-active));
+  color: hsl(var(--button-text-focus-active));
 }
 
 button.disabled,
@@ -152,13 +147,13 @@ button:disabled:active,
 .button:disabled:focus,
 .button:disabled:active {
   background-color: hsl(var(--button-background-disabled));
-  color: rgb(var(--button-text-disabled));
+  color: hsl(var(--button-text-disabled));
   cursor: default;
   text-decoration: none;
 }
 
 .button__ring {
-  transition: background-color var(--layout-transition-extra-fast), border-color var(--layout-transition-extra-fast), color var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
+  transition: background-color var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
 }
 
 .button__ring.button__primary:focus {
@@ -226,7 +221,7 @@ button .icon,
 }
 
 .button__small {
-  font-size: 0.8em;
+  font-size: 0.75em;
 }
 
 .button__large {
@@ -262,32 +257,4 @@ button [class*=" button-"]:last-child,
 
 .button__link {
   background-color: transparent;
-  border: 0;
-  color: hsl(var(--button-link-text));
-}
-
-.button__link:hover,
-.button__link:focus {
-  background-color: transparent;
-  color: hsl(var(--button-link-text-focus-hover));
-}
-
-.button__link:active {
-  background-color: transparent;
-  color: hsl(var(--button-link-text-active));
-}
-
-.button__link.disabled,
-.button__link:disabled {
-  background-color: transparent;
-  color: transparent;
-  pointer-events: none;
-}
-
-.button__link.disabled:hover,
-.button__link.disabled:focus,
-.button__link:hover:disabled,
-.button__link:focus:disabled {
-  background-color: transparent;
-  color: transparent;
 }

@@ -2,7 +2,7 @@ import { global } from '../global';
 import { formula } from '../formula';
 import { result } from '../result';
 
-export const data = {}
+export const data = {};
 
 data.state = {};
 
@@ -35,6 +35,6 @@ data.load = () => {
   return JSON.parse(localStorage.getItem(global.name.string));
 };
 
-data.wipe = () => {
+data.clear = () => {
   localStorage.removeItem(global.name.string);
 };

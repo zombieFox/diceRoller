@@ -11,7 +11,7 @@
   --form-input-background-hover: var(--theme-secondary-900);
   --form-input-background-focus-active: var(--theme-secondary-900);
   --form-input-background-disabled: var(--theme-secondary-800);
-  --form-input-text: var(--theme-secondary-100);
+  --form-input-text: var(--theme-text);
   --form-input-text-hover: var(--theme-text);
   --form-input-text-focus-active: var(--theme-text);
   --form-input-text-disabled: var(--theme-secondary-700);
@@ -142,7 +142,7 @@ input[type="text"] {
   border-width: 0;
   border-radius: calc(var(--theme-radius) / 2);
   cursor: text;
-  transition: background-color var(--layout-transition-extra-fast), color var(--layout-transition-extra-fast), border-color var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
+  transition: background-color var(--layout-transition-extra-fast), border-color var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
   -moz-appearance: textfield;
 }
 
@@ -294,9 +294,6 @@ select {
 }
 
 select:hover {
-  background-image:
-    linear-gradient(45deg, transparent 60%, rgb(var(--form-label-hover)) 60%),
-    linear-gradient(135deg, rgb(var(--form-label-hover)) 40%, transparent 40%);
   background-color: rgb(var(--form-input-background-hover));
   color: rgb(var(--form-label-hover));
   outline: none;
@@ -304,9 +301,6 @@ select:hover {
 
 select:focus,
 select:active {
-  background-image:
-    linear-gradient(45deg, transparent 60%, rgb(var(--form-label-focus-active)) 60%),
-    linear-gradient(135deg, rgb(var(--form-label-focus-active)) 40%, transparent 40%);
   background-color: rgb(var(--form-input-background-border-focus-active));
   color: rgb(var(--form-label-focus-active));
   outline: none;
@@ -319,9 +313,6 @@ select:disabled:hover,
 select:disabled:focus,
 select:disabled:active {
   background-color: rgb(var(--form-input-background-disabled));
-  background-image:
-    linear-gradient(45deg, transparent 50%, rgb(var(--form-input-text-disabled)) 50%),
-    linear-gradient(135deg, rgb(var(--form-input-text-disabled)) 50%, transparent 50%);
   color: rgb(var(--form-input-text-disabled));
   cursor: default;
   box-shadow: none;

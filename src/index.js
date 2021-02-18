@@ -15,6 +15,9 @@ app.clear = () => {
 app.render = () => {
   const add = [
     node('div|class:layout', [
+      node('section|class:layout__toolbar', [
+        component.toolbar.render()
+      ]),
       node('section|class:layout__formula', [
         node('section|class:layout__wrap', [
           component.formula.render()

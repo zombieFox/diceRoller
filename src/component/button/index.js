@@ -24,6 +24,10 @@ const Button = function({ text = false, type = false, round = false, block = fal
       this.button.classList.add('button__danger');
       break;
 
+    case 'link':
+      this.button.classList.add('button__link');
+      break;
+
     default:
       this.button.classList.add('button__primary');
       break;
