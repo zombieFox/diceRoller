@@ -73,7 +73,9 @@ modifier.render = (state) => {
   input.addEventListener('touchmove', (event) => {
     event.preventDefault();
 
-    state.modifier = currentValue + (Math.round((event.changedTouches[0].clientY - event.target.getBoundingClientRect().top) / 25) * -1);
+    let value = currentValue + (Math.round((event.changedTouches[0].clientY - event.target.getBoundingClientRect().top) / 25) * -1);
+
+    state.modifier = validateValue(value);
 
     input.value = prefixValue(state.modifier);
   });
