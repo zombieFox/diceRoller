@@ -427,14 +427,14 @@
   cursor: pointer;
   font-family: var(--font-ui-name);
   font-weight: var(--font-weight-bold);
-  color: hsl(var(--theme-success-300));
+  color: hsl(var(--theme-secondary-300));
   transform: rotate(0);
   transition: transform var(--layout-duration-04) var(--layout-timing-bounce);
 }
 
 .theme__style-text {
   position: relative;
-  font-size: 0.8em;
+  font-size: 0.75em;
   opacity: 0;
   transition: opacity var(--layout-duration-04) var(--layout-timing-bounce), left var(--layout-duration-02) var(--layout-timing-bounce);
   display: none;
@@ -467,7 +467,7 @@
 }
 
 .theme__style-icon {
-  background-color: hsl(var(--theme-success-300));
+  background-color: hsl(var(--theme-secondary-300));
   border-radius: 100%;
   width: var(--theme-toggle-size);
   height: var(--theme-toggle-size);
@@ -478,7 +478,7 @@
 
 .theme__style-icon:before {
   content: "";
-  background-color: hsl(var(--theme-background));
+  background-color: hsl(var(--theme-secondary-800));
   border-radius: 100%;
   width: calc(var(--theme-toggle-size) - calc(var(--theme-toggle-border) * 2));
   height: calc(var(--theme-toggle-size) - calc(var(--theme-toggle-border) * 2));
@@ -492,7 +492,7 @@
 
 .theme__style-icon:after {
   content: "";
-  background-color: hsl(var(--theme-success-300));
+  background-color: hsl(var(--theme-secondary-300));
   width: var(--theme-toggle-size);
   height: var(--theme-toggle-size);
   position: absolute;

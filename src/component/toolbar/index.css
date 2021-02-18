@@ -8,4 +8,5 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  transition: background-color var(--layout-transition-extra-fast);
 }
