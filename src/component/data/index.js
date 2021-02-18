@@ -8,6 +8,7 @@ data.state = {};
 
 data.state.save = () => {
   const dataToSave = {
+    [global.name.string]: true,
     formula: formula.state,
     result: result.state
   };
@@ -18,9 +19,12 @@ data.state.save = () => {
 data.state.load = () => {
   const dataToLoad = data.load();
 
-  formula.state = dataToLoad.formula;
-
-  result.state = dataToLoad.result;
+  if (dataToLoad) {
+    if (dataToLoad[global.name.string]) {
+      formula.state = dataToLoad.formula;
+      result.state = dataToLoad.result;
+    };
+  };
 };
 
 data.save = (data) => {
