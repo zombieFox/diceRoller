@@ -44,7 +44,7 @@ result.update = () => {
   const resultToRender = JSON.parse(JSON.stringify(result.state.history)).reverse().slice(0, result.state.count.max);
 
   if (resultToRender.length > 0) {
-    if (window.innerWidth > 800) {
+    if (window.innerWidth >= 800) {
       resultToRender.forEach((item, i) => {
         result.element.appendChild(result.resultItem(item));
       });

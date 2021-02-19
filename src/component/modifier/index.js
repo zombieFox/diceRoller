@@ -56,11 +56,11 @@ modifier.render = (state) => {
     state.modifier = validateValue(value);
   });
 
-  let currentValue = null;
-
   input.addEventListener('blur', (event) => {
     input.value = prefixValue(state.modifier);
   });
+
+  let currentValue = null;
 
   input.addEventListener('touchstart', (event) => {
     currentValue = parseInt(input.value, 10);

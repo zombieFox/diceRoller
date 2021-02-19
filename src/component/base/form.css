@@ -146,6 +146,15 @@ input[type="text"] {
   -moz-appearance: textfield;
 }
 
+.input__small[type="email"],
+.input__small[type="number"],
+.input__small[type="password"],
+.input__small[type="search"],
+.input__small[type="tel"],
+.input__small[type="text"] {
+  font-size: 0.75em;
+}
+
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,

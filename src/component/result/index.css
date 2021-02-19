@@ -9,7 +9,6 @@
 .result__item {
   position: relative;
   display: grid;
-  grid-template-rows: auto 1fr;
   gap: 2em;
 }
 
@@ -33,8 +32,8 @@
 }
 
 .result__total {
-  font-size: 2.5em;
-  line-height: 1;
+  font-size: 4em;
+  line-height: 1.25;
   min-width: 2.5em;
   font-family: var(--font-display-name);
   font-weight: var(--font-weight-extra-light);
@@ -45,16 +44,29 @@
 @media (min-width: 800px) {
   .result__total {
     text-align: left;
+    font-size: 2.5em;
   }
 }
 
 .result__details {
-  font-size: 0.75em;
+  display: none;
+  /* font-size: 0.75em;
   color: hsl(var(--theme-secondary-300));
   font-weight: var(--font-weight-bold);
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.5em;
+  gap: 0.5em; */
+}
+
+@media (min-width: 800px) {
+  .result__details {
+    font-size: 0.75em;
+    color: hsl(var(--theme-secondary-300));
+    font-weight: var(--font-weight-bold);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+  }
 }
 
 .result__formula {
