@@ -51,6 +51,10 @@ count.render = (state) => {
     state.count = validateValue(value);
   });
 
+  input.addEventListener('blur', (event) => {
+    input.value = state.count;
+  });
+
   let currentValue = null;
 
   input.addEventListener('touchstart', (event) => {
