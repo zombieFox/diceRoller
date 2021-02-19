@@ -20,7 +20,8 @@ app.render = () => {
       ]),
       node('section|class:layout__formula', [
         node('section|class:layout__wrap', [
-          component.formula.render()
+          component.formula.render(),
+          component.saved.render()
         ])
       ]),
       node('section|class:layout__roll', [
@@ -44,7 +45,7 @@ app.update = () => {
   app.render();
 };
 
-document.querySelector('body').addEventListener(events.key.diceRolled, (event) => {
+document.querySelector('body').addEventListener(events.key.rolledFormula, (event) => {
   component.result.history.add(component.dice.roll(component.formula.state.current));
   component.data.state.save();
   component.result.update();

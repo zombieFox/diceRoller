@@ -1,5 +1,6 @@
 import { global } from '../global';
 import { formula } from '../formula';
+import { saved } from '../saved';
 import { result } from '../result';
 import { theme } from '../theme';
 
@@ -10,9 +11,10 @@ data.state = {};
 data.state.save = () => {
   const dataToSave = {
     [global.name.string]: true,
-    theme: theme.state,
     formula: formula.state,
-    result: result.state
+    saved: saved.state,
+    result: result.state,
+    theme: theme.state
   };
 
   data.save(dataToSave);
@@ -23,9 +25,10 @@ data.state.load = () => {
 
   if (dataToLoad) {
     if (dataToLoad[global.name.string]) {
-      theme.state = dataToLoad.theme;
       formula.state = dataToLoad.formula;
+      saved.state = dataToLoad.saved;
       result.state = dataToLoad.result;
+      theme.state = dataToLoad.theme;
     };
   };
 };

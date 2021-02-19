@@ -1,0 +1,64 @@
+.saved {
+  margin-top: calc(var(--layout-gutter) * 3);
+  font-size: 1rem;
+  transition: background-color var(--layout-transition-extra-fast);
+}
+
+.saved__empty {
+  margin-top: 0;
+}
+
+.saved__body {
+  display: grid;
+  gap: 2em;
+}
+
+.saved__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-content: stretch;
+  align-items: center;
+  grid-column-gap: 1em;
+  grid-template-areas:
+    'remove name roll'
+    'remove formula roll';
+}
+
+.saved__item:not(:last-child):not(:only-child):after {
+  content: "";
+  position: absolute;
+  bottom: -1em;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid hsl(var(--theme-secondary-600));
+  transition: border-bottom var(--layout-transition-extra-fast);
+}
+
+.saved__remove {
+  grid-area: remove;
+}
+
+.saved__roll {
+  grid-area: roll;
+}
+
+.saved__name,
+.saved__name[type=number],
+.saved__name[type=text] {
+  border-radius: calc(var(--theme-radius) * 10);
+  font-size: 0.75em;
+  grid-area: name;
+}
+
+.saved__formula {
+  padding: 0 1.25em;
+  font-size: 0.75em;
+  color: hsl(var(--theme-primary-200));
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.25em 0.75em;
+  grid-area: formula;
+}

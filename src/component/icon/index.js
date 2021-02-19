@@ -66,7 +66,7 @@ icon.all = {
   }
 };
 
-icon.render = function(name, string) {
+icon.render = (name, string) => {
   switch (string) {
     case true:
       return '<span class="icon"><svg version="1.1" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="' + icon.all[name].path + '"></path></svg></span>'

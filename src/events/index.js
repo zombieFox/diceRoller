@@ -3,10 +3,11 @@ import { dice } from '../component/dice';
 
 export const events = {
   key: {
-    diceRolled: 'diceRolled'
+    rolledFormula: 'rolledFormula',
+    rollSaved: 'rollSaved'
   }
 };
 
-events.diceRolled = new CustomEvent(events.key.diceRolled, {
+events.rolledFormula = new CustomEvent(events.key.rolledFormula, {
   'bubbles': true
 });

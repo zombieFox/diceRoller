@@ -4,18 +4,18 @@
 }
 
 .formula {
-  background-color: hsl(var(--theme-secondary-900));
   font-size: 1rem;
-  border-radius: calc(var(--theme-radius) * 4);
   position: relative;
-  box-shadow: 0 2em 4em rgba(0, 0, 0, 0.2);
-  transition: background-color var(--layout-transition-extra-fast);
 }
 
 .formula__body {
+  background-color: hsl(var(--theme-secondary-900));
   display: grid;
   grid-template-columns: 100%;
   z-index: 1;
+  border-radius: calc(var(--theme-radius) * 4);
+  box-shadow: 0 2em 4em rgba(0, 0, 0, 0.2);
+  transition: background-color var(--layout-transition-extra-fast);
 }
 
 .formula__control {

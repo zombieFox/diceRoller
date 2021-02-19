@@ -18,8 +18,8 @@
 }
 
 :root {
-  --form-placeholder: var(--theme-secondary-300);
-  --form-placeholder-focus-hover: var(--theme-secondary-400);
+  --form-placeholder: var(--theme-secondary-600);
+  --form-placeholder-focus-hover: var(--theme-secondary-500);
   --form-placeholder-disabled: var(--theme-secondary-700);
 }
 
@@ -291,6 +291,10 @@ select {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+}
+
+select option {
+  color: rgb(var(--theme-black));
 }
 
 select:hover {
