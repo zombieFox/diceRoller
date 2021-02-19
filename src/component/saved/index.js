@@ -44,6 +44,8 @@ saved.remove = (index) => {
 
 saved.element = node('div|class:saved');
 
+saved.delay = 100;
+
 saved.clear = () => {
   while (saved.element.lastChild) {
     saved.element.removeChild(saved.element.lastChild);
@@ -126,6 +128,8 @@ saved.savedItem = (savedData, index) => {
     savedFormula.appendChild(formulaDice);
   });
 
+  let delay = null;
+
   const savedRemove = new Button({
     iconName: 'minus',
     round: true,
@@ -134,9 +138,13 @@ saved.savedItem = (savedData, index) => {
     size: 'small',
     classList: ['saved__remove'],
     func: () => {
-      saved.remove(index);
-      data.state.save();
-      saved.update();
+
+      delay = window.setTimeout(function() {
+        saved.remove(index);
+        data.state.save();
+        saved.update();
+      }, saved.delay);
+
     }
   });
 
