@@ -44,8 +44,8 @@
 
 .button__link {
   /* --button-background: var(--theme-danger-300); */
-  --button-background-focus-hover: var(--theme-secondary-800);
-  --button-background-active: var(--theme-secondary-700);
+  --button-background-focus-hover: var(--theme-secondary-700);
+  --button-background-active: var(--theme-secondary-600);
   --button-background-disabled: var(--theme-secondary-600);
   --button-text: var(--theme-primary-300);
   --button-text-focus-hover: var(--theme-primary-200);
@@ -218,9 +218,9 @@ button:disabled:active,
 
 .button__round {
   padding: 0;
-  width: 2em;
-  height: 2em;
-  min-height: 2em;
+  width: 2.5em;
+  height: 2.5em;
+  min-height: 2.5em;
 }
 
 button .icon,
@@ -231,10 +231,11 @@ button .icon,
 
 .button__small {
   font-size: 0.75em;
+  line-height: 2;
 }
 
 .button__large {
-  font-size: 1.2em;
+  font-size: 1.25em;
 }
 
 .button__block {
