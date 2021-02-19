@@ -32,6 +32,7 @@ toolbar.render = () => {
     size: 'small',
     func: () => {
       saved.add();
+      data.state.save();
       saved.update();
     }
   });

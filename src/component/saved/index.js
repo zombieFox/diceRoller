@@ -19,9 +19,12 @@ saved.state.current = [{
     rules: { dropLowest: false }
   }]
 }, {
-  name: 'Melee kapow!',
+  name: 'Melee damage',
   formula: [{
     dice: { count: 1, size: 6, modifier: 4 },
+    rules: { dropLowest: false }
+  }, {
+    dice: { count: 1, size: 4, modifier: 1 },
     rules: { dropLowest: false }
   }]
 }];
@@ -36,6 +39,7 @@ saved.add = () => {
 };
 
 saved.remove = (index) => {
+  console.log(index);
   saved.state.current.splice(index, 1);
 };
 
@@ -56,21 +60,64 @@ saved.render = () => {
 saved.update = () => {
   saved.clear();
 
-  const savedToRender = JSON.parse(JSON.stringify(saved.state.current));
+  const savedBody = node('div|class:saved__body');
+
+  // const savedToRender = JSON.parse(JSON.stringify(saved.state.current));
+  const savedToRender = saved.state.current;
 
   if (savedToRender.length > 0) {
     savedToRender.forEach((item, i) => {
-      saved.element.appendChild(saved.savedItem(item));
+      savedBody.appendChild(saved.savedItem(item, i));
     });
   };
+
+  saved.element.appendChild(savedBody);
 };
 
-saved.savedItem = (savedData) => {
+saved.savedItem = (savedData, index) => {
   const savedItem = node('div|class:saved__item');
 
-  const savedName = node(`div:${savedData.name}|class:saved__name`);
+  const savedName = node(`input|class:saved__name,type:text,value:${savedData.name},placeholder:Roll name`);
 
-  const rollSaved = new Button({
+  savedName.addEventListener('input', () => {
+    savedData.name = savedName.value;
+    data.state.save();
+  });
+
+  const savedFormula = node(`div|class:saved__formula`);
+
+  savedData.formula.forEach((item, i) => {
+    const formulaDice = node('div|class:saved__formula-dice');
+
+    let diceString = '';
+    if (item.dice.count > 1) {
+      diceString = diceString + item.dice.count;
+    };
+    diceString = diceString + ' d' + item.dice.size;
+    if (item.dice.modifier > 0) {
+      diceString = diceString + ' +' + item.dice.modifier;
+    } else if (item.dice.modifier < 0) {
+      diceString = diceString + ' ' + item.dice.modifier;
+    };
+    formulaDice.textContent = diceString;
+
+    savedFormula.appendChild(formulaDice);
+  });
+
+  const savedRemove = new Button({
+    iconName: 'minus',
+    round: true,
+    ring: true,
+    type: 'danger',
+    classList: ['saved__remove'],
+    func: () => {
+      saved.remove(index);
+      data.state.save();
+      saved.update();
+    }
+  });
+
+  const savedRoll = new Button({
     text: 'Roll',
     ring: true,
     type: 'link',
@@ -82,12 +129,13 @@ saved.savedItem = (savedData) => {
     }
   });
 
+  savedItem.appendChild(savedRemove.button);
 
   savedItem.appendChild(savedName);
 
-  savedItem.appendChild(rollSaved.button);
+  savedItem.appendChild(savedFormula);
 
-  console.log(savedData);
+  savedItem.appendChild(savedRoll.button);
 
   return savedItem;
 };
