@@ -23,20 +23,6 @@ toolbar.render = () => {
     }
   });
 
-  const saveFormula = new Button({
-    text: 'Save formula',
-    ring: true,
-    type: 'link',
-    size: 'small',
-    func: () => {
-      saved.add();
-      data.state.save();
-      saved.update();
-    }
-  });
-
-  toolbar.element.appendChild(saveFormula.button);
-
   toolbar.element.appendChild(resultHistory.button);
 
   toolbar.element.appendChild(theme.toggle.render());

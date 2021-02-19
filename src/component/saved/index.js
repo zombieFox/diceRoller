@@ -39,7 +39,6 @@ saved.add = () => {
 };
 
 saved.remove = (index) => {
-  console.log(index);
   saved.state.current.splice(index, 1);
 };
 
@@ -60,11 +59,11 @@ saved.render = () => {
 saved.update = () => {
   saved.clear();
 
-  if (saved.state.current.length === 0) {
-    saved.element.classList.add('saved__empty');
-  } else {
-    saved.element.classList.remove('saved__empty');
-  };
+  // if (saved.state.current.length === 0) {
+  //   saved.element.classList.add('saved__empty');
+  // } else {
+  //   saved.element.classList.remove('saved__empty');
+  // };
 
   const savedBody = node('div|class:saved__body');
 
@@ -76,9 +75,23 @@ saved.update = () => {
     });
   };
 
-  if (savedToRender.length > 0) {
-    saved.element.appendChild(node('h1:Saved formula|class:layout__heading'));
-  };
+  const saveFormula = new Button({
+    text: 'Save current formula',
+    ring: true,
+    type: 'link',
+    size: 'small',
+    func: () => {
+      saved.add();
+      data.state.save();
+      saved.update();
+    }
+  });
+
+  saved.element.appendChild(saveFormula.button);
+
+  // if (savedToRender.length > 0) {
+  //   saved.element.appendChild(node('h1:Saved formula|class:layout__heading'));
+  // };
 
   saved.element.appendChild(savedBody);
 };

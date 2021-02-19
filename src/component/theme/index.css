@@ -427,7 +427,7 @@
   cursor: pointer;
   font-family: var(--font-ui-name);
   font-weight: var(--font-weight-bold);
-  color: hsl(var(--theme-primary-300));
+  color: hsl(var(--theme-secondary-300));
   transform: rotate(0);
   transition: transform var(--layout-duration-04) var(--layout-timing-bounce);
 }
@@ -467,7 +467,7 @@
 }
 
 .theme__style-icon {
-  background-color: hsl(var(--theme-primary-300));
+  background-color: hsl(var(--theme-secondary-300));
   border-radius: 100%;
   width: var(--theme-toggle-size);
   height: var(--theme-toggle-size);
@@ -492,7 +492,7 @@
 
 .theme__style-icon:after {
   content: "";
-  background-color: hsl(var(--theme-primary-300));
+  background-color: hsl(var(--theme-secondary-300));
   width: var(--theme-toggle-size);
   height: var(--theme-toggle-size);
   position: absolute;
