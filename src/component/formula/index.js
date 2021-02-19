@@ -1,8 +1,7 @@
 import './index.css';
-import { events } from '../../events';
 import { node } from '../../utilities/node';
+import { events } from '../../events';
 import { data } from '../data';
-import { icon } from '../icon';
 import { ControlSet } from '../ControlSet';
 import { Button } from '../button';
 
@@ -46,6 +45,7 @@ formula.clear = () => {
 
 formula.render = () => {
   formula.update();
+
   return formula.element;
 };
 

@@ -14,6 +14,7 @@ import { modifier } from './modifier';
 import { roll } from './roll';
 import { result } from './result';
 import { formula } from './formula';
+import { saved } from './saved';
 import { toolbar } from './toolbar';
 import { styleguide } from './styleguide';
 
@@ -34,6 +35,7 @@ export const component = {
   roll,
   result,
   formula,
+  saved,
   toolbar,
   styleguide
 };

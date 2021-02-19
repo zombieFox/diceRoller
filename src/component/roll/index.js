@@ -17,7 +17,7 @@ roll.render = () => {
     type: 'success',
     classList: ['roll__button'],
     func: () => {
-      rollButton.button.dispatchEvent(events.diceRolled);
+      rollButton.button.dispatchEvent(events.rolledFormula);
     }
   });
 

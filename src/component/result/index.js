@@ -34,6 +34,7 @@ result.clear = () => {
 
 result.render = () => {
   result.update();
+
   return result.element;
 };
 
