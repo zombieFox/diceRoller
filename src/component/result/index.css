@@ -50,12 +50,6 @@
 
 .result__details {
   display: none;
-  /* font-size: 0.75em;
-  color: hsl(var(--theme-secondary-300));
-  font-weight: var(--font-weight-bold);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5em; */
 }
 
 @media (min-width: 800px) {

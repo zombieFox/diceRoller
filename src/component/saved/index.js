@@ -12,24 +12,22 @@ export const saved = {};
 
 saved.state = {};
 
-saved.state.current = [];
-
-// saved.state.current = [{
-//   name: 'Short sword +1',
-//   formula: [{
-//     dice: { count: 1, size: 20, modifier: 6 },
-//     rules: { dropLowest: false }
-//   }]
-// }, {
-//   name: 'Melee damage',
-//   formula: [{
-//     dice: { count: 1, size: 6, modifier: 4 },
-//     rules: { dropLowest: false }
-//   }, {
-//     dice: { count: 1, size: 4, modifier: 1 },
-//     rules: { dropLowest: false }
-//   }]
-// }];
+saved.state.current = [{
+  name: 'Short sword +1',
+  formula: [{
+    dice: { count: 1, size: 20, modifier: 6 },
+    rules: { dropLowest: false }
+  }]
+}, {
+  name: 'Melee damage',
+  formula: [{
+    dice: { count: 1, size: 6, modifier: 4 },
+    rules: { dropLowest: false }
+  }, {
+    dice: { count: 1, size: 4, modifier: 1 },
+    rules: { dropLowest: false }
+  }]
+}];
 
 saved.add = () => {
   const formulaToAdd = {
