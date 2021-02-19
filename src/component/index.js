@@ -6,7 +6,6 @@ import { data } from './data';
 import { theme } from './theme';
 import { layout } from './layout';
 import { icon } from './icon';
-import { card } from './card';
 import { dice } from './dice';
 import { count } from './count';
 import { size } from './size';
@@ -27,7 +26,6 @@ export const component = {
   theme,
   layout,
   icon,
-  card,
   dice,
   count,
   size,

@@ -62,7 +62,6 @@ saved.update = () => {
 
   const savedBody = node('div|class:saved__body');
 
-  // const savedToRender = JSON.parse(JSON.stringify(saved.state.current));
   const savedToRender = saved.state.current;
 
   if (savedToRender.length > 0) {
@@ -77,7 +76,7 @@ saved.update = () => {
 saved.savedItem = (savedData, index) => {
   const savedItem = node('div|class:saved__item');
 
-  const savedName = node(`input|class:saved__name,type:text,value:${savedData.name},placeholder:Roll name`);
+  const savedName = node(`input|class:saved__name,type:text,value:${savedData.name},placeholder:Saved roll formula,tabindex:1`);
 
   savedName.addEventListener('input', () => {
     savedData.name = savedName.value;
@@ -108,7 +107,8 @@ saved.savedItem = (savedData, index) => {
     iconName: 'minus',
     round: true,
     ring: true,
-    type: 'danger',
+    type: 'link',
+    size: 'small',
     classList: ['saved__remove'],
     func: () => {
       saved.remove(index);
@@ -122,6 +122,7 @@ saved.savedItem = (savedData, index) => {
     ring: true,
     type: 'link',
     size: 'small',
+    classList: ['saved__roll'],
     func: () => {
       result.history.add(dice.roll(savedData.formula));
       data.state.save();
