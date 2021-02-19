@@ -63,6 +63,7 @@ formula.update = () => {
       iconName: 'minus',
       round: true,
       ring: true,
+      size: 'small',
       type: 'danger',
       classList: ['formula__remove'],
       func: () => {
@@ -97,6 +98,7 @@ formula.update = () => {
     iconName: 'plus',
     round: true,
     ring: true,
+    size: 'small',
     classList: ['formula__add'],
     func: () => {
 
@@ -109,9 +111,9 @@ formula.update = () => {
     }
   });
 
-  if (formula.state.current.length > 0) {
-    formula.element.appendChild(node('h1:Dice formula|class:layout__heading'));
-  };
+  // if (formula.state.current.length > 0) {
+  //   formula.element.appendChild(node('h1:Dice formula|class:layout__heading'));
+  // };
 
   formula.element.appendChild(formulaBody);
 
