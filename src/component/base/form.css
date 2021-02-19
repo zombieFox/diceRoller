@@ -294,7 +294,7 @@ select {
 }
 
 select option {
-  color: hsl(var(--form-input-text));
+  color: rgb(var(--theme-black));
 }
 
 select:hover {
