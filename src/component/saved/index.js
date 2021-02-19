@@ -12,22 +12,24 @@ export const saved = {};
 
 saved.state = {};
 
-saved.state.current = [{
-  name: 'Short sword +1',
-  formula: [{
-    dice: { count: 1, size: 20, modifier: 6 },
-    rules: { dropLowest: false }
-  }]
-}, {
-  name: 'Melee damage',
-  formula: [{
-    dice: { count: 1, size: 6, modifier: 4 },
-    rules: { dropLowest: false }
-  }, {
-    dice: { count: 1, size: 4, modifier: 1 },
-    rules: { dropLowest: false }
-  }]
-}];
+saved.state.current = [];
+
+// saved.state.current = [{
+//   name: 'Short sword +1',
+//   formula: [{
+//     dice: { count: 1, size: 20, modifier: 6 },
+//     rules: { dropLowest: false }
+//   }]
+// }, {
+//   name: 'Melee damage',
+//   formula: [{
+//     dice: { count: 1, size: 6, modifier: 4 },
+//     rules: { dropLowest: false }
+//   }, {
+//     dice: { count: 1, size: 4, modifier: 1 },
+//     rules: { dropLowest: false }
+//   }]
+// }];
 
 saved.add = () => {
   const formulaToAdd = {
@@ -60,6 +62,12 @@ saved.render = () => {
 saved.update = () => {
   saved.clear();
 
+  if (saved.state.current.length === 0) {
+    saved.element.classList.add('saved__empty');
+  } else {
+    saved.element.classList.remove('saved__empty');
+  };
+
   const savedBody = node('div|class:saved__body');
 
   const savedToRender = saved.state.current;
@@ -70,13 +78,17 @@ saved.update = () => {
     });
   };
 
+  if (savedToRender.length > 0) {
+    saved.element.appendChild(node('h1:Saved formula|class:layout__heading'));
+  };
+
   saved.element.appendChild(savedBody);
 };
 
 saved.savedItem = (savedData, index) => {
   const savedItem = node('div|class:saved__item');
 
-  const savedName = node(`input|class:saved__name,type:text,value:${savedData.name},placeholder:Saved roll formula,tabindex:1`);
+  const savedName = node(`input|class:saved__name,type:text,value:${savedData.name},placeholder:Saved formula name,tabindex:1`);
 
   savedName.addEventListener('input', () => {
     savedData.name = savedName.value;

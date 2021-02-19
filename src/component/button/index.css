@@ -108,7 +108,7 @@ input[type="reset"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:hover {
   background-color: hsl(var(--button-background-focus-hover));
-  color: hsl(var(--button-text-focus-hover));
+  color: rgb(var(--button-text-focus-hover));
   outline: none;
   text-decoration: none;
 }
@@ -119,7 +119,7 @@ input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
   background-color: hsl(var(--button-background-active));
-  color: hsl(var(--button-text-active));
+  color: rgb(var(--button-text-active));
   outline: none;
   text-decoration: none;
   transition: none;
@@ -127,7 +127,7 @@ input[type="submit"]:active {
 
 button.active,
 .button.active {
-  color: hsl(var(--button-text-focus-active));
+  color: rgb(var(--button-text-active));
 }
 
 button.disabled,
@@ -190,6 +190,15 @@ button:disabled:active,
 .button__ring.button__success:active,
 .button__ring.button__success.active {
   box-shadow: var(--theme-focus-success);
+}
+
+.button__ring.button__link:focus {
+  box-shadow: var(--theme-focus-secondary);
+}
+
+.button__ring.button__link:active,
+.button__ring.button__link.active {
+  box-shadow: var(--theme-focus-secondary);
 }
 
 .button__ring.disabled,

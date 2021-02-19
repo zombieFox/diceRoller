@@ -109,6 +109,10 @@ formula.update = () => {
     }
   });
 
+  if (formula.state.current.length > 0) {
+    formula.element.appendChild(node('h1:Dice formula|class:layout__heading'));
+  };
+
   formula.element.appendChild(formulaBody);
 
   formula.element.appendChild(node('div|class:formula__control', [

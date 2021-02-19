@@ -1,7 +1,11 @@
 .saved {
-  margin-top: 3em;
+  margin-top: calc(var(--layout-gutter) * 3);
   font-size: 1rem;
   transition: background-color var(--layout-transition-extra-fast);
+}
+
+.saved__empty {
+  margin-top: 0;
 }
 
 .saved__body {
