@@ -23,8 +23,6 @@ toolbar.render = () => {
     }
   });
 
-  toolbar.element.appendChild(resultHistory.button);
-
   const saveFormula = new Button({
     text: 'Save formula',
     ring: true,
@@ -38,6 +36,8 @@ toolbar.render = () => {
   });
 
   toolbar.element.appendChild(saveFormula.button);
+
+  toolbar.element.appendChild(resultHistory.button);
 
   toolbar.element.appendChild(theme.toggle.render());
 
