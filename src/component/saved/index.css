@@ -18,8 +18,8 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   justify-content: stretch;
-  align-items: center;
-  grid-column-gap: 1em;
+  align-items: start;
+  gap: 0.25em 1em;
   grid-template-areas:
     'remove name roll'
     'remove formula roll';
@@ -48,7 +48,7 @@
 .saved__name[type=number],
 .saved__name[type=text] {
   border-radius: calc(var(--theme-radius) * 10);
-  font-size: 0.75em;
+  /* font-size: 0.75em; */
   grid-area: name;
 }
 

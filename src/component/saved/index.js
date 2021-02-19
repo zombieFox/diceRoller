@@ -88,7 +88,7 @@ saved.update = () => {
 saved.savedItem = (savedData, index) => {
   const savedItem = node('div|class:saved__item');
 
-  const savedName = node(`input|class:saved__name,type:text,value:${savedData.name},placeholder:Saved formula name,tabindex:1`);
+  const savedName = node(`input|class:saved__name input__small,type:text,value:${savedData.name},placeholder:Saved formula name,tabindex:1`);
 
   savedName.addEventListener('input', () => {
     savedData.name = savedName.value;
