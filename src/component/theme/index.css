@@ -390,7 +390,7 @@
 
 @media (min-width: 800px) {
   :root {
-    --theme-toggle-size: 24px;
+    --theme-toggle-size: 20px;
   }
 }
 
