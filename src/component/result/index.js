@@ -63,7 +63,7 @@ result.resultItem = (resultData) => {
 
   const resultTimestamp = node('div|class:result__timestamp');
 
-  resultTimestamp.textContent = `${resultData.timestamp.hours}:${resultData.timestamp.minutes < 10 ? `0`+resultData.timestamp.minutes : resultData.timestamp.minutes}:${resultData.timestamp.seconds < 10 ? `0`+resultData.timestamp.seconds : resultData.timestamp.seconds} ${resultData.timestamp.date}/${resultData.timestamp.monthString}/${resultData.timestamp.year}`;
+  resultTimestamp.textContent = `${resultData.timestamp.hours < 10 ? `0`+resultData.timestamp.hours : resultData.timestamp.hours}:${resultData.timestamp.minutes < 10 ? `0`+resultData.timestamp.minutes : resultData.timestamp.minutes}:${resultData.timestamp.seconds < 10 ? `0`+resultData.timestamp.seconds : resultData.timestamp.seconds} ${resultData.timestamp.date}/${resultData.timestamp.monthString}/${resultData.timestamp.year}`;
 
   resultData.formula.forEach((item, i) => {
     const formula = node('div|class:result__formula');
@@ -71,7 +71,7 @@ result.resultItem = (resultData) => {
     const formulaDice = node('div|class:result__formula-dice');
 
     let diceString = '';
-    if (item.dice.count > 0) {
+    if (item.dice.count > 1) {
       diceString = diceString + item.dice.count;
     };
     diceString = diceString + ' d' + item.dice.size;
