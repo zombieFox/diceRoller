@@ -9,7 +9,7 @@
 }
 
 :root {
-  --font-size: 18px;
+  --font-size: 16px;
 }
 
 html {
@@ -38,5 +38,3 @@ body {
   max-height: 100vh;
   height: 100vh;
 }
-
-@media (min-width: 800px) {}
