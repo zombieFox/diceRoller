@@ -1,5 +1,5 @@
 .saved {
-  margin-top: calc(var(--layout-gutter) * 3);
+  margin-top: calc(var(--layout-gutter) * 2);
   font-size: 1rem;
   display: grid;
   gap: 2em;
@@ -19,7 +19,7 @@
   grid-template-columns: auto 1fr auto;
   justify-content: stretch;
   align-items: start;
-  gap: 0.25em 1em;
+  gap: 0.25em 0.5em;
   grid-template-areas:
     'remove name roll'
     'remove formula roll';
