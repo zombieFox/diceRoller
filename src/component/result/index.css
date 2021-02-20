@@ -79,10 +79,14 @@
 
 .result__name {
   color: hsl(var(--theme-secondary-100));
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .result__timestamp {
   color: hsl(var(--theme-secondary-500));
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .result__rolls-list {

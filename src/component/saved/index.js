@@ -71,7 +71,7 @@ saved.update = () => {
   const saveFormula = new Button({
     text: 'Save current formula',
     ring: true,
-    type: 'link',
+    type: 'primary',
     size: 'small',
     func: () => {
       saved.add();
