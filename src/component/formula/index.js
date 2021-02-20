@@ -1,6 +1,5 @@
 import './index.css';
 import { node } from '../../utilities/node';
-import { events } from '../../events';
 import { data } from '../data';
 import { ControlSet } from '../ControlSet';
 import { Button } from '../button';

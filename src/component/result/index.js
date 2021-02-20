@@ -1,5 +1,4 @@
 import './index.css';
-import { events } from '../../events';
 import { node } from '../../utilities/node';
 import { formula } from '../formula';
 import { dice } from '../dice';
@@ -60,11 +59,15 @@ result.resultItem = (resultData) => {
 
   const resultTotal = node(`div:${resultData.total}|class:result__total`);
 
-  const resultBody = node('div|class:result__details');
+  const resultDetails = node('div|class:result__details');
 
   const resultTimestamp = node('div|class:result__timestamp');
 
   resultTimestamp.textContent = `${resultData.timestamp.hours < 10 ? `0`+resultData.timestamp.hours : resultData.timestamp.hours}:${resultData.timestamp.minutes < 10 ? `0`+resultData.timestamp.minutes : resultData.timestamp.minutes}:${resultData.timestamp.seconds < 10 ? `0`+resultData.timestamp.seconds : resultData.timestamp.seconds} ${resultData.timestamp.date}/${resultData.timestamp.monthString}/${resultData.timestamp.year}`;
+
+  if (resultData.name) {
+    resultDetails.appendChild(node(`div:${resultData.name}|class:result__name`));
+  };
 
   resultData.formula.forEach((item, i) => {
     const formula = node('div|class:result__formula');
@@ -109,14 +112,14 @@ result.resultItem = (resultData) => {
 
     formula.appendChild(formulaRolls);
 
-    resultBody.appendChild(formula);
+    resultDetails.appendChild(formula);
   });
 
-  resultBody.appendChild(resultTimestamp);
+  resultDetails.appendChild(resultTimestamp);
 
   resultItem.appendChild(resultTotal);
 
-  resultItem.appendChild(resultBody);
+  resultItem.appendChild(resultDetails);
 
   return resultItem;
 };

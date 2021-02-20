@@ -1,6 +1,5 @@
 import './index.css';
 import { node } from '../../utilities/node';
-import { events } from '../../events';
 import { data } from '../data';
 import { dice } from '../dice';
 import { result } from '../result';
@@ -61,18 +60,10 @@ saved.render = () => {
 saved.update = () => {
   saved.clear();
 
-  // if (saved.state.current.length === 0) {
-  //   saved.element.classList.add('saved__empty');
-  // } else {
-  //   saved.element.classList.remove('saved__empty');
-  // };
-
   const savedBody = node('div|class:saved__body');
 
-  const savedToRender = saved.state.current;
-
-  if (savedToRender.length > 0) {
-    savedToRender.forEach((item, i) => {
+  if (saved.state.current.length > 0) {
+    saved.state.current.forEach((item, i) => {
       savedBody.appendChild(saved.savedItem(item, i));
     });
   };
@@ -90,10 +81,6 @@ saved.update = () => {
   });
 
   saved.element.appendChild(saveFormula.button);
-
-  // if (savedToRender.length > 0) {
-  //   saved.element.appendChild(node('h1:Saved formula|class:layout__heading'));
-  // };
 
   saved.element.appendChild(savedBody);
 };
@@ -151,13 +138,15 @@ saved.savedItem = (savedData, index) => {
   const savedRoll = new Button({
     text: 'Roll',
     ring: true,
-    type: 'link',
+    type: 'success',
     size: 'small',
     classList: ['saved__roll'],
     func: () => {
-      result.history.add(dice.roll(savedData.formula));
+
+      result.history.add(dice.roll(savedData));
       data.state.save();
       result.update();
+
     }
   });
 

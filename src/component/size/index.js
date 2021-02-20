@@ -1,4 +1,3 @@
-import { events } from '../../events';
 import { node } from '../../utilities/node';
 import { dice } from '../dice';
 import { icon } from '../icon';

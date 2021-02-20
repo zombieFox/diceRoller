@@ -72,8 +72,13 @@
 .result__details,
 .result__rolls-list,
 .result__rolls-list-item,
+.result__name,
 .result__timestamp {
   line-height: 2em;
+}
+
+.result__name {
+  color: hsl(var(--theme-secondary-100));
 }
 
 .result__timestamp {

@@ -1,6 +1,6 @@
 import './index.css';
-import { events } from '../../events';
 import { node } from '../../utilities/node';
+import { data } from '../data';
 import { formula } from '../formula';
 import { dice } from '../dice';
 import { result } from '../result';
@@ -17,7 +17,14 @@ roll.render = () => {
     type: 'success',
     classList: ['roll__button'],
     func: () => {
-      rollButton.button.dispatchEvent(events.rolledFormula);
+
+      result.history.add(dice.roll({
+        name: false,
+        formula: JSON.parse(JSON.stringify(formula.state.current)),
+      }));
+      data.state.save();
+      result.update();
+
     }
   });
 

@@ -7,14 +7,11 @@ dice.random = (min, max) => Math.round(Math.random() * (max - min)) + min;
 
 dice.reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-dice.roll = (allFormula) => {
-  const result = {
-    formula: JSON.parse(JSON.stringify(allFormula)),
-    total: 0,
-    timestamp: null
-  };
+dice.roll = (data) => {
+  data.total = 0;
+  data.timestamp = null;
 
-  result.formula.forEach((item, i) => {
+  data.formula.forEach((item, i) => {
     item.result = {};
 
     item.result.rolls = {
@@ -35,10 +32,10 @@ dice.roll = (allFormula) => {
       item.result.total = item.result.total - item.result.rolls.lowest;
     };
 
-    result.total = result.total + item.result.total;
+    data.total = data.total + item.result.total;
   });
 
-  result.timestamp = dateTime();
+  data.timestamp = dateTime();
 
-  return result;
+  return data;
 };
