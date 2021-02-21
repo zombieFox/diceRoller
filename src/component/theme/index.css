@@ -1,5 +1,5 @@
 :root {
-  --theme-black: 30, 30, 30;
+  --theme-black: 20, 20, 20;
   --theme-white: 250, 250, 250;
   --theme-background: var(--theme-secondary-900);
 }
@@ -20,7 +20,7 @@
 :root {
   --theme-primary-h: 210;
   --theme-primary-s: 80;
-  --theme-primary-l: 50;
+  --theme-primary-l: 45;
   --theme-primary-l-mod: 90;
   --theme-primary-s-mod: 50;
 }
@@ -28,15 +28,15 @@
 :root {
   --theme-secondary-h: 210;
   --theme-secondary-s: 20;
-  --theme-secondary-l: 50;
-  --theme-secondary-l-mod: 110;
-  --theme-secondary-s-mod: -50;
+  --theme-secondary-l: 45;
+  --theme-secondary-l-mod: 90;
+  --theme-secondary-s-mod: -70;
 }
 
 :root {
   --theme-success-h: 130;
   --theme-success-s: 80;
-  --theme-success-l: 50;
+  --theme-success-l: 45;
   --theme-success-l-mod: 90;
   --theme-success-s-mod: 50;
 }
@@ -44,7 +44,7 @@
 :root {
   --theme-danger-h: 340;
   --theme-danger-s: 80;
-  --theme-danger-l: 50;
+  --theme-danger-l: 45;
   --theme-danger-l-mod: 90;
   --theme-danger-s-mod: 50;
 }
@@ -237,18 +237,11 @@
     calc(calc(var(--theme-danger-l) + var(--theme-danger-l-step-4)) * 1%);
 }
 
-.is-theme-light {
-  --theme-focus-primary: 0 0 0 3px hsla(var(--theme-primary-600), 1), 0 0 0 6px hsla(var(--theme-primary-600), 0.4);
-  --theme-focus-secondary: 0 0 0 3px hsla(var(--theme-secondary-600), 1), 0 0 0 6px hsla(var(--theme-secondary-600), 0.4);
-  --theme-focus-danger: 0 0 0 3px hsla(var(--theme-danger-600), 1), 0 0 0 6px hsla(var(--theme-danger-600), 0.4);
-  --theme-focus-success: 0 0 0 3px hsla(var(--theme-success-600), 1), 0 0 0 6px hsla(var(--theme-success-600), 0.4);
-}
-
-.is-theme-dark {
-  --theme-focus-primary: 0 0 0 3px hsla(var(--theme-primary-600), 1), 0 0 0 6px hsla(var(--theme-primary-600), 0.4);
-  --theme-focus-secondary: 0 0 0 3px hsla(var(--theme-secondary-600), 1), 0 0 0 6px hsla(var(--theme-secondary-600), 0.4);
-  --theme-focus-danger: 0 0 0 3px hsla(var(--theme-danger-600), 1), 0 0 0 6px hsla(var(--theme-danger-600), 0.4);
-  --theme-focus-success: 0 0 0 3px hsla(var(--theme-success-600), 1), 0 0 0 6px hsla(var(--theme-success-600), 0.4);
+:root {
+  --theme-focus-primary: 0 0 0 3px hsla(var(--theme-primary-500), 1), 0 0 0 6px hsla(var(--theme-primary-500), 0.5);
+  --theme-focus-secondary: 0 0 0 3px hsla(var(--theme-secondary-500), 1), 0 0 0 6px hsla(var(--theme-secondary-500), 0.5);
+  --theme-focus-danger: 0 0 0 3px hsla(var(--theme-danger-500), 1), 0 0 0 6px hsla(var(--theme-danger-500), 0.5);
+  --theme-focus-success: 0 0 0 3px hsla(var(--theme-success-500), 1), 0 0 0 6px hsla(var(--theme-success-500), 0.5);
 }
 
 .is-theme-light {
