@@ -6,7 +6,7 @@ export const styleguide = {};
 styleguide.colour = {};
 
 styleguide.colour.render = () => {
-  const layout = node('section', [
+  return node('section', [
     node('div|class:styleguide__colour', [
       node('div|class:styleguide__colour-primary', [
         node('div|class:styleguide__colour-primary-100'),
@@ -58,6 +58,4 @@ styleguide.colour.render = () => {
       node('div|class:styleguide__colour-white')
     ])
   ]);
-
-  return layout;
 };

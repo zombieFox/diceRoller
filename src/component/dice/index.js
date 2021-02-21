@@ -9,6 +9,7 @@ dice.reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 dice.roll = (data) => {
   data.total = 0;
+
   data.timestamp = null;
 
   data.formula.forEach((item, i) => {

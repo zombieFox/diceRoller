@@ -19,12 +19,12 @@ app.render = () => {
       ]),
       node('section|class:layout__formula', [
         node('section|class:layout__wrap', [
-          component.formula.render(),
-          component.saved.render()
+          node('section|class:layout__controls', [
+            component.formula.render(),
+            component.roll.render(),
+            component.saved.render()
+          ])
         ])
-      ]),
-      node('section|class:layout__roll', [
-        component.roll.render()
       ]),
       node('section|class:layout__result', [
         node('section|class:layout__wrap', [

@@ -60,6 +60,8 @@ saved.render = () => {
 saved.update = () => {
   saved.clear();
 
+  let delayUpdate = null;
+
   const savedBody = node('div|class:saved__body');
 
   if (saved.state.current.length > 0) {
@@ -71,12 +73,16 @@ saved.update = () => {
   const saveFormula = new Button({
     text: 'Save current formula',
     ring: true,
-    type: 'primary',
+    type: 'link',
     size: 'small',
     func: () => {
-      saved.add();
-      data.state.save();
-      saved.update();
+
+      delayUpdate = window.setTimeout(function() {
+        saved.add();
+        data.state.save();
+        saved.update();
+      }, saved.delay);
+
     }
   });
 
@@ -115,7 +121,7 @@ saved.savedItem = (savedData, index) => {
     savedFormula.appendChild(formulaDice);
   });
 
-  let delay = null;
+  let delayUpdate = null;
 
   const savedRemove = new Button({
     iconName: 'minus',
@@ -126,7 +132,7 @@ saved.savedItem = (savedData, index) => {
     classList: ['saved__remove'],
     func: () => {
 
-      delay = window.setTimeout(function() {
+      delayUpdate = window.setTimeout(function() {
         saved.remove(index);
         data.state.save();
         saved.update();

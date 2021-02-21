@@ -56,7 +56,7 @@ formula.update = () => {
   formula.state.current.forEach((item, i) => {
     const formulaSet = node('div|class:formula__set');
 
-    let delay = null;
+    let delayUpdate = null;
 
     const remove = new Button({
       iconName: 'minus',
@@ -67,7 +67,7 @@ formula.update = () => {
       classList: ['formula__remove'],
       func: () => {
 
-        delay = window.setTimeout(function() {
+        delayUpdate = window.setTimeout(function() {
           formula.remove(i);
           formula.update();
           data.state.save();
@@ -91,7 +91,7 @@ formula.update = () => {
     formulaBody.appendChild(formulaSet);
   });
 
-  let delay = null;
+  let delayUpdate = null;
 
   const formulaAdd = new Button({
     iconName: 'plus',
@@ -101,7 +101,7 @@ formula.update = () => {
     classList: ['formula__add'],
     func: () => {
 
-      delay = window.setTimeout(function() {
+      delayUpdate = window.setTimeout(function() {
         formula.add();
         formula.update();
         data.state.save();
@@ -109,10 +109,6 @@ formula.update = () => {
 
     }
   });
-
-  if (formula.state.current.length > 0) {
-    formula.element.appendChild(node('h1:Dice formula|class:layout__heading'));
-  };
 
   formula.element.appendChild(formulaBody);
 

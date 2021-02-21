@@ -30,15 +30,15 @@
   --theme-secondary-s: 20;
   --theme-secondary-l: 45;
   --theme-secondary-l-mod: 90;
-  --theme-secondary-s-mod: -70;
+  --theme-secondary-s-mod: -50;
 }
 
 :root {
   --theme-success-h: 130;
   --theme-success-s: 80;
   --theme-success-l: 45;
-  --theme-success-l-mod: 90;
-  --theme-success-s-mod: 50;
+  --theme-success-l-mod: 100;
+  --theme-success-s-mod: -50;
 }
 
 :root {

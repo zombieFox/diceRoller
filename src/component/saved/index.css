@@ -1,8 +1,7 @@
 .saved {
-  margin-top: calc(var(--layout-gutter) * 2);
   font-size: 1rem;
   display: grid;
-  gap: 2em;
+  gap: calc(var(--layout-gutter) / 1);
   justify-items: center;
   transition: background-color var(--layout-transition-extra-fast);
 }
@@ -19,7 +18,7 @@
   grid-template-columns: auto 1fr auto;
   justify-content: stretch;
   align-items: start;
-  gap: 0.25em 0.5em;
+  gap: 0.5em 1em;
   grid-template-areas:
     'remove name roll'
     'remove formula roll';
@@ -48,7 +47,6 @@
 .saved__name[type=number],
 .saved__name[type=text] {
   border-radius: calc(var(--theme-radius) * 10);
-  /* font-size: 0.75em; */
   grid-area: name;
 }
 

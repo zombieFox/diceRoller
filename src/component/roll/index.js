@@ -14,6 +14,7 @@ roll.render = () => {
   const rollButton = new Button({
     text: 'Roll the dice',
     ring: true,
+    size: 'large',
     type: 'success',
     classList: ['roll__button'],
     func: () => {

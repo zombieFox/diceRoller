@@ -2,6 +2,7 @@ import './index.css';
 import { node } from '../../utilities/node';
 import { formula } from '../formula';
 import { dice } from '../dice';
+import { Button } from '../button';
 
 export const result = {};
 
@@ -13,6 +14,8 @@ result.state.count = {
   max: 50
 };
 
+result.state.full = false;
+
 result.history = {};
 
 result.history.add = (data) => {
@@ -23,18 +26,67 @@ result.history.clear = (data) => {
   result.state.history = [];
 };
 
-result.element = node('div|class:result');
+result.element = {
+  root: node('div|class:result'),
+  history: node('div|class:result__history'),
+  control: node('div|class:result__control')
+};
 
 result.clear = () => {
-  while (result.element.lastChild) {
-    result.element.removeChild(result.element.lastChild);
+  while (result.element.history.lastChild) {
+    result.element.history.removeChild(result.element.history.lastChild);
   };
 };
 
 result.render = () => {
+  result.element.root.appendChild(result.element.control);
+
+  result.element.root.appendChild(result.element.history);
+
+  result.control();
+
   result.update();
 
-  return result.element;
+  return result.element.root;
+};
+
+result.control = () => {
+  const resultFull = new Button({
+    iconName: 'chevronUp',
+    round: true,
+    ring: true,
+    size: 'small',
+    type: 'link',
+    classList: ['result__full'],
+    func: () => {
+
+      result.full.toggle();
+      result.full.render();
+
+    }
+  });
+
+  result.element.control.appendChild(resultFull.button);
+};
+
+result.full = {}
+
+result.full.toggle = () => {
+  if (result.state.full) {
+    result.state.full = false;
+  } else {
+    result.state.full = true;
+  };
+};
+
+result.full.render = () => {
+  const html = document.querySelector('html');
+
+  if (result.state.full) {
+    html.classList.add('is-result-full');
+  } else {
+    html.classList.remove('is-result-full');
+  };
 };
 
 result.update = () => {
@@ -42,17 +94,12 @@ result.update = () => {
 
   const resultToRender = JSON.parse(JSON.stringify(result.state.history)).reverse().slice(0, result.state.count.max);
 
-  if (resultToRender.length > 0) {
-    if (window.innerWidth >= 800) {
-      resultToRender.forEach((item, i) => {
-        result.element.appendChild(result.resultItem(item));
-      });
-    } else {
-      result.element.appendChild(result.resultItem(resultToRender[0]));
-    };
+  if (resultToRender && resultToRender.length > 0) {
+    resultToRender.forEach((item, i) => {
+      result.element.history.appendChild(result.resultItem(item));
+    });
   };
 };
-
 
 result.resultItem = (resultData) => {
   const resultItem = node('div|class:result__item');
