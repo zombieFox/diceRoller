@@ -41,6 +41,20 @@ saved.remove = (index) => {
   saved.state.current.splice(index, 1);
 };
 
+saved.up = (index) => {
+  if (index > 0) {
+    let item = saved.state.current.splice(index, 1)[0];
+    saved.state.current.splice(index - 1, 0, item);
+  };
+};
+
+saved.down = (index) => {
+  if (index < saved.state.current.length) {
+    let item = saved.state.current.splice(index, 1)[0];
+    saved.state.current.splice(index + 1, 0, item);
+  };
+};
+
 saved.element = node('div|class:saved');
 
 saved.delay = 100;
@@ -101,7 +115,9 @@ saved.savedItem = (savedData, index) => {
     data.state.save();
   });
 
-  const savedFormula = node(`div|class:saved__formula`);
+  const savedFormula = node('div|class:saved__formula');
+
+  const savedControls = node('div|class:saved__controls');
 
   savedData.formula.forEach((item, i) => {
     const formulaDice = node('div|class:saved__formula-dice');
@@ -141,6 +157,42 @@ saved.savedItem = (savedData, index) => {
     }
   });
 
+  const savedUp = new Button({
+    iconName: 'chevronUp',
+    round: true,
+    ring: true,
+    type: 'link',
+    size: 'small',
+    classList: ['saved__up'],
+    func: () => {
+
+      delayUpdate = window.setTimeout(function() {
+        saved.up(index);
+        data.state.save();
+        saved.update();
+      }, saved.delay);
+
+    }
+  });
+
+  const savedDown = new Button({
+    iconName: 'chevronDown',
+    round: true,
+    ring: true,
+    type: 'link',
+    size: 'small',
+    classList: ['saved__down'],
+    func: () => {
+
+      delayUpdate = window.setTimeout(function() {
+        saved.down(index);
+        data.state.save();
+        saved.update();
+      }, saved.delay);
+
+    }
+  });
+
   const savedRoll = new Button({
     text: 'Roll',
     ring: true,
@@ -156,7 +208,13 @@ saved.savedItem = (savedData, index) => {
     }
   });
 
-  savedItem.appendChild(savedRemove.button);
+  savedControls.appendChild(savedRemove.button);
+
+  savedControls.appendChild(savedUp.button);
+
+  savedControls.appendChild(savedDown.button);
+
+  savedItem.appendChild(savedControls);
 
   savedItem.appendChild(savedName);
 

@@ -20,8 +20,8 @@
   align-items: start;
   gap: 0.5em 1em;
   grid-template-areas:
-    'remove name roll'
-    'remove formula roll';
+    'controls name roll'
+    'controls formula roll';
 }
 
 .saved__item:not(:last-child):not(:only-child):after {
@@ -35,9 +35,18 @@
   transition: border-bottom var(--layout-transition-extra-fast);
 }
 
-.saved__remove {
-  grid-area: remove;
+.saved__controls {
+  grid-area: controls;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25em;
 }
+
+.saved__remove {}
+
+.saved__up {}
+
+.saved__down {}
 
 .saved__roll {
   grid-area: roll;
