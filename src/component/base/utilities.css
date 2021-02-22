@@ -42,23 +42,6 @@
   font-size: 0.8em;
 }
 
-.text__blue,
-.text__orange {
-  border-radius: calc(var(--theme-radius) / 2);
-  padding: 0 0.25em;
-  transition: background-color var(--layout-transition-extra-fast), color var(--layout-transition-extra-fast);
-}
-
-.text__blue {
-  background-color: hsl(var(--theme-primary-900));
-  color: hsl(var(--theme-primary-300));
-}
-
-.text__orange {
-  background-color: hsl(var(--theme-secondary-900));
-  color: hsl(var(--theme-secondary-300));
-}
-
 .text__muted {
   color: hsl(var(--theme-secondary-500));
 }
