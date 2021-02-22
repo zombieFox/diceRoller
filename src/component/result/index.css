@@ -91,9 +91,9 @@
 }
 
 .result__rolls {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em;
 }
 
 .result__details,
