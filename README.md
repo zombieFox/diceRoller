@@ -1,9 +1,9 @@
 # Dice Roller
 A dice roller for RPGs or table top game
 
-## [See it in action](https://zombiefox.github.io/nightTab/)
+## [See it in action](https://zombiefox.github.io/diceRoller/)
 
-[![nightTab Demo](assets/screenshot-001.gif)](https://zombiefox.github.io/nightTab/)
+[![nightTab Demo](assets/screenshot-001.gif)](https://zombiefox.github.io/diceRoller/)
 
 
 ### Features
