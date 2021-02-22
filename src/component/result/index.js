@@ -2,6 +2,7 @@ import './index.css';
 import { node } from '../../utilities/node';
 import { formula } from '../formula';
 import { dice } from '../dice';
+import { data } from '../data';
 import { Button } from '../button';
 
 export const result = {};
@@ -55,18 +56,36 @@ result.control = () => {
     iconName: 'chevronUp',
     round: true,
     ring: true,
-    size: 'small',
     type: 'link',
     classList: ['result__full'],
     func: () => {
 
       result.full.toggle();
+      data.state.save();
       result.full.render();
 
     }
   });
 
+  const resultRoll = new Button({
+    text: 'Roll the dice',
+    ring: true,
+    type: 'success',
+    func: () => {
+
+      result.history.add(dice.roll({
+        name: false,
+        formula: JSON.parse(JSON.stringify(formula.state.current)),
+      }));
+      data.state.save();
+      result.update();
+
+    }
+  });
+
   result.element.control.appendChild(resultFull.button);
+
+  result.element.control.appendChild(resultRoll.button);
 };
 
 result.full = {}

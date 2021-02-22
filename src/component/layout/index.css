@@ -128,7 +128,6 @@
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
-  z-index: 1;
   overflow-y: auto;
   display: grid;
   justify-items: center;
@@ -163,7 +162,6 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 1;
   display: grid;
   justify-items: stretch;
   align-items: stretch;
@@ -196,4 +194,22 @@
 .layout__controls {
   display: grid;
   gap: calc(var(--layout-gutter) * 2);
+}
+
+.layout__toolbar {
+  z-index: 2;
+}
+
+.layout__formula {
+  z-index: 1;
+}
+
+.layout__result {
+  z-index: 3;
+}
+
+@media (min-width: 800px) {
+  .layout__result {
+    z-index: 1;
+  }
 }

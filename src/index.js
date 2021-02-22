@@ -48,5 +48,6 @@ app.update = () => {
 component.data.state.load();
 component.theme.style.render();
 component.theme.keyboard.bind();
+component.result.full.render();
 component.global.render();
 app.render();

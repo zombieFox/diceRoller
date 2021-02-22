@@ -16,7 +16,6 @@ roll.render = () => {
     ring: true,
     size: 'large',
     type: 'success',
-    classList: ['roll__button'],
     func: () => {
 
       result.history.add(dice.roll({
