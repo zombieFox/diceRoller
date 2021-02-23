@@ -46,7 +46,13 @@ result.render = () => {
 
   result.control();
 
-  result.update();
+  const resultToRender = JSON.parse(JSON.stringify(result.state.history)).reverse().slice(0, result.state.count.max);
+
+  if (resultToRender && resultToRender.length > 0) {
+    resultToRender.forEach((item, i) => {
+      result.element.history.appendChild(result.resultItem(item));
+    });
+  };
 
   return result.element.root;
 };
@@ -109,14 +115,14 @@ result.full.render = () => {
 };
 
 result.update = () => {
-  result.clear();
+  const resultToRender = JSON.parse(JSON.stringify(result.state.history))[result.state.history.length - 1];
 
-  const resultToRender = JSON.parse(JSON.stringify(result.state.history)).reverse().slice(0, result.state.count.max);
+  if (resultToRender) {
+    result.element.history.prepend(result.resultItem(resultToRender));
+  };
 
-  if (resultToRender && resultToRender.length > 0) {
-    resultToRender.forEach((item, i) => {
-      result.element.history.appendChild(result.resultItem(item));
-    });
+  if (result.state.history.length > result.state.count.max) {
+    result.element.history.removeChild(result.element.history.lastChild);
   };
 };
 

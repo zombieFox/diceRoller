@@ -72,6 +72,7 @@
   background-color: transparent;
   border-color: transparent;
   color: transparent;
+  border-radius: var(--theme-radius);
   position: absolute;
   top: 0;
   left: 0;
@@ -176,6 +177,7 @@
   font-family: var(--font-display-name);
   font-weight: var(--font-weight-extra-light);
   font-style: var(--font-display-style);
+  border-radius: calc(var(--theme-radius) / 2);
 }
 
 .formula__set:first-child .formula__count-input,

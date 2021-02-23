@@ -11,19 +11,21 @@ export const toolbar = {};
 toolbar.element = node('div|class:toolbar');
 
 toolbar.render = () => {
-  const resultHistory = new Button({
+  const clearResultHistory = new Button({
     text: 'Clear history',
     ring: true,
     type: 'link',
     size: 'small',
     func: () => {
+
       result.history.clear();
       data.state.save();
-      result.update();
+      result.clear();
+
     }
   });
 
-  toolbar.element.appendChild(resultHistory.button);
+  toolbar.element.appendChild(clearResultHistory.button);
 
   toolbar.element.appendChild(theme.toggle.render());
 
