@@ -49,5 +49,6 @@ component.data.state.load();
 component.theme.style.render();
 component.theme.keyboard.bind();
 component.result.full.render();
+component.roll.keyboard.bind();
 component.global.render();
 app.render();

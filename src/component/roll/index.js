@@ -8,6 +8,22 @@ import { Button } from '../button';
 
 export const roll = {};
 
+roll.keyboard = {};
+
+roll.keyboard.bind = () => {
+  window.addEventListener('keydown', (event) => {
+    // ctrl+alt+r
+    if (event.ctrlKey && event.altKey && event.keyCode == 82) {
+      result.history.add(dice.roll({
+        name: false,
+        formula: JSON.parse(JSON.stringify(formula.state.current)),
+      }));
+      data.state.save();
+      result.update();
+    };
+  });
+};
+
 roll.render = () => {
   const roll = node('div|class:roll');
 

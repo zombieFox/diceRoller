@@ -55,7 +55,7 @@ theme.keyboard.bind = () => {
       theme.style.render();
       theme.toggle.update();
     };
-  }, false);
+  });
 };
 
 theme.toggle = {};
