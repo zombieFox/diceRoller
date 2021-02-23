@@ -13,7 +13,7 @@
   display: grid;
   grid-template-columns: 100%;
   z-index: 1;
-  border-radius: calc(var(--theme-radius) * 4);
+  border-radius: calc(var(--theme-radius) * 8);
   box-shadow: 0 2em 4em rgba(0, 0, 0, 0.2);
   transition: background-color var(--layout-transition-extra-fast);
 }
@@ -183,23 +183,23 @@
 .formula__set:first-child .formula__count-input,
 .formula__set[type=number]:first-child .formula__count-input,
 .formula__set[type=text]:first-child .formula__count-input {
-  border-top-left-radius: calc(var(--theme-radius) * 1.6);
+  border-top-left-radius: calc(var(--theme-radius) * 3.2);
 }
 
 .formula__set:last-child .formula__count-input,
 .formula__set[type=number]:last-child .formula__count-input,
 .formula__set[type=text]:last-child .formula__count-input {
-  border-bottom-left-radius: calc(var(--theme-radius) * 1.6);
+  border-bottom-left-radius: calc(var(--theme-radius) * 3.2);
 }
 
 .formula__set:first-child .formula__modifier-input,
 .formula__set[type=number]:first-child .formula__modifier-input,
 .formula__set[type=text]:first-child .formula__modifier-input {
-  border-top-right-radius: calc(var(--theme-radius) * 1.6);
+  border-top-right-radius: calc(var(--theme-radius) * 3.2);
 }
 
 .formula__set:last-child .formula__modifier-input,
 .formula__set[type=number]:last-child .formula__modifier-input,
 .formula__set[type=text]:last-child .formula__modifier-input {
-  border-bottom-right-radius: calc(var(--theme-radius) * 1.6);
+  border-bottom-right-radius: calc(var(--theme-radius) * 3.2);
 }
