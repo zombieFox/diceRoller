@@ -24,6 +24,15 @@
     'controls formula roll';
 }
 
+@media (min-width: 1200px) {
+  .saved__item {
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    grid-template-areas:
+      'controls name formula roll';
+  }
+}
+
 .saved__item:not(:last-child):not(:only-child):after {
   content: "";
   position: absolute;
@@ -63,9 +72,18 @@
   padding: 0 1.25em;
   font-size: 0.75em;
   color: hsl(var(--theme-primary-200));
+  font-weight: var(--font-weight-bold);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.25em 0.75em;
   grid-area: formula;
+}
+
+@media (min-width: 1200px) {
+  .saved__formula {
+    padding: 0;
+    justify-content: flex-end;
+    max-width: 15vw;
+  }
 }
