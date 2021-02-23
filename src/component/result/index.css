@@ -55,11 +55,11 @@
 .result__total {
   font-size: 3em;
   line-height: 1.25;
-  min-width: 2.5em;
   font-family: var(--font-display-name);
   font-weight: var(--font-weight-extra-light);
   font-style: var(--font-display-style);
   text-align: center;
+  justify-self: center;
   align-self: start;
 }
 
@@ -71,6 +71,7 @@
 @media (min-width: 800px) {
   .result__total {
     font-size: 2.5em;
+    min-width: 2.5em;
   }
 }
 
