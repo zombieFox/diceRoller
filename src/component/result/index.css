@@ -21,6 +21,7 @@
 .result__item {
   position: relative;
   display: grid;
+  align-items: start;
   gap: 0.5em;
 }
 
@@ -65,13 +66,14 @@
 
 .result__item:first-child .result__total {
   transform-origin: center;
-  animation: scale-in var(--layout-transition-extra-fast) 1;
+  animation: scale-in var(--layout-transition-fast) 1;
 }
 
 @media (min-width: 800px) {
   .result__total {
-    font-size: 2.5em;
-    min-width: 2.5em;
+    min-width: 3em;
+    font-size: 3.4em;
+    line-height: 1;
   }
 }
 
