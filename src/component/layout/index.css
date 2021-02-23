@@ -99,13 +99,6 @@
   }
 }
 
-@media (min-width: 800px) {
-  .result__total {
-    text-align: left;
-    font-size: 2.5em;
-  }
-}
-
 .layout__toolbar {
   grid-column-start: 1;
   grid-column-end: 2;

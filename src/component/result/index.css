@@ -60,11 +60,16 @@
   font-weight: var(--font-weight-extra-light);
   font-style: var(--font-display-style);
   text-align: center;
+  align-self: start;
+}
+
+.result__item:first-child .result__total {
+  transform-origin: center;
+  animation: scale-in var(--layout-transition-extra-fast) 1;
 }
 
 @media (min-width: 800px) {
   .result__total {
-    text-align: left;
     font-size: 2.5em;
   }
 }
