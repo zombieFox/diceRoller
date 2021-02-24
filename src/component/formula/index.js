@@ -36,6 +36,10 @@ formula.remove = (index) => {
   };
 };
 
+formula.reset = () => {
+  formula.state.current = JSON.parse(JSON.stringify([formula.default]));
+};
+
 formula.clear = () => {
   while (formula.element.lastChild) {
     formula.element.removeChild(formula.element.lastChild);
