@@ -26,10 +26,10 @@
 }
 
 :root {
-  --theme-secondary-h: 210;
+  --theme-secondary-h: 215;
   --theme-secondary-s: 20;
-  --theme-secondary-l: 45;
-  --theme-secondary-l-mod: 90;
+  --theme-secondary-l: 50;
+  --theme-secondary-l-mod: 110;
   --theme-secondary-s-mod: -50;
 }
 
