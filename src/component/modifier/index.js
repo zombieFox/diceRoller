@@ -6,8 +6,6 @@ export const modifier = {};
 modifier.render = (state) => {
   const formulaModifier = node('div|class:formula__item formula__modifier');
 
-  const input = node(`input|class:formula__modifier-input,type:text,tabindex:1`);
-
   const max = 999;
 
   const min = -999;
@@ -15,7 +13,7 @@ modifier.render = (state) => {
   let delayUpdate = null;
 
   const validateValue = (oldValue) => {
-    let newValue = oldValue;
+    let newValue = parseInt(oldValue, 10);
 
     if (isNaN(oldValue)) {
       newValue = 0;
@@ -29,13 +27,11 @@ modifier.render = (state) => {
       newValue = min;
     };
 
-    if (isNaN(oldValue) || oldValue > max || oldValue < min) {
-      clearTimeout(delayUpdate);
+    clearTimeout(delayUpdate);
 
-      delayUpdate = window.setTimeout(function() {
-        input.value = prefixValue(state.modifier);
-      }, 1500);
-    };
+    delayUpdate = window.setTimeout(function() {
+      input.value = prefixValue(state.modifier);
+    }, 1500);
 
     return newValue;
   };
@@ -48,18 +44,18 @@ modifier.render = (state) => {
     };
   };
 
+  const input = node('input|class:formula__modifier-input,type:text,tabindex:1');
+
   input.value = prefixValue(state.modifier);
 
   input.addEventListener('input', () => {
-    let value = parseInt(input.value, 10);
-
-    state.modifier = validateValue(value);
+    state.modifier = validateValue(input.value);
 
     data.state.save();
   });
 
   input.addEventListener('blur', (event) => {
-    input.value = prefixValue(state.modifier);
+    input.value = prefixValue(validateValue(state.modifier));
   });
 
   let currentValue = null;
@@ -85,13 +81,13 @@ modifier.render = (state) => {
   input.addEventListener('keydown', (event) => {
     // arrow up
     if (event.keyCode === 38) {
-      state.modifier = validateValue(state.modifier + 1);
+      state.modifier = state.modifier + 1;
       input.value = prefixValue(state.modifier);
     };
 
     // arrow down
     if (event.keyCode === 40) {
-      state.modifier = validateValue(state.modifier - 1);
+      state.modifier = state.modifier - 1;
       input.value = prefixValue(state.modifier);
     };
 

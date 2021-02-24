@@ -15,7 +15,7 @@ count.render = (state) => {
   let delay = null;
 
   const validateValue = (oldValue) => {
-    let newValue = oldValue;
+    let newValue = parseInt(oldValue, 10);
 
     if (isNaN(oldValue)) {
       newValue = min;
@@ -29,25 +29,17 @@ count.render = (state) => {
       newValue = min;
     };
 
-    if (isNaN(oldValue) || oldValue > max || oldValue < min) {
-      clearTimeout(delay);
+    clearTimeout(delay);
 
-      delay = window.setTimeout(function() {
-        input.value = state.count;
-      }, 1500);
-    };
+    delay = window.setTimeout(function() {
+      input.value = state.count;
+    }, 1500);
 
     return newValue;
   };
 
   input.addEventListener('input', () => {
-    let value = parseInt(input.value, 10);
-
-    if (value < min) {
-      input.value = min;
-    };
-
-    state.count = validateValue(value);
+    state.count = validateValue(input.value);
 
     data.state.save();
   });
