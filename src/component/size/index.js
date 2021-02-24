@@ -49,10 +49,12 @@ size.render = (state) => {
 
   select.addEventListener('touchstart', (event) => {
     currentIndex = select.selectedIndex;
+    select.focus();
   });
 
   select.addEventListener('touchend', (event) => {
     currentIndex = null;
+    select.blur();
   });
 
   select.addEventListener('touchmove', (event) => {

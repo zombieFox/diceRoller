@@ -62,10 +62,12 @@ modifier.render = (state) => {
 
   input.addEventListener('touchstart', (event) => {
     currentValue = parseInt(input.value, 10);
+    input.focus();
   });
 
   input.addEventListener('touchend', (event) => {
     currentValue = null;
+    input.blur();
   });
 
   input.addEventListener('touchmove', (event) => {
