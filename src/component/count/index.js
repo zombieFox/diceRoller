@@ -1,6 +1,5 @@
 import { node } from '../../utilities/node';
-import { dice } from '../dice';
-import { Button } from '../button';
+import { data } from '../data';
 
 export const count = {};
 
@@ -49,6 +48,8 @@ count.render = (state) => {
     };
 
     state.count = validateValue(value);
+
+    data.state.save();
   });
 
   input.addEventListener('blur', (event) => {

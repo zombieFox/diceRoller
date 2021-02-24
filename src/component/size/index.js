@@ -1,5 +1,5 @@
 import { node } from '../../utilities/node';
-import { dice } from '../dice';
+import { data } from '../data';
 import { icon } from '../icon';
 
 export const size = {};
@@ -27,6 +27,8 @@ size.render = (state) => {
     state.size = select.selectedOptions[0].size;
 
     formulaSizeText.textContent = 'd' + state.size;
+
+    data.state.save();
   });
 
   size.availableDice.forEach((item, i) => {

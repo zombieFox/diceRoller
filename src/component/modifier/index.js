@@ -1,5 +1,5 @@
 import { node } from '../../utilities/node';
-import { dice } from '../dice';
+import { data } from '../data';
 
 export const modifier = {};
 
@@ -54,6 +54,8 @@ modifier.render = (state) => {
     let value = parseInt(input.value, 10);
 
     state.modifier = validateValue(value);
+
+    data.state.save();
   });
 
   input.addEventListener('blur', (event) => {
@@ -86,11 +88,14 @@ modifier.render = (state) => {
       state.modifier = validateValue(state.modifier + 1);
       input.value = prefixValue(state.modifier);
     };
+
     // arrow down
     if (event.keyCode === 40) {
       state.modifier = validateValue(state.modifier - 1);
       input.value = prefixValue(state.modifier);
     };
+
+    data.state.save();
   });
 
   formulaModifier.appendChild(input);
