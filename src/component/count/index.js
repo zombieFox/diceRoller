@@ -8,7 +8,7 @@ count.render = (state) => {
 
   const max = 100;
 
-  const min = max * -1;
+  const min = 1;
 
   const input = node(`input|class:formula__count-input,type:number,value:${state.count},tabindex:1,min:${min},max:${max}`);
 
