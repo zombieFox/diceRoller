@@ -1,9 +1,4 @@
-.is-theme-light ::selection {
-  background-color: hsl(var(--theme-danger-600));
-  color: rgb(var(--theme-white));
-}
-
-.is-theme-dark ::selection {
+::selection {
   background-color: hsl(var(--theme-primary-600));
   color: rgb(var(--theme-white));
 }

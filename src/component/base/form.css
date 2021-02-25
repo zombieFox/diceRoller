@@ -135,6 +135,7 @@ input[type="text"] {
   font-family: var(--font-ui-name);
   font-weight: var(--font-weight-bold);
   font-style: var(--font-ui-style);
+  caret-color: hsl(var(--theme-primary-400));
   line-height: 1.6;
   height: 2.5em;
   min-width: 0;
