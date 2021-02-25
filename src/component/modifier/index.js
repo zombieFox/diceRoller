@@ -15,7 +15,7 @@ modifier.render = (state) => {
   const validateValue = (oldValue) => {
     let newValue = parseInt(oldValue, 10);
 
-    if (isNaN(oldValue)) {
+    if (isNaN(oldValue) || oldValue === '') {
       newValue = 0;
     };
 
