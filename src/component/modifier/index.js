@@ -8,7 +8,9 @@ modifier.render = (state) => {
 
   const max = 999;
 
-  const min = -999;
+  const mid = 0;
+
+  const min = max * -1;
 
   let delayUpdate = null;
 
@@ -16,7 +18,7 @@ modifier.render = (state) => {
     let newValue = parseInt(oldValue, 10);
 
     if (isNaN(oldValue) || oldValue === '') {
-      newValue = 0;
+      newValue = mid;
     };
 
     if (oldValue > max) {
@@ -37,7 +39,7 @@ modifier.render = (state) => {
   };
 
   const prefixValue = (oldValue) => {
-    if (oldValue >= 0) {
+    if (oldValue >= mid) {
       return '+' + oldValue;
     } else {
       return oldValue;
