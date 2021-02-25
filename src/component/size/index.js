@@ -75,6 +75,8 @@ size.render = (state) => {
     select.selectedIndex = newIndex;
 
     formulaSizeText.textContent = 'd' + state.size;
+
+    data.state.save();
   });
 
   formulaSize.appendChild(select);

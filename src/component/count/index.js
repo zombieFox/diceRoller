@@ -68,6 +68,8 @@ count.render = (state) => {
     state.count = validateValue(value);
 
     input.value = state.count;
+
+    data.state.save();
   });
 
   formulaCount.appendChild(input);

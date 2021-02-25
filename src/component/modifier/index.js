@@ -80,6 +80,8 @@ modifier.render = (state) => {
     state.modifier = validateValue(value);
 
     input.value = prefixValue(state.modifier);
+
+    data.state.save();
   });
 
   input.addEventListener('keydown', (event) => {
