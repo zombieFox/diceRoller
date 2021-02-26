@@ -5,7 +5,6 @@ global.name = {
   string: 'diceRoller'
 };
 
-
 global.render = () => {
   document.title = global.name.display;
 };
