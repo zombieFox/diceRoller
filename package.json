@@ -1,7 +1,7 @@
 {
   "name": "diceRoller",
   "version": "1.0.0",
-  "description": "",
+  "description": "A dice roller for RPGs or any table top game",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
