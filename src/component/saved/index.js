@@ -145,6 +145,7 @@ saved.savedItem = (savedData, index) => {
     ring: true,
     type: 'link',
     size: 'small',
+    sr: 'Remove formula',
     classList: ['saved__remove'],
     func: () => {
 
@@ -163,6 +164,7 @@ saved.savedItem = (savedData, index) => {
     ring: true,
     type: 'link',
     size: 'small',
+    sr: 'Move formula up',
     classList: ['saved__up'],
     func: () => {
 
@@ -181,6 +183,7 @@ saved.savedItem = (savedData, index) => {
     ring: true,
     type: 'link',
     size: 'small',
+    sr: 'Move formula down',
     classList: ['saved__down'],
     func: () => {
 

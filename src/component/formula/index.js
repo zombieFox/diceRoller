@@ -68,6 +68,7 @@ formula.update = () => {
       ring: true,
       size: 'small',
       type: 'danger',
+      sr: 'Remove formula',
       classList: ['formula__remove'],
       func: () => {
 
@@ -102,6 +103,7 @@ formula.update = () => {
     round: true,
     ring: true,
     size: 'small',
+    sr: 'Add formula',
     classList: ['formula__add'],
     func: () => {
 

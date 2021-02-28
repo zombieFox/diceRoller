@@ -2,13 +2,19 @@ import './index.css';
 import { node } from '../../utilities/node';
 import { icon } from '../icon';
 
-const Button = function({ text = false, type = false, round = false, block = false, size = false, style = [], ring = false, title = false, classList = [], iconName = false, func = false } = {}) {
+const Button = function({ text = false, type = false, round = false, block = false, size = false, style = [], ring = false, title = false, classList = [], iconName = false, func = false, sr = false } = {}) {
   this.button = node('button|class:button,tabindex:1,type:button');
 
   if (text) {
-    const buttonText = node('span:' + text + '|class:button-text');
+    const buttonText = node('span:' + text + '|class:button__text');
 
     this.button.appendChild(buttonText);
+  };
+
+  if (sr) {
+    const buttonSr = node('span:' + sr + '|class:sr__only');
+
+    this.button.appendChild(buttonSr);
   };
 
   switch (type) {

@@ -58,7 +58,7 @@
   overflow-y: hidden;
 }
 
-.sr-only {
+.sr__only {
   position: absolute;
   width: 1px;
   height: 1px;

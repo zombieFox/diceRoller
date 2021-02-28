@@ -99,6 +99,7 @@ input[type="submit"] {
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
+  gap: 0.5em;
   align-items: center;
   transition: background-color var(--layout-transition-extra-fast), color var(--layout-transition-extra-fast);
 }
@@ -222,7 +223,7 @@ button:disabled:active,
   box-shadow: none;
 }
 
-.button-text {
+.button__text {
   pointer-events: none;
 }
 
@@ -251,26 +252,4 @@ button .icon,
 .button__block {
   display: flex;
   width: 100%;
-}
-
-button [class^="button-"],
-button [class*=" button-"],
-.button [class^="button-"],
-.button [class*=" button-"] {
-  margin-left: 0.25em;
-  margin-right: 0.25em;
-}
-
-button [class^="button-"]:first-child,
-button [class*=" button-"]:first-child,
-.button [class^="button-"]:first-child,
-.button [class*=" button-"]:first-child {
-  margin-left: 0;
-}
-
-button [class^="button-"]:last-child,
-button [class*=" button-"]:last-child,
-.button [class^="button-"]:last-child,
-.button [class*=" button-"]:last-child {
-  margin-right: 0;
 }

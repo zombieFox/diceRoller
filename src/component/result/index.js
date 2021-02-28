@@ -63,6 +63,7 @@ result.control = () => {
     round: true,
     ring: true,
     type: 'link',
+    sr: 'Toggle result',
     classList: ['result__full'],
     func: () => {
 
