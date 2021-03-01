@@ -14,7 +14,7 @@
 
 @media (min-width: 1000px) {
   .toolbar {
-    padding: 0 var(--layout-gutter);
+    padding: 0 calc(var(--layout-gutter) * 2);
     gap: calc(var(--layout-gutter) / 2);
   }
 }
