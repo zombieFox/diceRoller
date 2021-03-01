@@ -55,12 +55,12 @@ count.render = (state, id) => {
   input.addEventListener('touchstart', (event) => {
     currentValue = parseInt(input.value, 10);
     input.focus();
-  });
+  }, { passive: true });
 
   input.addEventListener('touchend', (event) => {
     currentValue = null;
     input.blur();
-  });
+  }, { passive: true });
 
   input.addEventListener('touchmove', (event) => {
     event.preventDefault();
@@ -72,7 +72,7 @@ count.render = (state, id) => {
     input.value = state.count;
 
     data.state.save();
-  });
+  }, { passive: true });
 
   formulaCount.appendChild(label);
 
