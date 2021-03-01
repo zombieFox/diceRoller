@@ -3,14 +3,12 @@ import { data } from '../data';
 
 export const count = {};
 
-count.render = (state) => {
+count.render = (state, id) => {
   const formulaCount = node('div|class:formula__item formula__count');
 
   const max = 100;
 
   const min = 1;
-
-  const input = node(`input|class:formula__count-input,type:number,value:${state.count},tabindex:1,min:${min},max:${max}`);
 
   let delay = null;
 
@@ -37,6 +35,10 @@ count.render = (state) => {
 
     return newValue;
   };
+
+  const label = node(`label:Dice count|class:sr__only,for:formula__count-input-${id}`);
+
+  const input = node(`input|class:formula__count-input,id:formula__count-input-${id},type:number,value:${state.count},tabindex:1,min:${min},max:${max}`);
 
   input.addEventListener('input', () => {
     state.count = validateValue(input.value);
@@ -71,6 +73,8 @@ count.render = (state) => {
 
     data.state.save();
   });
+
+  formulaCount.appendChild(label);
 
   formulaCount.appendChild(input);
 

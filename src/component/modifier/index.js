@@ -3,7 +3,7 @@ import { data } from '../data';
 
 export const modifier = {};
 
-modifier.render = (state) => {
+modifier.render = (state, id) => {
   const formulaModifier = node('div|class:formula__item formula__modifier');
 
   const max = 999;
@@ -46,7 +46,9 @@ modifier.render = (state) => {
     };
   };
 
-  const input = node('input|class:formula__modifier-input,type:text,tabindex:1');
+  const label = node(`label:Dice modifier|class:sr__only,for:formula__modifier-input-${id}`);
+
+  const input = node(`input|class:formula__modifier-input,id:formula__modifier-input-${id},type:text,tabindex:1`);
 
   input.value = prefixValue(state.modifier);
 
@@ -99,6 +101,8 @@ modifier.render = (state) => {
 
     data.state.save();
   });
+
+  formulaModifier.appendChild(label);
 
   formulaModifier.appendChild(input);
 

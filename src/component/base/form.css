@@ -3,7 +3,7 @@
   --form-label-hover: var(--theme-text);
   --form-label-focus-active: var(--theme-text);
   --form-label-checked: var(--theme-text);
-  --form-label-disabled: var(--theme-secondary-700);
+  --form-label-disabled: var(--theme-secondary-600);
 }
 
 :root {
@@ -107,13 +107,10 @@ fieldset:not(:last-child),
 label {
   padding: 0;
   margin-bottom: 0;
-  color: hsl(var(--form-label));
+  color: rgb(var(--form-label));
   font-size: 1em;
   display: block;
-}
-
-label:not(:only-child):not(:last-child) {
-  padding-bottom: calc(var(--form-wrap-space) / 2);
+  transition: color var(--layout-transition-extra-fast);
 }
 
 label.disabled {

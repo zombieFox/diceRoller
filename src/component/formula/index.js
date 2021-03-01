@@ -81,7 +81,7 @@ formula.update = () => {
       }
     });
 
-    const block = new ControlSet(item);
+    const block = new ControlSet(item, i);
 
     if (formula.state.current.length > 1) {
       formulaSet.appendChild(remove.button);

@@ -6,7 +6,7 @@ export const size = {};
 
 size.availableDice = [2, 3, 4, 6, 8, 10, 12, 20, 100];
 
-size.render = (state) => {
+size.render = (state, id) => {
   const formulaSize = node('div|class:formula__item formula__size');
 
   const display = node('div|class:formula__size-display');
@@ -21,7 +21,9 @@ size.render = (state) => {
 
   display.appendChild(formulaSizeIcon);
 
-  const select = node('select|class:formula__size-select,tabindex:1');
+  const label = node(`label:Dice size|class:sr__only,for:formula__size-select-${id}`);
+
+  const select = node(`select|class:formula__size-select,id:formula__size-select-${id},tabindex:1`);
 
   select.addEventListener('change', () => {
     state.size = select.selectedOptions[0].size;
@@ -78,6 +80,8 @@ size.render = (state) => {
 
     data.state.save();
   });
+
+  formulaSize.appendChild(label);
 
   formulaSize.appendChild(select);
 

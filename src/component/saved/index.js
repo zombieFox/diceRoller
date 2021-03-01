@@ -105,13 +105,17 @@ saved.update = () => {
   saved.element.appendChild(savedBody);
 };
 
-saved.savedItem = (savedData, index) => {
+saved.savedItem = (savedData, id) => {
   const savedItem = node('div|class:saved__item');
 
-  const savedName = node(`input|class:saved__name input__small,type:text,value:${savedData.name},placeholder:Saved formula name,tabindex:1`);
+  const savedName = node('div|class:saved__name');
 
-  savedName.addEventListener('input', () => {
-    savedData.name = savedName.value;
+  const savedNameLabel = node(`label:Saved formula name|class:saved__name-label sr__only,for:saved__name-${id}`);
+
+  const savedNameInput = node(`input|class:saved__name-input input__small,id:saved__name-${id},type:text,value:${savedData.name},placeholder:Saved formula name,tabindex:1`);
+
+  savedNameInput.addEventListener('input', () => {
+    savedData.name = savedNameInput.value;
     data.state.save();
   });
 
@@ -150,7 +154,7 @@ saved.savedItem = (savedData, index) => {
     func: () => {
 
       delayUpdate = window.setTimeout(function() {
-        saved.remove(index);
+        saved.remove(id);
         data.state.save();
         saved.update();
       }, saved.delay);
@@ -169,7 +173,7 @@ saved.savedItem = (savedData, index) => {
     func: () => {
 
       delayUpdate = window.setTimeout(function() {
-        saved.up(index);
+        saved.up(id);
         data.state.save();
         saved.update();
       }, saved.delay);
@@ -188,7 +192,7 @@ saved.savedItem = (savedData, index) => {
     func: () => {
 
       delayUpdate = window.setTimeout(function() {
-        saved.down(index);
+        saved.down(id);
         data.state.save();
         saved.update();
       }, saved.delay);
@@ -218,6 +222,10 @@ saved.savedItem = (savedData, index) => {
   savedControls.appendChild(savedDown.button);
 
   savedItem.appendChild(savedControls);
+
+  savedName.appendChild(savedNameLabel);
+
+  savedName.appendChild(savedNameInput);
 
   savedItem.appendChild(savedName);
 

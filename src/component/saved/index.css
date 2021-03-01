@@ -71,10 +71,7 @@
   grid-area: roll;
 }
 
-.saved__name,
-.saved__name[type=number],
-.saved__name[type=text] {
-  border-radius: calc(var(--theme-radius) * 10);
+.saved__name {
   grid-area: name;
 }
 
