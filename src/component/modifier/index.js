@@ -48,7 +48,7 @@ modifier.render = (state, id) => {
 
   const label = node(`label:Dice modifier|class:sr__only,for:formula__modifier-input-${id}`);
 
-  const input = node(`input|class:formula__modifier-input,id:formula__modifier-input-${id},type:text,tabindex:1`);
+  const input = node(`input|class:formula__modifier-input,id:formula__modifier-input-${id},type:text`);
 
   input.value = prefixValue(state.modifier);
 

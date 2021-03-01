@@ -3,7 +3,7 @@ import { node } from '../../utilities/node';
 import { icon } from '../icon';
 
 const Button = function({ text = false, type = false, round = false, block = false, size = false, style = [], ring = false, title = false, classList = [], iconName = false, func = false, sr = false } = {}) {
-  this.button = node('button|class:button,tabindex:1,type:button');
+  this.button = node('button|class:button,type:button');
 
   if (text) {
     const buttonText = node('span:' + text + '|class:button__text');

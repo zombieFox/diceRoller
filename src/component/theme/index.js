@@ -61,7 +61,7 @@ theme.keyboard.bind = () => {
 theme.toggle = {};
 
 theme.toggle.render = () => {
-  const themeStyleInput = node('input|type:checkbox,class:theme__style-input,id:theme__style-input,tabindex:1');
+  const themeStyleInput = node('input|type:checkbox,class:theme__style-input,id:theme__style-input');
 
   const themeStyleLabel = node('label|class:theme__style-label button button__link button__ring button__small,for:theme__style-input,for:theme__style-input', [
     node('span|class:theme__style-icon'),

@@ -23,7 +23,7 @@ size.render = (state, id) => {
 
   const label = node(`label:Dice size|class:sr__only,for:formula__size-select-${id}`);
 
-  const select = node(`select|class:formula__size-select,id:formula__size-select-${id},tabindex:1`);
+  const select = node(`select|class:formula__size-select,id:formula__size-select-${id}`);
 
   select.addEventListener('change', () => {
     state.size = select.selectedOptions[0].size;

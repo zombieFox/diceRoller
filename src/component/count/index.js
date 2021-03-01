@@ -38,7 +38,7 @@ count.render = (state, id) => {
 
   const label = node(`label:Dice count|class:sr__only,for:formula__count-input-${id}`);
 
-  const input = node(`input|class:formula__count-input,id:formula__count-input-${id},type:number,value:${state.count},tabindex:1,min:${min},max:${max}`);
+  const input = node(`input|class:formula__count-input,id:formula__count-input-${id},type:number,value:${state.count},min:${min},max:${max}`);
 
   input.addEventListener('input', () => {
     state.count = validateValue(input.value);
