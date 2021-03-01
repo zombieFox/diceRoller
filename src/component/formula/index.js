@@ -9,10 +9,7 @@ export const formula = {};
 formula.state = {};
 
 formula.state.current = [{
-  dice: { count: 1, size: 20, modifier: 2 },
-  rules: { dropLowest: false }
-}, {
-  dice: { count: 6, size: 6, modifier: 6 },
+  dice: { count: 1, size: 20, modifier: 0 },
   rules: { dropLowest: false }
 }];
 
