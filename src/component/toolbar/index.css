@@ -8,6 +8,6 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.75em;
   transition: background-color var(--layout-transition-extra-fast);
 }

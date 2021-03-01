@@ -225,6 +225,7 @@ button:disabled:active,
 
 .button__text {
   pointer-events: none;
+  user-select: none;
 }
 
 .button__round {
