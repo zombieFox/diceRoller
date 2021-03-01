@@ -8,6 +8,12 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  gap: 0.75em;
+  gap: calc(var(--layout-gutter) / 4);
   transition: background-color var(--layout-transition-extra-fast);
+}
+
+@media (min-width: 1000px) {
+  .toolbar {
+    gap: calc(var(--layout-gutter) / 2);
+  }
 }
