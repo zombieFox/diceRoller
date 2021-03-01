@@ -1,13 +1,34 @@
 import './index.css';
 import { node } from '../../utilities/node';
 import { data } from '../data';
+import { Button } from '../button';
 
 export const theme = {};
 
 theme.state = {};
 
 theme.state = {
-  style: 'dark'
+  style: 'dark',
+  color: {
+    primary: { h: 210, s: 80, l: 45 },
+    secondary: { h: 215, s: 20, l: 50 },
+    success: { h: 130, s: 80, l: 45 },
+    danger: { h: 340, s: 80, l: 45 }
+  }
+};
+
+theme.variable = {};
+
+theme.variable.render = () => {
+  const html = document.querySelector('html');
+
+  for (var type in theme.state.color) {
+    for (var colorValue in theme.state.color[type]) {
+
+      html.style.setProperty(`--theme-${type}-${colorValue}`, theme.state.color[type][colorValue]);
+
+    };
+  };
 };
 
 theme.style = {};

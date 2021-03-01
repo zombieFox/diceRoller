@@ -34,7 +34,7 @@
 }
 
 :root {
-  --form-wrap-space: 1em;
+  --form-wrap-space: calc(var(--layout-gutter) / 2);
 }
 
 fieldset:not(:only-child):not(:last-child),
@@ -117,6 +117,8 @@ label.disabled {
   color: hsl(var(--form-label-disabled));
 }
 
+input[type="radio"]:focus+label.button,
+input[type="radio"]:hover+label.button,
 input[type="checkbox"]:focus+label.button,
 input[type="checkbox"]:hover+label.button {
   background-color: hsl(var(--button-background-focus-hover));
@@ -125,6 +127,7 @@ input[type="checkbox"]:hover+label.button {
   text-decoration: none;
 }
 
+input[type="radio"]:active+label.button,
 input[type="checkbox"]:active+label.button {
   background-color: hsl(var(--button-background-active));
   color: rgb(var(--button-text-active));
@@ -133,6 +136,10 @@ input[type="checkbox"]:active+label.button {
   transition: none;
 }
 
+input[type="radio"]:disabled+label.button,
+input[type="radio"]:disabled+label.button:hover,
+input[type="radio"]:disabled+label.button:focus,
+input[type="radio"]:disabled+label.button:active,
 input[type="checkbox"]:disabled+label.button,
 input[type="checkbox"]:disabled+label.button:hover,
 input[type="checkbox"]:disabled+label.button:focus,
@@ -143,46 +150,60 @@ input[type="checkbox"]:disabled+label.button:active {
   text-decoration: none;
 }
 
+input[type="radio"]:focus+label.button__ring.button__primary,
 input[type="checkbox"]:focus+label.button__ring.button__primary {
   box-shadow: var(--theme-focus-primary);
 }
 
+input[type="radio"]:active+label.button__ring.button__primary,
 input[type="checkbox"]:active+label.button__ring.button__primary {
   box-shadow: var(--theme-focus-primary);
 }
 
+input[type="radio"]:focus+label.button__ring.button__secondary,
 input[type="checkbox"]:focus+label.button__ring.button__secondary {
   box-shadow: var(--theme-focus-secondary);
 }
 
+input[type="radio"]:active+label.button__ring.button__secondary,
 input[type="checkbox"]:active+label.button__ring.button__secondary {
   box-shadow: var(--theme-focus-secondary);
 }
 
+input[type="radio"]:focus+label.button__ring.button__danger,
 input[type="checkbox"]:focus+label.button__ring.button__danger {
   box-shadow: var(--theme-focus-danger);
 }
 
+input[type="radio"]:active+label.button__ring.button__danger,
 input[type="checkbox"]:active+label.button__ring.button__danger {
   box-shadow: var(--theme-focus-danger);
 }
 
+input[type="radio"]:focus+label.button__ring.button__success,
 input[type="checkbox"]:focus+label.button__ring.button__success {
   box-shadow: var(--theme-focus-success);
 }
 
+input[type="radio"]:active+label.button__ring.button__success,
 input[type="checkbox"]:active+label.button__ring.button__success {
   box-shadow: var(--theme-focus-success);
 }
 
+input[type="radio"]:focus+label.button__ring.button__link,
 input[type="checkbox"]:focus+label.button__ring.button__link {
   box-shadow: var(--theme-focus-secondary);
 }
 
+input[type="radio"]:active+label.button__ring.button__link,
 input[type="checkbox"]:active+label.button__ring.button__link {
   box-shadow: var(--theme-focus-secondary);
 }
 
+input[type="radio"]:disabled+label.button__ring,
+input[type="radio"]:disabled+label.button__ring:focus,
+input[type="radio"]:disabled+label.button__ring:hover,
+input[type="radio"]:disabled+label.button__ring:active,
 input[type="checkbox"]:disabled+label.button__ring,
 input[type="checkbox"]:disabled+label.button__ring:focus,
 input[type="checkbox"]:disabled+label.button__ring:hover,
@@ -410,8 +431,8 @@ select:disabled:active {
   border-left-width: 4px;
   border-style: solid;
   border-color: hsl(var(--form-feedback-border));
-  border-top-right-radius: var(--theme-radius-base);
-  border-bottom-right-radius: var(--theme-radius-base);
+  border-top-right-radius: var(--theme-radius);
+  border-bottom-right-radius: var(--theme-radius);
   width: 100%;
   transition: background-color var(--layout-transition-extra-fast), border-color var(--layout-transition-extra-fast);
 }

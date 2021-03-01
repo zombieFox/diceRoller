@@ -2,7 +2,7 @@ import './index.css';
 import { node } from '../../utilities/node';
 import { icon } from '../icon';
 
-const Button = function({ text = false, type = false, round = false, block = false, size = false, style = [], ring = false, title = false, classList = [], iconName = false, func = false, sr = false } = {}) {
+export const Button = function({ text = false, type = false, round = false, block = false, size = false, style = [], ring = false, title = false, classList = [], iconName = false, func = false, sr = false } = {}) {
   this.button = node('button|class:button,type:button');
 
   if (text) {
@@ -40,7 +40,7 @@ const Button = function({ text = false, type = false, round = false, block = fal
   };
 
   if (iconName) {
-    const buttonIcon = node('span|class:button-icon', [
+    const buttonIcon = node('span|class:button__icon', [
       icon.render(iconName)
     ]);
 
@@ -104,12 +104,10 @@ const Button = function({ text = false, type = false, round = false, block = fal
   };
 
   this.deactive = () => {
-    this.button.classList.remove('active');
+    this.button.classList.remove('button__active');
   };
 
   this.active = () => {
-    this.button.classList.add('active');
+    this.button.classList.add('button__active');
   };
 };
-
-export { Button };

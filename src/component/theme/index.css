@@ -18,33 +18,21 @@
 }
 
 :root {
-  --theme-primary-h: 210;
-  --theme-primary-s: 80;
-  --theme-primary-l: 45;
   --theme-primary-l-mod: 90;
   --theme-primary-s-mod: 50;
 }
 
 :root {
-  --theme-secondary-h: 215;
-  --theme-secondary-s: 20;
-  --theme-secondary-l: 50;
   --theme-secondary-l-mod: 110;
   --theme-secondary-s-mod: -50;
 }
 
 :root {
-  --theme-success-h: 130;
-  --theme-success-s: 80;
-  --theme-success-l: 45;
   --theme-success-l-mod: 100;
   --theme-success-s-mod: -50;
 }
 
 :root {
-  --theme-danger-h: 340;
-  --theme-danger-s: 80;
-  --theme-danger-l: 45;
   --theme-danger-l-mod: 90;
   --theme-danger-s-mod: 50;
 }

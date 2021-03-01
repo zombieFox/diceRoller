@@ -1,7 +1,7 @@
 import './index.css';
 import { node } from '../../utilities/node';
 import { data } from '../data';
-import { ControlSet } from '../ControlSet';
+import { ControlFormulaSet } from '../ControlFormulaSet';
 import { Button } from '../button';
 
 export const formula = {};
@@ -78,7 +78,7 @@ formula.update = () => {
       }
     });
 
-    const block = new ControlSet(item, i);
+    const block = new ControlFormulaSet(item, i);
 
     if (formula.state.current.length > 1) {
       formulaSet.appendChild(remove.button);

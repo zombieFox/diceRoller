@@ -4,7 +4,7 @@ import { data } from '../data';
 import { dice } from '../dice';
 import { result } from '../result';
 import { formula } from '../formula';
-import { ControlSet } from '../ControlSet';
+import { ControlFormulaSet } from '../ControlFormulaSet';
 import { Button } from '../button';
 
 export const saved = {};
