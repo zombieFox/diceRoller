@@ -45,6 +45,7 @@ toolbar.render = () => {
   const themeDropdown = new Dropdown({
     text: 'Theme',
     iconName: 'chevronDown',
+    position: 'bottomRight',
     content: theme.control.render()
   });
 

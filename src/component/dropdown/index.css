@@ -17,9 +17,9 @@
   border-radius: calc(var(--theme-radius) * 4);
   min-width: 4em;
   min-height: 4em;
+  width: 90vw;
+  max-width: 90vw;
   position: absolute;
-  top: 0;
-  left: 0;
   opacity: 1;
   transform: scale(1);
   box-shadow: 0 2em 4em rgba(0, 0, 0, 0.2);
@@ -27,6 +27,18 @@
   z-index: var(--zindex-dropdown);
   transform-origin: center;
   transition: background-color var(--layout-transition-extra-fast), opacity var(--layout-transition-extra-fast), transform var(--layout-transition-extra-fast);
+}
+
+@media (min-width: 800px) {
+  .dropdown__panel {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dropdown__panel {
+    width: 30vw;
+  }
 }
 
 .dropdown__panel.is__dropdown-open {

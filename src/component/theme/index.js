@@ -148,6 +148,7 @@ theme.control.render = () => {
     value: theme.state.color.primary.h,
     min: 1,
     max: 360,
+    classList: ['input__hue-spectrum'],
     action: () => {
 
       theme.state.color.primary.h = parseInt(themePrimaryH.range.value, 10);
@@ -163,6 +164,7 @@ theme.control.render = () => {
     value: theme.state.color.secondary.h,
     min: 1,
     max: 360,
+    classList: ['input__hue-spectrum'],
     action: () => {
 
       theme.state.color.secondary.h = parseInt(themeSecondaryH.range.value, 10);

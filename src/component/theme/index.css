@@ -455,7 +455,3 @@
 .theme__style-input:checked+.theme__style-label .theme__style-icon:after {
   left: 60%;
 }
-
-.theme__control {
-  min-width: 20em;
-}
