@@ -4,8 +4,16 @@ import { Button } from '../button';
 
 const form = {};
 
+form.form = (children) => {
+  return node('form', children);
+};
+
 form.wrap = (children) => {
   return node('div|class:form__wrap', children);
+};
+
+form.fieldset = (children) => {
+  return node('fieldset', children);
 };
 
 form.label = ({ id = false, text = false, icon = false, classList = [] } = {}) => {

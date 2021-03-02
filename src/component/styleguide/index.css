@@ -1,6 +1,6 @@
 .styleguide__colour {
   display: grid;
-  grid-auto-rows: 3em;
+  grid-auto-rows: 1.5em;
   grid-template-columns: 1fr;
 }
 

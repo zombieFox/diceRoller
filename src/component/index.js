@@ -5,6 +5,7 @@ import { global } from './global';
 import { base } from './base';
 import { data } from './data';
 import { form } from './form';
+import { ControlRange } from './form';
 import { theme } from './theme';
 import { layout } from './layout';
 import { icon } from './icon';
@@ -27,6 +28,7 @@ export const component = {
   base,
   data,
   form,
+  ControlRange,
   theme,
   layout,
   icon,

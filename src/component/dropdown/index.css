@@ -22,7 +22,7 @@
   left: 0;
   opacity: 1;
   transform: scale(1);
-  box-shadow: 0 2em 4em rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2em 4em rgba(0, 0, 0, 0.2);
   display: flex;
   z-index: var(--zindex-dropdown);
   transform-origin: center;

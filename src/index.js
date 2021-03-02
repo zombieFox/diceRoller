@@ -11,6 +11,21 @@ app.clear = () => {
   };
 };
 
+const themeSecondaryH = new component.ControlRange({
+  id: 'theme-secondary-h',
+  label: 'Secondary Hue',
+  value: component.theme.state.color.secondary.h,
+  min: 1,
+  max: 360,
+  action: () => {
+
+    component.theme.state.color.secondary.h = parseInt(themeSecondaryH.range.value, 10);
+    component.data.state.save();
+    component.theme.variable.render();
+
+  }
+});
+
 app.render = () => {
   const add = [
     node('div|class:layout', [
@@ -20,6 +35,8 @@ app.render = () => {
       node('section|class:layout__formula', [
         node('section|class:layout__wrap', [
           node('section|class:layout__controls', [
+            themeSecondaryH.wrap,
+            component.styleguide.colour.render(),
             component.formula.render(),
             component.roll.render(),
             component.saved.render()

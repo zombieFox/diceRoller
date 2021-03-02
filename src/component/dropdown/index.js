@@ -16,7 +16,7 @@ export const Dropdown = function({ text = false, iconName = false, content = fal
     };
   };
 
-  this.node = {
+  this.element = {
     app: document.querySelector('.app'),
     dropdown: node('div|class:dropdown'),
     panel: node('div|class:dropdown__panel'),
@@ -40,53 +40,53 @@ export const Dropdown = function({ text = false, iconName = false, content = fal
   this.render.node = {};
 
   this.render.node.toggle = () => {
-    this.node.dropdown.appendChild(this.node.toggle.button);
+    this.element.dropdown.appendChild(this.element.toggle.button);
   };
 
   this.render.node.panel = () => {
     if (content) {
-      this.node.panel.appendChild(content);
+      this.element.panel.appendChild(content);
     };
   };
 
   this.render.node.dropdown = () => {
-    this.node.dropdown.appendChild(this.node.toggle.button);
+    this.element.dropdown.appendChild(this.element.toggle.button);
   };
 
   this.render.dropdown = () => {
     if (this.state.open) {
-      this.node.dropdown.classList.add('is__dropdown-open');
-      this.node.dropdown.classList.remove('is__dropdown-closed');
-      this.node.toggle.active();
+      this.element.dropdown.classList.add('is__dropdown-open');
+      this.element.dropdown.classList.remove('is__dropdown-closed');
+      this.element.toggle.active();
     } else {
-      this.node.dropdown.classList.add('is__dropdown-closed');
-      this.node.dropdown.classList.remove('is__dropdown-open');
-      this.node.toggle.deactive();
+      this.element.dropdown.classList.add('is__dropdown-closed');
+      this.element.dropdown.classList.remove('is__dropdown-open');
+      this.element.toggle.deactive();
     };
   };
 
   this.render.panel = () => {
     const remove = () => {
       if (!this.state.open) {
-        this.node.panel.remove();
-        this.node.panel.removeEventListener('animationend', remove);
+        this.element.panel.remove();
+        this.element.panel.removeEventListener('animationend', remove);
       };
     };
 
     if (this.state.open) {
-      this.node.panel.removeEventListener('animationend', remove);
-      this.node.app.appendChild(this.node.panel);
-      const toggleBox = this.node.toggle.button.getBoundingClientRect();
-      const panelBox = this.node.panel.getBoundingClientRect();
+      this.element.panel.removeEventListener('animationend', remove);
+      this.element.app.appendChild(this.element.panel);
+      const toggleBox = this.element.toggle.button.getBoundingClientRect();
+      const panelBox = this.element.panel.getBoundingClientRect();
       const fontSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--font-size'), 10);
-      this.node.panel.style.top = `${toggleBox.top + toggleBox.height + fontSize}px`;
-      this.node.panel.style.left = `${toggleBox.right - panelBox.width}px`;
-      this.node.panel.classList.remove('is__dropdown-closed');
-      this.node.panel.classList.add('is__dropdown-open');
+      this.element.panel.style.top = `${toggleBox.top + toggleBox.height + fontSize}px`;
+      this.element.panel.style.left = `${toggleBox.right - panelBox.width}px`;
+      this.element.panel.classList.remove('is__dropdown-closed');
+      this.element.panel.classList.add('is__dropdown-open');
     } else {
-      this.node.panel.addEventListener('animationend', remove);
-      this.node.panel.classList.remove('is__dropdown-open');
-      this.node.panel.classList.add('is__dropdown-closed');
+      this.element.panel.addEventListener('animationend', remove);
+      this.element.panel.classList.remove('is__dropdown-open');
+      this.element.panel.classList.add('is__dropdown-closed');
     };
   };
 
@@ -98,5 +98,5 @@ export const Dropdown = function({ text = false, iconName = false, content = fal
 
   this.render.dropdown();
 
-  this.dropdown = this.node.dropdown;
+  this.dropdown = this.element.dropdown;
 };

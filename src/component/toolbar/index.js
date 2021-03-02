@@ -5,7 +5,7 @@ import { formula } from '../formula';
 import { result } from '../result';
 import { theme } from '../theme';
 import { saved } from '../saved';
-import { ControlRange } from '../form';
+import { form, ControlRange } from '../form';
 import { Button } from '../button';
 import { Dropdown } from '../dropdown';
 
@@ -75,17 +75,22 @@ toolbar.render = () => {
   const themeDropdown = new Dropdown({
     text: 'Theme',
     iconName: 'chevronDown',
-    content: node('div', [
-      themePrimaryH.wrap,
-      themeSecondaryH.wrap
+    content: form.form([
+      form.fieldset([
+        form.wrap([
+          theme.toggle.render()
+        ])
+      ]),
+      form.fieldset([
+        themePrimaryH.wrap,
+        themeSecondaryH.wrap
+      ])
     ])
   });
 
   toolbar.element.appendChild(clearFormula.button);
 
   toolbar.element.appendChild(clearResultHistory.button);
-
-  toolbar.element.appendChild(theme.toggle.render());
 
   toolbar.element.appendChild(themeDropdown.dropdown);
 

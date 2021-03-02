@@ -84,9 +84,9 @@ theme.toggle = {};
 theme.toggle.render = () => {
   const themeStyleInput = node('input|type:checkbox,class:theme__style-input,id:theme__style-input');
 
-  const themeStyleLabel = node('label|class:theme__style-label button button__link button__ring button__small,for:theme__style-input,for:theme__style-input', [
+  const themeStyleLabel = node('label|class:theme__style-label button button__link button__ring,for:theme__style-input,for:theme__style-input', [
     node('span|class:theme__style-icon'),
-    node('span|class:button__text theme__style-text', [
+    node('span|class:theme__style-text', [
       node('span:Light|class:theme__style-text-light'),
       node('span:Dark|class:theme__style-text-dark')
     ])
