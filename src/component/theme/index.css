@@ -399,13 +399,7 @@
 
 .theme__style-text {
   position: relative;
-  display: none;
-}
-
-@media (min-width: 800px) {
-  .theme__style-text {
     display: flex;
-  }
 }
 
 .theme__style-text-light,
@@ -460,4 +454,8 @@
 
 .theme__style-input:checked+.theme__style-label .theme__style-icon:after {
   left: 60%;
+}
+
+.theme__control {
+  min-width: 20em;
 }

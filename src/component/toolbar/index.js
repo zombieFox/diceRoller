@@ -42,50 +42,10 @@ toolbar.render = () => {
     }
   });
 
-  const themePrimaryH = new ControlRange({
-    id: 'theme-primary-h',
-    label: 'Primary Hue',
-    value: theme.state.color.primary.h,
-    min: 1,
-    max: 360,
-    action: () => {
-
-      theme.state.color.primary.h = parseInt(themePrimaryH.range.value, 10);
-      data.state.save();
-      theme.variable.render();
-
-    }
-  });
-
-  const themeSecondaryH = new ControlRange({
-    id: 'theme-secondary-h',
-    label: 'Secondary Hue',
-    value: theme.state.color.secondary.h,
-    min: 1,
-    max: 360,
-    action: () => {
-
-      theme.state.color.secondary.h = parseInt(themeSecondaryH.range.value, 10);
-      data.state.save();
-      theme.variable.render();
-
-    }
-  });
-
   const themeDropdown = new Dropdown({
     text: 'Theme',
     iconName: 'chevronDown',
-    content: form.form([
-      form.fieldset([
-        form.wrap([
-          theme.toggle.render()
-        ])
-      ]),
-      form.fieldset([
-        themePrimaryH.wrap,
-        themeSecondaryH.wrap
-      ])
-    ])
+    content: theme.control.render()
   });
 
   toolbar.element.appendChild(clearFormula.button);

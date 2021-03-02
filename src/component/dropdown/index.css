@@ -13,7 +13,7 @@
 
 .dropdown__panel {
   background-color: hsl(var(--theme-secondary-800));
-  padding: calc(var(--layout-gutter) * 0.75) var(--layout-gutter);
+  padding: var(--layout-gutter);
   border-radius: calc(var(--theme-radius) * 4);
   min-width: 4em;
   min-height: 4em;

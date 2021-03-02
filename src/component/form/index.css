@@ -39,15 +39,15 @@
 
 form {
   display: grid;
-  grid-template-rows: auto 1fr;
   gap: calc(var(--layout-gutter) * 2);
   position: relative;
+  width: 100%;
 }
 
 fieldset {
-  position: relative;
   margin: 0;
   padding: 0;
+  position: relative;
   width: 100%;
 }
 

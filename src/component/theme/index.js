@@ -2,6 +2,7 @@ import './index.css';
 import { node } from '../../utilities/node';
 import { data } from '../data';
 import { Button } from '../button';
+import { form, ControlRange } from '../form';
 
 export const theme = {};
 
@@ -85,14 +86,12 @@ theme.toggle.element = {
   input: node('input|type:checkbox,class:theme__style-input,id:theme__style-input')
 };
 
-
-
 theme.toggle.render = () => {
   const themeStyleLabel = node('label|class:theme__style-label button button__link button__ring,for:theme__style-input,for:theme__style-input', [
     node('span|class:theme__style-icon'),
     node('span|class:theme__style-text', [
-      node('span:Light|class:theme__style-text-light'),
-      node('span:Dark|class:theme__style-text-dark')
+      node('span:Light mode|class:theme__style-text-light'),
+      node('span:Dark mode|class:theme__style-text-dark')
     ])
   ]);
 
@@ -138,4 +137,48 @@ theme.toggle.update = () => {
       theme.toggle.element.input.checked = true;
       break;
   };
+};
+
+theme.control = {};
+
+theme.control.render = () => {
+  const themePrimaryH = new ControlRange({
+    id: 'theme-primary-h',
+    label: 'Accent',
+    value: theme.state.color.primary.h,
+    min: 1,
+    max: 360,
+    action: () => {
+
+      theme.state.color.primary.h = parseInt(themePrimaryH.range.value, 10);
+      data.state.save();
+      theme.variable.render();
+
+    }
+  });
+
+  const themeSecondaryH = new ControlRange({
+    id: 'theme-secondary-h',
+    label: 'Colour',
+    value: theme.state.color.secondary.h,
+    min: 1,
+    max: 360,
+    action: () => {
+
+      theme.state.color.secondary.h = parseInt(themeSecondaryH.range.value, 10);
+      data.state.save();
+      theme.variable.render();
+
+    }
+  });
+
+  return node('form|class:theme__control', [
+    form.fieldset([
+      theme.toggle.render()
+    ]),
+    form.fieldset([
+      themeSecondaryH.wrap,
+      themePrimaryH.wrap
+    ])
+  ])
 };

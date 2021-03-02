@@ -4,10 +4,6 @@ import { Button } from '../button';
 
 const form = {};
 
-form.form = (children) => {
-  return node('form', children);
-};
-
 form.wrap = (children) => {
   return node('div|class:form__wrap', children);
 };
