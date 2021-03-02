@@ -5,7 +5,9 @@ import { formula } from '../formula';
 import { result } from '../result';
 import { theme } from '../theme';
 import { saved } from '../saved';
+import { form, ControlRange } from '../form';
 import { Button } from '../button';
+import { Dropdown } from '../dropdown';
 
 export const toolbar = {};
 
@@ -40,11 +42,18 @@ toolbar.render = () => {
     }
   });
 
+  const themeDropdown = new Dropdown({
+    text: 'Theme',
+    iconName: 'chevronDown',
+    position: 'bottomRight',
+    content: theme.control.render()
+  });
+
   toolbar.element.appendChild(clearFormula.button);
 
   toolbar.element.appendChild(clearResultHistory.button);
 
-  toolbar.element.appendChild(theme.toggle.render());
+  toolbar.element.appendChild(themeDropdown.dropdown);
 
   return toolbar.element;
 };

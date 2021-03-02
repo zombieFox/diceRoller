@@ -1,3 +1,7 @@
+:root {
+  --button-height: 3em;
+}
+
 .button__primary {
   --button-background: var(--theme-primary-300);
   --button-background-focus-hover: var(--theme-primary-400);
@@ -88,7 +92,7 @@ input[type="submit"] {
   font-family: var(--font-ui-name);
   font-weight: var(--font-weight-bold);
   font-style: var(--font-ui-style);
-  min-height: 2.5em;
+  min-height: var(--button-height);
   line-height: 1;
   border: 0;
   border-radius: calc(var(--theme-radius) * 10);
@@ -132,8 +136,8 @@ input[type="submit"]:active {
   transition: none;
 }
 
-button.active,
-.button.active {
+button.button__active {
+  background-color: hsl(var(--button-background-active));
   color: rgb(var(--button-text-active));
 }
 
@@ -171,8 +175,7 @@ button:disabled:active,
   box-shadow: var(--theme-focus-primary);
 }
 
-.button__ring.button__primary:active,
-.button__ring.button__primary.active {
+.button__ring.button__primary:active {
   box-shadow: var(--theme-focus-primary);
 }
 
@@ -180,8 +183,7 @@ button:disabled:active,
   box-shadow: var(--theme-focus-secondary);
 }
 
-.button__ring.button__secondary:active,
-.button__ring.button__secondary.active {
+.button__ring.button__secondary:active {
   box-shadow: var(--theme-focus-secondary);
 }
 
@@ -189,8 +191,7 @@ button:disabled:active,
   box-shadow: var(--theme-focus-danger);
 }
 
-.button__ring.button__danger:active,
-.button__ring.button__danger.active {
+.button__ring.button__danger:active {
   box-shadow: var(--theme-focus-danger);
 }
 
@@ -198,8 +199,7 @@ button:disabled:active,
   box-shadow: var(--theme-focus-success);
 }
 
-.button__ring.button__success:active,
-.button__ring.button__success.active {
+.button__ring.button__success:active {
   box-shadow: var(--theme-focus-success);
 }
 
@@ -207,8 +207,7 @@ button:disabled:active,
   box-shadow: var(--theme-focus-secondary);
 }
 
-.button__ring.button__link:active,
-.button__ring.button__link.active {
+.button__ring.button__link:active {
   box-shadow: var(--theme-focus-secondary);
 }
 
@@ -230,9 +229,9 @@ button:disabled:active,
 
 .button__round {
   padding: 0;
-  width: 2.5em;
-  height: 2.5em;
-  min-height: 2.5em;
+  width: var(--button-height);
+  height: var(--button-height);
+  min-height: var(--button-height);
 }
 
 button .icon,

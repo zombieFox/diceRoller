@@ -1,5 +1,4 @@
 :root {
-  --layout-line-width: 0.2em;
   --layout-duration-01: 0.1s;
   --layout-duration-02: 0.2s;
   --layout-duration-03: 0.3s;
@@ -25,6 +24,7 @@
 }
 
 :root {
+  --layout-line-width: 0.2em;
   --layout-gutter: 2em;
   --layout-result-height: 30vh;
   --layout-toolbar-height: 3em;
@@ -37,6 +37,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: var(--layout-toolbar-height) 1fr;
+  z-index: var(--zindex-layout);
 }
 
 @media (min-width: 800px) {

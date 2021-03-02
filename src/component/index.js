@@ -1,8 +1,11 @@
 import { Button } from './button';
-import { ControlSet } from './ControlSet';
+import { Dropdown } from './dropdown';
+import { ControlFormulaSet } from './ControlFormulaSet';
 import { global } from './global';
 import { base } from './base';
 import { data } from './data';
+import { form } from './form';
+import { ControlRange } from './form';
 import { theme } from './theme';
 import { layout } from './layout';
 import { icon } from './icon';
@@ -19,10 +22,13 @@ import { styleguide } from './styleguide';
 
 export const component = {
   Button,
-  ControlSet,
+  ControlFormulaSet,
+  Dropdown,
   global,
   base,
   data,
+  form,
+  ControlRange,
   theme,
   layout,
   icon,
