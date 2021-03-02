@@ -81,9 +81,13 @@ theme.keyboard.bind = () => {
 
 theme.toggle = {};
 
-theme.toggle.render = () => {
-  const themeStyleInput = node('input|type:checkbox,class:theme__style-input,id:theme__style-input');
+theme.toggle.element = {
+  input: node('input|type:checkbox,class:theme__style-input,id:theme__style-input')
+};
 
+
+
+theme.toggle.render = () => {
   const themeStyleLabel = node('label|class:theme__style-label button button__link button__ring,for:theme__style-input,for:theme__style-input', [
     node('span|class:theme__style-icon'),
     node('span|class:theme__style-text', [
@@ -93,22 +97,22 @@ theme.toggle.render = () => {
   ]);
 
   const themeToggle = node('div|class:theme__style-toggle', [
-    themeStyleInput,
+    theme.toggle.element.input,
     themeStyleLabel
   ]);
 
   switch (theme.state.style) {
     case 'light':
-      themeStyleInput.checked = false;
+      theme.toggle.element.input.checked = false;
       break;
 
     case 'dark':
-      themeStyleInput.checked = true;
+      theme.toggle.element.input.checked = true;
       break;
   };
 
-  themeStyleInput.addEventListener('change', (event) => {
-    if (themeStyleInput.checked) {
+  theme.toggle.element.input.addEventListener('change', (event) => {
+    if (theme.toggle.element.input.checked) {
       theme.style.toggle('dark');
       theme.state.style = 'dark';
     } else {
@@ -127,11 +131,11 @@ theme.toggle.render = () => {
 theme.toggle.update = () => {
   switch (theme.state.style) {
     case 'light':
-      document.querySelector('.theme__style-input').checked = false;
+      theme.toggle.element.input.checked = false;
       break;
 
     case 'dark':
-      document.querySelector('.theme__style-input').checked = true;
+      theme.toggle.element.input.checked = true;
       break;
   };
 };

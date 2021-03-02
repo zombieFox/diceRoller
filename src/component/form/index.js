@@ -74,7 +74,7 @@ form.range = ({ id = false, min = false, max = false, value = false, classList =
   return input;
 };
 
-const ControlRange = function({ id = 'name', label = 'Name', value = false, defaultValue = false, min = false, max = false, action = false } = {}) {
+const ControlRange = function({ id = 'name', label = 'Name', value = false, defaultValue = false, min = false, max = false, classList = [], action = false } = {}) {
   this.label = form.label({
     id: id,
     text: label
@@ -85,6 +85,7 @@ const ControlRange = function({ id = 'name', label = 'Name', value = false, defa
     min: min,
     max: max,
     value: value,
+    classList: classList,
     action: action
   });
 

@@ -1,3 +1,7 @@
+:root {
+  --button-height: 3em;
+}
+
 .button__primary {
   --button-background: var(--theme-primary-300);
   --button-background-focus-hover: var(--theme-primary-400);
@@ -88,7 +92,7 @@ input[type="submit"] {
   font-family: var(--font-ui-name);
   font-weight: var(--font-weight-bold);
   font-style: var(--font-ui-style);
-  min-height: 2.5em;
+  min-height: var(--button-height);
   line-height: 1;
   border: 0;
   border-radius: calc(var(--theme-radius) * 10);
@@ -225,9 +229,9 @@ button:disabled:active,
 
 .button__round {
   padding: 0;
-  width: 2.5em;
-  height: 2.5em;
-  min-height: 2.5em;
+  width: var(--button-height);
+  height: var(--button-height);
+  min-height: var(--button-height);
 }
 
 button .icon,
