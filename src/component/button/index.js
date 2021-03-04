@@ -30,6 +30,10 @@ export const Button = function({ text = false, type = false, round = false, bloc
       this.button.classList.add('button__danger');
       break;
 
+    case 'light':
+      this.button.classList.add('button__light');
+      break;
+
     case 'link':
       this.button.classList.add('button__link');
       break;
@@ -67,16 +71,6 @@ export const Button = function({ text = false, type = false, round = false, bloc
     case 'large':
       this.button.classList.add('button__large');
       break;
-  };
-
-  if (style.length > 0) {
-    style.forEach((item, i) => {
-      switch (item) {
-        case 'link':
-          this.button.classList.add('button__link');
-          break;
-      };
-    });
   };
 
   if (title) {

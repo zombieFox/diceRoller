@@ -46,8 +46,19 @@
   --button-text-disabled: var(--theme-secondary-600);
 }
 
+.button__light {
+  --button-background: var(--theme-secondary-700);
+  --button-background-focus-hover: var(--theme-secondary-700);
+  --button-background-active: var(--theme-secondary-600);
+  --button-background-disabled: var(--theme-secondary-700);
+  --button-text: var(--theme-text);
+  --button-text-focus-hover: var(--theme-text);
+  --button-text-active: var(--theme-text);
+  --button-text-disabled: var(--theme-secondary-600);
+}
+
 .button__link {
-  /* --button-background: var(--theme-secondary-300); */
+  /* --button-background: var(--theme-secondary-700); */
   --button-background-focus-hover: var(--theme-secondary-700);
   --button-background-active: var(--theme-secondary-600);
   --button-background-disabled: var(--theme-secondary-700);
@@ -71,10 +82,12 @@
   --theme-text: var(--theme-black);
 }
 
+.is-theme-light .button__light,
 .is-theme-light .button__link {
   --theme-text: var(--theme-black);
 }
 
+.is-theme-dark .button__light,
 .is-theme-dark .button__link {
   --theme-text: var(--theme-white);
 }
@@ -163,6 +176,10 @@ button:disabled:active,
   text-decoration: none;
 }
 
+.button__light {
+  background-color: hsla(var(--button-background), 0.25);
+}
+
 .button__link {
   background-color: transparent;
 }
@@ -201,6 +218,14 @@ button:disabled:active,
 
 .button__ring.button__success:active {
   box-shadow: var(--theme-focus-success);
+}
+
+.button__ring.button__light:focus {
+  box-shadow: var(--theme-focus-secondary);
+}
+
+.button__ring.button__light:active {
+  box-shadow: var(--theme-focus-secondary);
 }
 
 .button__ring.button__link:focus {

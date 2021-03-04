@@ -87,7 +87,7 @@ theme.toggle.element = {
 };
 
 theme.toggle.render = () => {
-  const themeStyleLabel = node('label|class:theme__style-label button button__link button__ring,for:theme__style-input,for:theme__style-input', [
+  const themeStyleLabel = node('label|class:theme__style-label button button__light button__ring,for:theme__style-input,for:theme__style-input', [
     node('span|class:theme__style-icon'),
     node('span|class:theme__style-text', [
       node('span:Light mode|class:theme__style-text-light'),

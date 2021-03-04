@@ -4,7 +4,7 @@
 }
 
 .dropdown__toggle .button__icon {
-  transition: background-color var(--layout-transition-extra-fast), color var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast), transform var(--layout-transition-fast);
+  transition: transform var(--layout-transition-fast);
 }
 
 .is__dropdown-open .dropdown__toggle .button__icon {
