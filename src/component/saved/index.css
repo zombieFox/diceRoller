@@ -11,7 +11,7 @@
 .saved {
   font-size: 1rem;
   display: grid;
-  gap: calc(var(--layout-gutter) / 1);
+  gap: calc(var(--layout-gutter) * 2);
   justify-items: center;
   transition: background-color var(--layout-transition-extra-fast);
 }
