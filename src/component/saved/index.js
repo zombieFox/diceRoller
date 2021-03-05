@@ -112,7 +112,7 @@ saved.savedItem = (savedData, id) => {
 
   const savedNameLabel = node(`label:Saved formula name|class:saved__name-label sr__only,for:saved__name-${id}`);
 
-  const savedNameInput = node(`input|class:saved__name-input input__small,id:saved__name-${id},type:text,value:${savedData.name},placeholder:Saved formula name`);
+  const savedNameInput = node(`input|class:saved__name-input input__small,id:saved__name-${id},type:text,value:${savedData.name},placeholder:Saved formula name,autocomplete:off,autocorrect:off,autocapitalize:off,spellcheck:false`);
 
   savedNameInput.addEventListener('input', () => {
     savedData.name = savedNameInput.value;
