@@ -4,17 +4,19 @@
 }
 
 :root {
-  --font-size: 16px;
+  --base-font-size: 16px;
+  --base-background: var(--theme-secondary-800);
+  --base-card-background: var(--theme-secondary-900);
 }
 
 html {
-  background-color: hsl(var(--theme-secondary-800));
-  font-size: var(--font-size);
+  background-color: hsl(var(--base-background));
+  font-size: var(--base-font-size);
   transition: background-color var(--layout-transition-extra-fast);
 }
 
 body {
-  background-color: hsl(var(--theme-secondary-800));
+  background-color: hsl(var(--base-background));
   font-size: 1rem;
   line-height: 1.6;
   min-width: 100vw;

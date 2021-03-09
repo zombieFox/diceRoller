@@ -3,53 +3,53 @@
 }
 
 .button__primary {
-  --button-background: var(--theme-primary-300);
+  --button-background: var(--theme-primary-500);
   --button-background-focus-hover: var(--theme-primary-400);
   --button-background-active: var(--theme-primary-300);
   --button-background-disabled: var(--theme-secondary-700);
-  --button-text: var(--theme-text);
-  --button-text-focus-hover: var(--theme-text);
-  --button-text-active: var(--theme-text);
+  --button-text: var(--theme-primary-text-500);
+  --button-text-focus-hover: var(--theme-primary-text-400);
+  --button-text-active: var(--theme-primary-text-300);
   --button-text-disabled: var(--theme-secondary-600);
 }
 
 .button__secondary {
-  --button-background: var(--theme-secondary-300);
+  --button-background: var(--theme-secondary-500);
   --button-background-focus-hover: var(--theme-secondary-400);
   --button-background-active: var(--theme-secondary-300);
   --button-background-disabled: var(--theme-secondary-700);
-  --button-text: var(--theme-text);
-  --button-text-focus-hover: var(--theme-text);
-  --button-text-active: var(--theme-text);
+  --button-text: var(--theme-secondary-text-500);
+  --button-text-focus-hover: var(--theme-secondary-text-400);
+  --button-text-active: var(--theme-secondary-text-300);
   --button-text-disabled: var(--theme-secondary-600);
 }
 
 .button__success {
-  --button-background: var(--theme-success-300);
+  --button-background: var(--theme-success-500);
   --button-background-focus-hover: var(--theme-success-400);
   --button-background-active: var(--theme-success-300);
   --button-background-disabled: var(--theme-secondary-700);
-  --button-text: var(--theme-text);
-  --button-text-focus-hover: var(--theme-text);
-  --button-text-active: var(--theme-text);
+  --button-text: var(--theme-success-text-500);
+  --button-text-focus-hover: var(--theme-success-text-400);
+  --button-text-active: var(--theme-success-text-300);
   --button-text-disabled: var(--theme-secondary-600);
 }
 
 .button__danger {
-  --button-background: var(--theme-danger-300);
+  --button-background: var(--theme-danger-500);
   --button-background-focus-hover: var(--theme-danger-400);
   --button-background-active: var(--theme-danger-300);
   --button-background-disabled: var(--theme-secondary-700);
-  --button-text: var(--theme-text);
-  --button-text-focus-hover: var(--theme-text);
-  --button-text-active: var(--theme-text);
+  --button-text: var(--theme-danger-text-500);
+  --button-text-focus-hover: var(--theme-danger-text-400);
+  --button-text-active: var(--theme-danger-text-300);
   --button-text-disabled: var(--theme-secondary-600);
 }
 
 .button__light {
   --button-background: var(--theme-secondary-700);
   --button-background-focus-hover: var(--theme-secondary-700);
-  --button-background-active: var(--theme-secondary-600);
+  --button-background-active: var(--theme-secondary-700);
   --button-background-disabled: var(--theme-secondary-700);
   --button-text: var(--theme-text);
   --button-text-focus-hover: var(--theme-text);
@@ -58,9 +58,9 @@
 }
 
 .button__link {
-  /* --button-background: var(--theme-secondary-700); */
+  --button-background: var(--theme-secondary-700);
   --button-background-focus-hover: var(--theme-secondary-700);
-  --button-background-active: var(--theme-secondary-600);
+  --button-background-active: var(--theme-secondary-700);
   --button-background-disabled: var(--theme-secondary-700);
   --button-text: var(--theme-text);
   --button-text-focus-hover: var(--theme-text);
@@ -180,7 +180,14 @@ button:disabled:active,
   background-color: hsla(var(--button-background), 0.25);
 }
 
-.button__link {
+.button__light:disabled,
+.button__light:disabled:hover {
+  background-color: transparent;
+}
+
+.button__link,
+.button__link:disabled,
+.button__link:disabled:hover {
   background-color: transparent;
 }
 

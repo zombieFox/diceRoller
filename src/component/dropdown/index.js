@@ -83,7 +83,7 @@ export const Dropdown = function({ text = false, iconName = false, content = fal
 
       const panelBox = this.element.panel.getBoundingClientRect();
 
-      const fontSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--font-size'), 10);
+      const fontSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--base-font-size'), 10);
 
       switch (position) {
         case 'topLeft':

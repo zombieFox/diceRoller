@@ -1,159 +1,201 @@
 .styleguide__colour {
   display: grid;
-  grid-auto-rows: 1.5em;
+  grid-auto-rows: 3em;
   grid-template-columns: 1fr;
 }
 
-.styleguide__colour-primary,
-.styleguide__colour-secondary,
-.styleguide__colour-success,
-.styleguide__colour-danger {
+.styleguide__colour-list {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
 }
 
+.styleguide__colour-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-ui-name);
+  font-weight: var(--font-weight-bold);
+  font-style: var(--font-display-style);
+}
+
 .styleguide__colour-primary-100 {
   background-color: hsl(var(--theme-primary-100));
+  color: rgb(var(--theme-primary-text-100));
 }
 
 .styleguide__colour-primary-200 {
   background-color: hsl(var(--theme-primary-200));
+  color: rgb(var(--theme-primary-text-200));
 }
 
 .styleguide__colour-primary-300 {
   background-color: hsl(var(--theme-primary-300));
+  color: rgb(var(--theme-primary-text-300));
 }
 
 .styleguide__colour-primary-400 {
   background-color: hsl(var(--theme-primary-400));
+  color: rgb(var(--theme-primary-text-400));
 }
 
 .styleguide__colour-primary-500 {
   background-color: hsl(var(--theme-primary-500));
+  color: rgb(var(--theme-primary-text-500));
 }
 
 .styleguide__colour-primary-600 {
   background-color: hsl(var(--theme-primary-600));
+  color: rgb(var(--theme-primary-text-600));
 }
 
 .styleguide__colour-primary-700 {
   background-color: hsl(var(--theme-primary-700));
+  color: rgb(var(--theme-primary-text-700));
 }
 
 .styleguide__colour-primary-800 {
   background-color: hsl(var(--theme-primary-800));
+  color: rgb(var(--theme-primary-text-800));
 }
 
 .styleguide__colour-primary-900 {
   background-color: hsl(var(--theme-primary-900));
+  color: rgb(var(--theme-primary-text-900));
 }
 
 .styleguide__colour-secondary-100 {
   background-color: hsl(var(--theme-secondary-100));
+  color: rgb(var(--theme-secondary-text-100));
 }
 
 .styleguide__colour-secondary-200 {
   background-color: hsl(var(--theme-secondary-200));
+  color: rgb(var(--theme-secondary-text-200));
 }
 
 .styleguide__colour-secondary-300 {
   background-color: hsl(var(--theme-secondary-300));
+  color: rgb(var(--theme-secondary-text-300));
 }
 
 .styleguide__colour-secondary-400 {
   background-color: hsl(var(--theme-secondary-400));
+  color: rgb(var(--theme-secondary-text-400));
 }
 
 .styleguide__colour-secondary-500 {
   background-color: hsl(var(--theme-secondary-500));
+  color: rgb(var(--theme-secondary-text-500));
 }
 
 .styleguide__colour-secondary-600 {
   background-color: hsl(var(--theme-secondary-600));
+  color: rgb(var(--theme-secondary-text-600));
 }
 
 .styleguide__colour-secondary-700 {
   background-color: hsl(var(--theme-secondary-700));
+  color: rgb(var(--theme-secondary-text-700));
 }
 
 .styleguide__colour-secondary-800 {
   background-color: hsl(var(--theme-secondary-800));
+  color: rgb(var(--theme-secondary-text-800));
 }
 
 .styleguide__colour-secondary-900 {
   background-color: hsl(var(--theme-secondary-900));
+  color: rgb(var(--theme-secondary-text-900));
 }
 
 .styleguide__colour-success-100 {
   background-color: hsl(var(--theme-success-100));
+  color: rgb(var(--theme-success-text-100));
 }
 
 .styleguide__colour-success-200 {
   background-color: hsl(var(--theme-success-200));
+  color: rgb(var(--theme-success-text-200));
 }
 
 .styleguide__colour-success-300 {
   background-color: hsl(var(--theme-success-300));
+  color: rgb(var(--theme-success-text-300));
 }
 
 .styleguide__colour-success-400 {
   background-color: hsl(var(--theme-success-400));
+  color: rgb(var(--theme-success-text-400));
 }
 
 .styleguide__colour-success-500 {
   background-color: hsl(var(--theme-success-500));
+  color: rgb(var(--theme-success-text-500));
 }
 
 .styleguide__colour-success-600 {
   background-color: hsl(var(--theme-success-600));
+  color: rgb(var(--theme-success-text-600));
 }
 
 .styleguide__colour-success-700 {
   background-color: hsl(var(--theme-success-700));
+  color: rgb(var(--theme-success-text-700));
 }
 
 .styleguide__colour-success-800 {
   background-color: hsl(var(--theme-success-800));
+  color: rgb(var(--theme-success-text-800));
 }
 
 .styleguide__colour-success-900 {
   background-color: hsl(var(--theme-success-900));
+  color: rgb(var(--theme-success-text-900));
 }
 
 .styleguide__colour-danger-100 {
   background-color: hsl(var(--theme-danger-100));
+  color: rgb(var(--theme-danger-text-100));
 }
 
 .styleguide__colour-danger-200 {
   background-color: hsl(var(--theme-danger-200));
+  color: rgb(var(--theme-danger-text-200));
 }
 
 .styleguide__colour-danger-300 {
   background-color: hsl(var(--theme-danger-300));
+  color: rgb(var(--theme-danger-text-300));
 }
 
 .styleguide__colour-danger-400 {
   background-color: hsl(var(--theme-danger-400));
+  color: rgb(var(--theme-danger-text-400));
 }
 
 .styleguide__colour-danger-500 {
   background-color: hsl(var(--theme-danger-500));
+  color: rgb(var(--theme-danger-text-500));
 }
 
 .styleguide__colour-danger-600 {
   background-color: hsl(var(--theme-danger-600));
+  color: rgb(var(--theme-danger-text-600));
 }
 
 .styleguide__colour-danger-700 {
   background-color: hsl(var(--theme-danger-700));
+  color: rgb(var(--theme-danger-text-700));
 }
 
 .styleguide__colour-danger-800 {
   background-color: hsl(var(--theme-danger-800));
+  color: rgb(var(--theme-danger-text-800));
 }
 
 .styleguide__colour-danger-900 {
   background-color: hsl(var(--theme-danger-900));
+  color: rgb(var(--theme-danger-text-900));
 }
 
 .styleguide__colour-black {

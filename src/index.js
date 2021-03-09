@@ -20,6 +20,7 @@ app.render = () => {
       node('section|class:layout__formula', [
         node('section|class:layout__wrap', [
           node('section|class:layout__controls', [
+            // component.styleguide.colour.render(),
             component.formula.render(),
             component.roll.render(),
             component.saved.render()

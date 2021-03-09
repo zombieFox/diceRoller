@@ -11,10 +11,16 @@ theme.state = {};
 theme.state = {
   style: 'dark',
   color: {
-    primary: { h: 210, s: 80, l: 45 },
-    secondary: { h: 215, s: 20, l: 50 },
-    success: { h: 130, s: 80, l: 45 },
-    danger: { h: 340, s: 80, l: 45 }
+    range: {
+      primary: { h: 210, s: 75 },
+      secondary: { h: 220, s: 30 },
+      success: { h: 150, s: 75 },
+      danger: { h: 345, s: 75 }
+    },
+    lightness: {
+      start: 8,
+      end: 92
+    }
   }
 };
 
@@ -23,13 +29,17 @@ theme.variable = {};
 theme.variable.render = () => {
   const html = document.querySelector('html');
 
-  for (var type in theme.state.color) {
-    for (var colorValue in theme.state.color[type]) {
+  for (var type in theme.state.color.range) {
+    for (var colorValue in theme.state.color.range[type]) {
 
-      html.style.setProperty(`--theme-${type}-${colorValue}`, theme.state.color[type][colorValue]);
+      html.style.setProperty(`--theme-${type}-${colorValue}`, theme.state.color.range[type][colorValue]);
 
     };
   };
+
+  html.style.setProperty('--l-start', theme.state.color.lightness.start);
+
+  html.style.setProperty('--l-end', theme.state.color.lightness.end);
 };
 
 theme.style = {};
@@ -145,13 +155,13 @@ theme.control.render = () => {
   const themePrimaryH = new ControlRange({
     id: 'theme-primary-h',
     label: 'Accent',
-    value: theme.state.color.primary.h,
+    value: theme.state.color.range.primary.h,
     min: 1,
     max: 360,
     classList: ['input__hue-spectrum'],
     action: () => {
 
-      theme.state.color.primary.h = parseInt(themePrimaryH.range.value, 10);
+      theme.state.color.range.primary.h = parseInt(themePrimaryH.range.value, 10);
       data.state.save();
       theme.variable.render();
 
@@ -161,13 +171,13 @@ theme.control.render = () => {
   const themeSecondaryH = new ControlRange({
     id: 'theme-secondary-h',
     label: 'Colour',
-    value: theme.state.color.secondary.h,
+    value: theme.state.color.range.secondary.h,
     min: 1,
     max: 360,
     classList: ['input__hue-spectrum'],
     action: () => {
 
-      theme.state.color.secondary.h = parseInt(themeSecondaryH.range.value, 10);
+      theme.state.color.range.secondary.h = parseInt(themeSecondaryH.range.value, 10);
       data.state.save();
       theme.variable.render();
 

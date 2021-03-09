@@ -78,7 +78,7 @@
 .saved__formula {
   padding: 0 1.25em;
   font-size: 0.75em;
-  color: hsl(var(--theme-primary-200));
+  color: hsl(var(--theme-primary-300));
   font-weight: var(--font-weight-bold);
   display: flex;
   flex-direction: row;

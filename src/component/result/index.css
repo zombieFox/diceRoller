@@ -88,7 +88,7 @@
 
 .result__details {
   font-size: 0.75em;
-  color: hsl(var(--theme-secondary-300));
+  color: hsl(var(--theme-secondary-200));
   font-weight: var(--font-weight-bold);
   display: grid;
   grid-template-columns: 1fr;
@@ -102,7 +102,7 @@
 }
 
 .result__formula-dice {
-  color: hsl(var(--theme-primary-200));
+  color: hsl(var(--theme-primary-300));
   min-width: 7em;
   white-space: nowrap;
 }
@@ -156,22 +156,14 @@
   font-style: var(--font-display-style);
 }
 
-.is-theme-light .result__critical-success,
-.is-theme-light .result__critical-failure {
-  color: rgb(var(--theme-white));
-}
-
-.is-theme-dark .result__critical-success,
-.is-theme-dark .result__critical-failure {
-  color: rgb(var(--theme-black));
-}
-
 .result__critical-success {
-  background-color: hsl(var(--theme-success-300));
+  background-color: hsl(var(--theme-success-400));
+  color: rgb(var(--theme-success-text-400));
 }
 
 .result__critical-failure {
-  background-color: hsl(var(--theme-danger-300));
+  background-color: hsl(var(--theme-danger-400));
+  color: rgb(var(--theme-danger-text-400));
 }
 
 .result__control {
