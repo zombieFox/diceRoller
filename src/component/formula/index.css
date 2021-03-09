@@ -116,6 +116,12 @@
   font-size: 0.75em;
 }
 
+.formula__size-select,
+.formula__count-input,
+.formula__modifier-input {
+  touch-action: none;
+}
+
 .formula__count-input,
 .formula__count-input[type=number],
 .formula__count-input[type=text] {

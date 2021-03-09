@@ -54,12 +54,12 @@ count.render = (state, id) => {
 
   input.addEventListener('touchstart', (event) => {
     currentValue = parseInt(input.value, 10);
-    input.focus();
+    // input.focus();
   }, { passive: true });
 
   input.addEventListener('touchend', (event) => {
     currentValue = null;
-    input.blur();
+    // input.blur();
   }, { passive: true });
 
   input.addEventListener('touchmove', (event) => {
