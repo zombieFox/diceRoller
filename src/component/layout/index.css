@@ -19,8 +19,8 @@
 }
 
 :root {
-  --layout-horizontal-rule-small: 1px solid hsl(var(--theme-secondary-900));
-  --layout-horizontal-rule-large: 2px solid hsl(var(--theme-secondary-900));
+  --layout-horizontal-rule-small: 1px solid hsl(var(--theme-secondary-800));
+  --layout-horizontal-rule-large: 2px solid hsl(var(--theme-secondary-800));
 }
 
 :root {

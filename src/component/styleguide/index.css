@@ -1,6 +1,6 @@
 .styleguide__colour {
   display: grid;
-  grid-auto-rows: 3em;
+  grid-auto-rows: 2.5em;
   grid-template-columns: 1fr;
 }
 
@@ -199,9 +199,9 @@
 }
 
 .styleguide__colour-black {
-  background-color: hsl(var(--theme-black));
+  background-color: rgb(var(--theme-black));
 }
 
 .styleguide__colour-white {
-  background-color: hsl(var(--theme-white));
+  background-color: rgb(var(--theme-white));
 }

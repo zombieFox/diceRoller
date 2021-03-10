@@ -4,12 +4,30 @@ import { Button } from '../button';
 
 const form = {};
 
-form.wrap = (children) => {
-  return node('div|class:form__wrap', children);
+form.wrap = (children, classList) => {
+  let formWrapClass = 'form__wrap';
+
+  if (classList && classList.length > 0) {
+    classList.forEach((item, i) => {
+      formWrapClass = `${formWrapClass} ${item}`;
+    });
+
+    formWrapClass = formWrapClass.trim();
+  };
+
+  return node(`div|class:${formWrapClass}`, children);
 };
 
 form.fieldset = (children) => {
   return node('fieldset', children);
+};
+
+form.group = (children) => {
+  return node('div|class:form__group form__group-block', children);
+};
+
+form.indent = (children) => {
+  return node('div|class:form__indent', children);
 };
 
 form.label = ({ id = false, text = false, icon = false, classList = [] } = {}) => {
@@ -70,7 +88,7 @@ form.range = ({ id = false, min = false, max = false, value = false, classList =
   return input;
 };
 
-const ControlRange = function({ id = 'name', label = 'Name', value = false, defaultValue = false, min = false, max = false, classList = [], action = false } = {}) {
+const ControlRange = function({ id = 'name', label = 'Name', value = false, defaultValue = false, min = false, max = false, classList = [], action = false} = {}) {
   this.label = form.label({
     id: id,
     text: label
@@ -90,6 +108,15 @@ const ControlRange = function({ id = 'name', label = 'Name', value = false, defa
     this.range
   ]);
 
+  this.group = form.group([
+    form.wrap([
+      this.label
+    ], ['form__group-item-text']),
+    form.wrap([
+      this.range
+    ], ['form__group-item-grow'])
+  ]);
+
   this.disable = () => {
     this.label.classList.add('disabled');
     this.range.disabled = true;
@@ -98,6 +125,12 @@ const ControlRange = function({ id = 'name', label = 'Name', value = false, defa
   this.enable = () => {
     this.label.classList.remove('disabled');
     this.range.disabled = false;
+  };
+
+  this.update = (newValue) => {
+    if (newValue || newValue === 0) {
+      this.range.value = newValue;
+    };
   };
 };
 

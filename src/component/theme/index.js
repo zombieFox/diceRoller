@@ -7,9 +7,7 @@ import { form, ControlRange } from '../form';
 
 export const theme = {};
 
-theme.state = {};
-
-theme.state = {
+theme.default = {
   style: 'dark',
   color: {
     range: {
@@ -20,11 +18,14 @@ theme.state = {
     },
     lightness: {
       shades: 9,
+      contrast: 8,
       start: 8,
       end: 92
     }
   }
 };
+
+theme.state = JSON.parse(JSON.stringify(theme.default));
 
 theme.variable = {};
 
@@ -164,7 +165,7 @@ theme.control = {};
 theme.control.render = () => {
   const themePrimaryH = new ControlRange({
     id: 'theme-primary-h',
-    label: 'Accent',
+    label: 'Hue',
     value: theme.state.color.range.primary.h,
     min: 1,
     max: 360,
@@ -178,9 +179,24 @@ theme.control.render = () => {
     }
   });
 
+  const themePrimaryS = new ControlRange({
+    id: 'theme-primary-s',
+    label: 'Saturation',
+    value: theme.state.color.range.primary.s,
+    min: 0,
+    max: 100,
+    action: () => {
+
+      theme.state.color.range.primary.s = parseInt(themePrimaryS.range.value, 10);
+      data.state.save();
+      theme.variable.render();
+
+    }
+  });
+
   const themeSecondaryH = new ControlRange({
     id: 'theme-secondary-h',
-    label: 'Colour',
+    label: 'Hue',
     value: theme.state.color.range.secondary.h,
     min: 1,
     max: 360,
@@ -194,13 +210,94 @@ theme.control.render = () => {
     }
   });
 
+  const themeSecondaryS = new ControlRange({
+    id: 'theme-secondary-s',
+    label: 'Saturation',
+    value: theme.state.color.range.secondary.s,
+    min: 0,
+    max: 100,
+    action: () => {
+
+      theme.state.color.range.secondary.s = parseInt(themeSecondaryS.range.value, 10);
+      data.state.save();
+      theme.variable.render();
+
+    }
+  });
+
+  const contrast = new ControlRange({
+    id: 'theme-contrast',
+    label: 'Contrast',
+    value: theme.state.color.lightness.contrast,
+    min: 0,
+    max: 45,
+    action: () => {
+
+      theme.state.color.lightness.contrast = parseInt(contrast.range.value, 10);
+      theme.state.color.lightness.start = theme.state.color.lightness.contrast;
+      theme.state.color.lightness.end = 100 - theme.state.color.lightness.contrast;
+      data.state.save();
+      theme.variable.render();
+
+    }
+  });
+
+  const reset = new Button({
+    text: 'Reset theme',
+    ring: true,
+    type: 'primary',
+    func: () => {
+
+      theme.state = JSON.parse(JSON.stringify(theme.default));
+      data.state.save();
+      theme.variable.render();
+      theme.style.toggle(theme.state.style);
+      theme.style.render();
+      theme.toggle.update();
+      themePrimaryH.update(theme.state.color.range.primary.h);
+      themePrimaryS.update(theme.state.color.range.primary.s);
+      themeSecondaryH.update(theme.state.color.range.secondary.h);
+      themeSecondaryS.update(theme.state.color.range.secondary.s);
+      contrast.update(theme.state.color.lightness.contrast);
+
+    }
+  });
+
   return node('form|class:theme__control', [
     form.fieldset([
       theme.toggle.render()
     ]),
     form.fieldset([
-      themeSecondaryH.wrap,
-      themePrimaryH.wrap
+      form.group([
+        contrast.group,
+      ])
+    ]),
+    form.fieldset([
+      form.group([
+        node('p:Colour')
+      ]),
+      form.group([
+        form.indent([
+          themeSecondaryH.group,
+          themeSecondaryS.group
+        ])
+      ]),
+    ]),
+    form.fieldset([
+      form.group([
+        node('p:Accent')
+      ]),
+      form.group([
+        form.indent([
+          themePrimaryH.group,
+          themePrimaryS.group
+        ])
+      ])
+    ]),
+    form.fieldset([
+      form.group([
+        reset.button
+      ])
     ])
   ])
 };

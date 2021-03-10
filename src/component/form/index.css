@@ -34,7 +34,7 @@
 }
 
 :root {
-  --form-wrap-space: var(--layout-gutter);
+  --form-wrap-space: calc(var(--layout-gutter) / 2);
 }
 
 form {
@@ -108,6 +108,53 @@ fieldset:not(:last-child):not(:only-child):after {
 .form__item-grow,
 .form__inline>.form__item-grow {
   flex-grow: 1;
+}
+
+.form__group {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--form-wrap-space);
+}
+
+.form__group:not(:first-child) {
+  margin-top: var(--form-wrap-space);
+}
+
+.form__group:not(:last-child) {
+  margin-bottom: var(--form-wrap-space);
+}
+
+.form__group .form__wrap {
+  display: flex;
+  align-items: center;
+}
+
+.form__group .form__wrap:not(:first-child),
+.form__group .form__wrap:not(:last-child) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.form__group-block {
+  display: flex;
+  width: 100%;
+}
+
+.form__group-item-grow {
+  flex-grow: 1;
+}
+
+.form__group-item-text {
+  width: 8em;
+}
+
+.form__indent {
+  margin-left: calc(var(--form-wrap-space) * 2.25);
+  position: relative;
+  width: 100%;
 }
 
 label {
@@ -523,6 +570,23 @@ input[type="range"].input__hue-spectrum::-webkit-slider-runnable-track {
       hsl(300, 100%, 50%),
       hsl(330, 100%, 50%),
       hsl(360, 100%, 50%));
+}
+
+input[type="range"]:disabled.input__hue-spectrum::-webkit-slider-runnable-track {
+  background-image: linear-gradient(to right,
+      hsl(0, 10%, 50%),
+      hsl(30, 10%, 50%),
+      hsl(60, 10%, 50%),
+      hsl(90, 10%, 50%),
+      hsl(120, 10%, 50%),
+      hsl(150, 10%, 50%),
+      hsl(180, 10%, 50%),
+      hsl(210, 10%, 50%),
+      hsl(240, 10%, 50%),
+      hsl(270, 10%, 50%),
+      hsl(300, 10%, 50%),
+      hsl(330, 10%, 50%),
+      hsl(360, 10%, 50%));
 }
 
 select {
