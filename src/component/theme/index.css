@@ -136,9 +136,10 @@
 
 :root {
   --theme-t: 0.5;
-  --theme-t-r: 0.2126;
+  /* calculates perceived lightness using the sRGB Luma method */
+  --theme-t-r: 0.2721;
   --theme-t-g: 0.7152;
-  --theme-t-b: 0.0722;
+  --theme-t-b: 0.1255;
 }
 
 .is__theme-light {
