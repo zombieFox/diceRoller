@@ -75,13 +75,13 @@ theme.style.render = () => {
 
   switch (theme.state.style) {
     case 'light':
-      html.classList.add('is-theme-light');
-      html.classList.remove('is-theme-dark');
+      html.classList.add('is__theme-light');
+      html.classList.remove('is__theme-dark');
       break;
 
     case 'dark':
-      html.classList.remove('is-theme-light');
-      html.classList.add('is-theme-dark');
+      html.classList.remove('is__theme-light');
+      html.classList.add('is__theme-dark');
       break;
   };
 };

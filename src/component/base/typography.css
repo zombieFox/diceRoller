@@ -108,16 +108,16 @@ strong {
   font-weight: var(--font-weight-bold);
 }
 
-.is-theme-light b::selection,
-.is-theme-light caption::selection,
-.is-theme-light strong::selection {
+.is__theme-light b::selection,
+.is__theme-light caption::selection,
+.is__theme-light strong::selection {
   color: rgb(var(--theme-white));
   background-color: hsl(var(--theme-secondary-300));
 }
 
-.is-theme-dark b::selection,
-.is-theme-dark caption::selection,
-.is-theme-dark strong::selection {
+.is__theme-dark b::selection,
+.is__theme-dark caption::selection,
+.is__theme-dark strong::selection {
   background-color: hsl(var(--theme-primary-300));
   color: rgb(var(--theme-white));
 }
@@ -171,11 +171,11 @@ a:before {
   width: calc(100% + 2em);
 }
 
-.is-theme-light a:focus:before {
+.is__theme-light a:focus:before {
   box-shadow: var(--theme-focus-orange);
 }
 
-.is-theme-dark a:focus:before {
+.is__theme-dark a:focus:before {
   box-shadow: 0 0 0 3px hsla(var(--theme-primary-500), 1), 0 0 0 6px hsla(var(--theme-primary-500), 0.5);
 }
 

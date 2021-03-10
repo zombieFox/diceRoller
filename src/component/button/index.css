@@ -68,27 +68,27 @@
   --button-text-disabled: var(--theme-secondary-600);
 }
 
-.is-theme-light .button__primary,
-.is-theme-light .button__secondary,
-.is-theme-light .button__danger,
-.is-theme-light .button__success {
+.is__theme-light .button__primary,
+.is__theme-light .button__secondary,
+.is__theme-light .button__danger,
+.is__theme-light .button__success {
   --theme-text: var(--theme-white);
 }
 
-.is-theme-dark .button__primary,
-.is-theme-dark .button__secondary,
-.is-theme-dark .button__danger,
-.is-theme-dark .button__success {
+.is__theme-dark .button__primary,
+.is__theme-dark .button__secondary,
+.is__theme-dark .button__danger,
+.is__theme-dark .button__success {
   --theme-text: var(--theme-black);
 }
 
-.is-theme-light .button__light,
-.is-theme-light .button__link {
+.is__theme-light .button__light,
+.is__theme-light .button__link {
   --theme-text: var(--theme-black);
 }
 
-.is-theme-dark .button__light,
-.is-theme-dark .button__link {
+.is__theme-dark .button__light,
+.is__theme-dark .button__link {
   --theme-text: var(--theme-white);
 }
 

@@ -1,51 +1,51 @@
-.is-hidden {
+.is__hidden {
   display: none !important;
 }
 
-.is-inline-block {
+.is__inline-block {
   display: inline-block !important;
 }
 
-.is-block {
+.is__block {
   display: block !important;
 }
 
-.is-transparent {
+.is__transparent {
   opacity: 0 !important;
 }
 
-.is-opaque {
+.is__opaque {
   opacity: 1 !important;
 }
 
-.is-invisible {
+.is__invisible {
   visibility: hidden !important;
 }
 
-.is-visible {
+.is__visible {
   visibility: visible !important;
 }
 
-.is-scroll-disabled {
+.is__scroll-disabled {
   overflow: hidden !important;
 }
 
-.is-small {
+.is__small {
   transform: scale(0.5) !important;
 }
 
-.is-large {
+.is__large {
   transform: scale(1.5) !important;
 }
 
-.is-shake {
+.is__shake {
   animation: shake var(--layout-transition-slow) 1;
 }
 
-.is-pop {
+.is__pop {
   animation: pop var(--layout-transition-slow) 1;
 }
 
-.is-appear {
+.is__appear {
   animation: appear var(--layout-transition-extra-fast) 1;
 }
