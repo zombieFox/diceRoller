@@ -157,6 +157,7 @@ fieldset:not(:last-child):not(:only-child):after {
   width: 100%;
 }
 
+.label,
 label {
   padding: 0;
   margin-bottom: 0;

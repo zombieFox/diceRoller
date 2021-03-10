@@ -274,7 +274,7 @@ theme.control.render = () => {
     ]),
     form.fieldset([
       form.group([
-        node('p:Colour')
+        node('p:Colour|class:label')
       ]),
       form.group([
         form.indent([
@@ -285,7 +285,7 @@ theme.control.render = () => {
     ]),
     form.fieldset([
       form.group([
-        node('p:Accent')
+        node('p:Accent|class:label')
       ]),
       form.group([
         form.indent([
