@@ -82,6 +82,7 @@ convertColor.hsl.rgb = function(hsl) {
   var t1 = 2 * l - t2;
 
   var rgb = [0, 0, 0];
+
   for (var i = 0; i < 3; i++) {
     t3 = h + 1 / 3 * -(i - 1);
     if (t3 < 0) {

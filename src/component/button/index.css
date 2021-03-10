@@ -100,7 +100,7 @@ input[type="submit"] {
   background-color: hsl(var(--button-background));
   padding: 0.25em 1.5em;
   margin: 0;
-  color: rgb(var(--button-text));
+  color: hsl(var(--button-text));
   font-size: 1em;
   font-family: var(--font-ui-name);
   font-weight: var(--font-weight-bold);
@@ -132,7 +132,7 @@ input[type="reset"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:hover {
   background-color: hsl(var(--button-background-focus-hover));
-  color: rgb(var(--button-text-focus-hover));
+  color: hsl(var(--button-text-focus-hover));
   outline: none;
   text-decoration: none;
 }
@@ -143,7 +143,7 @@ input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
   background-color: hsl(var(--button-background-active));
-  color: rgb(var(--button-text-active));
+  color: hsl(var(--button-text-active));
   outline: none;
   text-decoration: none;
   transition: none;
@@ -151,7 +151,7 @@ input[type="submit"]:active {
 
 button.button__active {
   background-color: hsl(var(--button-background-active));
-  color: rgb(var(--button-text-active));
+  color: hsl(var(--button-text-active));
 }
 
 button.disabled,

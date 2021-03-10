@@ -1,5 +1,6 @@
 import './index.css';
 import { node } from '../../utilities/node';
+import { convertColor } from '../../utilities/convertColor';
 import { data } from '../data';
 import { Button } from '../button';
 import { form, ControlRange } from '../form';
@@ -13,11 +14,12 @@ theme.state = {
   color: {
     range: {
       primary: { h: 210, s: 75 },
-      secondary: { h: 220, s: 30 },
+      secondary: { h: 225, s: 30 },
       success: { h: 150, s: 75 },
       danger: { h: 345, s: 75 }
     },
     lightness: {
+      shades: 9,
       start: 8,
       end: 92
     }
@@ -29,17 +31,25 @@ theme.variable = {};
 theme.variable.render = () => {
   const html = document.querySelector('html');
 
+  let shades = (theme.state.color.lightness.end - theme.state.color.lightness.start) / (theme.state.color.lightness.shades - 1);
+
   for (var type in theme.state.color.range) {
-    for (var colorValue in theme.state.color.range[type]) {
+    for (var i = 0; i < theme.state.color.lightness.shades; i++) {
+      let hsl = theme.state.color.range[type];
 
-      html.style.setProperty(`--theme-${type}-${colorValue}`, theme.state.color.range[type][colorValue]);
+      hsl.l = (shades * i) + theme.state.color.lightness.start;
 
+      let rgb = convertColor.hsl.rgb(hsl);
+
+      for (var key in rgb) {
+        html.style.setProperty(`--theme-${type}-${i + 1}-${key}`, Math.round(rgb[key]));
+      };
+
+      for (var key in hsl) {
+        html.style.setProperty(`--theme-${type}-${i + 1}-${key}`, Math.round(hsl[key]));
+      };
     };
   };
-
-  html.style.setProperty('--l-start', theme.state.color.lightness.start);
-
-  html.style.setProperty('--l-end', theme.state.color.lightness.end);
 };
 
 theme.style = {};

@@ -157,13 +157,13 @@
 }
 
 .result__critical-success {
-  background-color: hsl(var(--theme-success-400));
-  color: rgb(var(--theme-success-text-400));
+  background-color: hsl(var(--theme-success-500));
+  color: hsl(var(--theme-success-text-500));
 }
 
 .result__critical-failure {
-  background-color: hsl(var(--theme-danger-400));
-  color: rgb(var(--theme-danger-text-400));
+  background-color: hsl(var(--theme-danger-500));
+  color: hsl(var(--theme-danger-text-500));
 }
 
 .result__control {

@@ -18,56 +18,42 @@
 }
 
 :root {
-  --l-shades: 9;
-  --l-step: calc((var(--l-end) - var(--l-start)) / (var(--l-shades) - 1));
-  --l-100: calc((var(--l-step) * 0) + var(--l-start));
-  --l-200: calc((var(--l-step) * 1) + var(--l-start));
-  --l-300: calc((var(--l-step) * 2) + var(--l-start));
-  --l-400: calc((var(--l-step) * 3) + var(--l-start));
-  --l-500: calc((var(--l-step) * 4) + var(--l-start));
-  --l-600: calc((var(--l-step) * 5) + var(--l-start));
-  --l-700: calc((var(--l-step) * 6) + var(--l-start));
-  --l-800: calc((var(--l-step) * 7) + var(--l-start));
-  --l-900: calc((var(--l-step) * 8) + var(--l-start));
-}
-
-:root {
-  --theme-primary-1: var(--theme-primary-h), calc(var(--theme-primary-s) * 1%), calc(var(--l-100) * 1%);
-  --theme-primary-2: var(--theme-primary-h), calc(var(--theme-primary-s) * 1%), calc(var(--l-200) * 1%);
-  --theme-primary-3: var(--theme-primary-h), calc(var(--theme-primary-s) * 1%), calc(var(--l-300) * 1%);
-  --theme-primary-4: var(--theme-primary-h), calc(var(--theme-primary-s) * 1%), calc(var(--l-400) * 1%);
-  --theme-primary-5: var(--theme-primary-h), calc(var(--theme-primary-s) * 1%), calc(var(--l-500) * 1%);
-  --theme-primary-6: var(--theme-primary-h), calc(var(--theme-primary-s) * 1%), calc(var(--l-600) * 1%);
-  --theme-primary-7: var(--theme-primary-h), calc(var(--theme-primary-s) * 1%), calc(var(--l-700) * 1%);
-  --theme-primary-8: var(--theme-primary-h), calc(var(--theme-primary-s) * 1%), calc(var(--l-800) * 1%);
-  --theme-primary-9: var(--theme-primary-h), calc(var(--theme-primary-s) * 1%), calc(var(--l-900) * 1%);
-  --theme-secondary-1: var(--theme-secondary-h), calc(var(--theme-secondary-s) * 1%), calc(var(--l-100) * 1%);
-  --theme-secondary-2: var(--theme-secondary-h), calc(var(--theme-secondary-s) * 1%), calc(var(--l-200) * 1%);
-  --theme-secondary-3: var(--theme-secondary-h), calc(var(--theme-secondary-s) * 1%), calc(var(--l-300) * 1%);
-  --theme-secondary-4: var(--theme-secondary-h), calc(var(--theme-secondary-s) * 1%), calc(var(--l-400) * 1%);
-  --theme-secondary-5: var(--theme-secondary-h), calc(var(--theme-secondary-s) * 1%), calc(var(--l-500) * 1%);
-  --theme-secondary-6: var(--theme-secondary-h), calc(var(--theme-secondary-s) * 1%), calc(var(--l-600) * 1%);
-  --theme-secondary-7: var(--theme-secondary-h), calc(var(--theme-secondary-s) * 1%), calc(var(--l-700) * 1%);
-  --theme-secondary-8: var(--theme-secondary-h), calc(var(--theme-secondary-s) * 1%), calc(var(--l-800) * 1%);
-  --theme-secondary-9: var(--theme-secondary-h), calc(var(--theme-secondary-s) * 1%), calc(var(--l-900) * 1%);
-  --theme-success-1: var(--theme-success-h), calc(var(--theme-success-s) * 1%), calc(var(--l-100) * 1%);
-  --theme-success-2: var(--theme-success-h), calc(var(--theme-success-s) * 1%), calc(var(--l-200) * 1%);
-  --theme-success-3: var(--theme-success-h), calc(var(--theme-success-s) * 1%), calc(var(--l-300) * 1%);
-  --theme-success-4: var(--theme-success-h), calc(var(--theme-success-s) * 1%), calc(var(--l-400) * 1%);
-  --theme-success-5: var(--theme-success-h), calc(var(--theme-success-s) * 1%), calc(var(--l-500) * 1%);
-  --theme-success-6: var(--theme-success-h), calc(var(--theme-success-s) * 1%), calc(var(--l-600) * 1%);
-  --theme-success-7: var(--theme-success-h), calc(var(--theme-success-s) * 1%), calc(var(--l-700) * 1%);
-  --theme-success-8: var(--theme-success-h), calc(var(--theme-success-s) * 1%), calc(var(--l-800) * 1%);
-  --theme-success-9: var(--theme-success-h), calc(var(--theme-success-s) * 1%), calc(var(--l-900) * 1%);
-  --theme-danger-1: var(--theme-danger-h), calc(var(--theme-danger-s) * 1%), calc(var(--l-100) * 1%);
-  --theme-danger-2: var(--theme-danger-h), calc(var(--theme-danger-s) * 1%), calc(var(--l-200) * 1%);
-  --theme-danger-3: var(--theme-danger-h), calc(var(--theme-danger-s) * 1%), calc(var(--l-300) * 1%);
-  --theme-danger-4: var(--theme-danger-h), calc(var(--theme-danger-s) * 1%), calc(var(--l-400) * 1%);
-  --theme-danger-5: var(--theme-danger-h), calc(var(--theme-danger-s) * 1%), calc(var(--l-500) * 1%);
-  --theme-danger-6: var(--theme-danger-h), calc(var(--theme-danger-s) * 1%), calc(var(--l-600) * 1%);
-  --theme-danger-7: var(--theme-danger-h), calc(var(--theme-danger-s) * 1%), calc(var(--l-700) * 1%);
-  --theme-danger-8: var(--theme-danger-h), calc(var(--theme-danger-s) * 1%), calc(var(--l-800) * 1%);
-  --theme-danger-9: var(--theme-danger-h), calc(var(--theme-danger-s) * 1%), calc(var(--l-900) * 1%);
+  --theme-primary-1: var(--theme-primary-1-h), calc(var(--theme-primary-1-s) * 1%), calc(var(--theme-primary-1-l) * 1%);
+  --theme-primary-2: var(--theme-primary-2-h), calc(var(--theme-primary-2-s) * 1%), calc(var(--theme-primary-2-l) * 1%);
+  --theme-primary-3: var(--theme-primary-3-h), calc(var(--theme-primary-3-s) * 1%), calc(var(--theme-primary-3-l) * 1%);
+  --theme-primary-4: var(--theme-primary-4-h), calc(var(--theme-primary-4-s) * 1%), calc(var(--theme-primary-4-l) * 1%);
+  --theme-primary-5: var(--theme-primary-5-h), calc(var(--theme-primary-5-s) * 1%), calc(var(--theme-primary-5-l) * 1%);
+  --theme-primary-6: var(--theme-primary-6-h), calc(var(--theme-primary-6-s) * 1%), calc(var(--theme-primary-6-l) * 1%);
+  --theme-primary-7: var(--theme-primary-7-h), calc(var(--theme-primary-7-s) * 1%), calc(var(--theme-primary-7-l) * 1%);
+  --theme-primary-8: var(--theme-primary-8-h), calc(var(--theme-primary-8-s) * 1%), calc(var(--theme-primary-8-l) * 1%);
+  --theme-primary-9: var(--theme-primary-9-h), calc(var(--theme-primary-9-s) * 1%), calc(var(--theme-primary-9-l) * 1%);
+  --theme-secondary-1: var(--theme-secondary-1-h), calc(var(--theme-secondary-1-s) * 1%), calc(var(--theme-secondary-1-l) * 1%);
+  --theme-secondary-2: var(--theme-secondary-2-h), calc(var(--theme-secondary-2-s) * 1%), calc(var(--theme-secondary-2-l) * 1%);
+  --theme-secondary-3: var(--theme-secondary-3-h), calc(var(--theme-secondary-3-s) * 1%), calc(var(--theme-secondary-3-l) * 1%);
+  --theme-secondary-4: var(--theme-secondary-4-h), calc(var(--theme-secondary-4-s) * 1%), calc(var(--theme-secondary-4-l) * 1%);
+  --theme-secondary-5: var(--theme-secondary-5-h), calc(var(--theme-secondary-5-s) * 1%), calc(var(--theme-secondary-5-l) * 1%);
+  --theme-secondary-6: var(--theme-secondary-6-h), calc(var(--theme-secondary-6-s) * 1%), calc(var(--theme-secondary-6-l) * 1%);
+  --theme-secondary-7: var(--theme-secondary-7-h), calc(var(--theme-secondary-7-s) * 1%), calc(var(--theme-secondary-7-l) * 1%);
+  --theme-secondary-8: var(--theme-secondary-8-h), calc(var(--theme-secondary-8-s) * 1%), calc(var(--theme-secondary-8-l) * 1%);
+  --theme-secondary-9: var(--theme-secondary-9-h), calc(var(--theme-secondary-9-s) * 1%), calc(var(--theme-secondary-9-l) * 1%);
+  --theme-success-1: var(--theme-success-1-h), calc(var(--theme-success-1-s) * 1%), calc(var(--theme-success-1-l) * 1%);
+  --theme-success-2: var(--theme-success-2-h), calc(var(--theme-success-2-s) * 1%), calc(var(--theme-success-2-l) * 1%);
+  --theme-success-3: var(--theme-success-3-h), calc(var(--theme-success-3-s) * 1%), calc(var(--theme-success-3-l) * 1%);
+  --theme-success-4: var(--theme-success-4-h), calc(var(--theme-success-4-s) * 1%), calc(var(--theme-success-4-l) * 1%);
+  --theme-success-5: var(--theme-success-5-h), calc(var(--theme-success-5-s) * 1%), calc(var(--theme-success-5-l) * 1%);
+  --theme-success-6: var(--theme-success-6-h), calc(var(--theme-success-6-s) * 1%), calc(var(--theme-success-6-l) * 1%);
+  --theme-success-7: var(--theme-success-7-h), calc(var(--theme-success-7-s) * 1%), calc(var(--theme-success-7-l) * 1%);
+  --theme-success-8: var(--theme-success-8-h), calc(var(--theme-success-8-s) * 1%), calc(var(--theme-success-8-l) * 1%);
+  --theme-success-9: var(--theme-success-9-h), calc(var(--theme-success-9-s) * 1%), calc(var(--theme-success-9-l) * 1%);
+  --theme-danger-1: var(--theme-danger-1-h), calc(var(--theme-danger-1-s) * 1%), calc(var(--theme-danger-1-l) * 1%);
+  --theme-danger-2: var(--theme-danger-2-h), calc(var(--theme-danger-2-s) * 1%), calc(var(--theme-danger-2-l) * 1%);
+  --theme-danger-3: var(--theme-danger-3-h), calc(var(--theme-danger-3-s) * 1%), calc(var(--theme-danger-3-l) * 1%);
+  --theme-danger-4: var(--theme-danger-4-h), calc(var(--theme-danger-4-s) * 1%), calc(var(--theme-danger-4-l) * 1%);
+  --theme-danger-5: var(--theme-danger-5-h), calc(var(--theme-danger-5-s) * 1%), calc(var(--theme-danger-5-l) * 1%);
+  --theme-danger-6: var(--theme-danger-6-h), calc(var(--theme-danger-6-s) * 1%), calc(var(--theme-danger-6-l) * 1%);
+  --theme-danger-7: var(--theme-danger-7-h), calc(var(--theme-danger-7-s) * 1%), calc(var(--theme-danger-7-l) * 1%);
+  --theme-danger-8: var(--theme-danger-8-h), calc(var(--theme-danger-8-s) * 1%), calc(var(--theme-danger-8-l) * 1%);
+  --theme-danger-9: var(--theme-danger-9-h), calc(var(--theme-danger-9-s) * 1%), calc(var(--theme-danger-9-l) * 1%);
 }
 
 .is-theme-dark {
@@ -80,15 +66,6 @@
   --theme-primary-700: var(--theme-primary-3);
   --theme-primary-800: var(--theme-primary-2);
   --theme-primary-900: var(--theme-primary-1);
-  --theme-primary-text-100: var(--theme-black);
-  --theme-primary-text-200: var(--theme-black);
-  --theme-primary-text-300: var(--theme-black);
-  --theme-primary-text-400: var(--theme-black);
-  --theme-primary-text-500: var(--theme-black);
-  --theme-primary-text-600: var(--theme-white);
-  --theme-primary-text-700: var(--theme-white);
-  --theme-primary-text-800: var(--theme-white);
-  --theme-primary-text-900: var(--theme-white);
   --theme-secondary-100: var(--theme-secondary-9);
   --theme-secondary-200: var(--theme-secondary-8);
   --theme-secondary-300: var(--theme-secondary-7);
@@ -98,15 +75,6 @@
   --theme-secondary-700: var(--theme-secondary-3);
   --theme-secondary-800: var(--theme-secondary-2);
   --theme-secondary-900: var(--theme-secondary-1);
-  --theme-secondary-text-100: var(--theme-black);
-  --theme-secondary-text-200: var(--theme-black);
-  --theme-secondary-text-300: var(--theme-black);
-  --theme-secondary-text-400: var(--theme-black);
-  --theme-secondary-text-500: var(--theme-white);
-  --theme-secondary-text-600: var(--theme-white);
-  --theme-secondary-text-700: var(--theme-white);
-  --theme-secondary-text-800: var(--theme-white);
-  --theme-secondary-text-900: var(--theme-white);
   --theme-success-100: var(--theme-success-9);
   --theme-success-200: var(--theme-success-8);
   --theme-success-300: var(--theme-success-7);
@@ -116,15 +84,6 @@
   --theme-success-700: var(--theme-success-3);
   --theme-success-800: var(--theme-success-2);
   --theme-success-900: var(--theme-success-1);
-  --theme-success-text-100: var(--theme-black);
-  --theme-success-text-200: var(--theme-black);
-  --theme-success-text-300: var(--theme-black);
-  --theme-success-text-400: var(--theme-black);
-  --theme-success-text-500: var(--theme-black);
-  --theme-success-text-600: var(--theme-black);
-  --theme-success-text-700: var(--theme-white);
-  --theme-success-text-800: var(--theme-white);
-  --theme-success-text-900: var(--theme-white);
   --theme-danger-100: var(--theme-danger-9);
   --theme-danger-200: var(--theme-danger-8);
   --theme-danger-300: var(--theme-danger-7);
@@ -134,15 +93,6 @@
   --theme-danger-700: var(--theme-danger-3);
   --theme-danger-800: var(--theme-danger-2);
   --theme-danger-900: var(--theme-danger-1);
-  --theme-danger-text-100: var(--theme-black);
-  --theme-danger-text-200: var(--theme-black);
-  --theme-danger-text-300: var(--theme-black);
-  --theme-danger-text-400: var(--theme-black);
-  --theme-danger-text-500: var(--theme-white);
-  --theme-danger-text-600: var(--theme-white);
-  --theme-danger-text-700: var(--theme-white);
-  --theme-danger-text-800: var(--theme-white);
-  --theme-danger-text-900: var(--theme-white);
 }
 
 .is-theme-light {
@@ -155,15 +105,6 @@
   --theme-primary-700: var(--theme-primary-7);
   --theme-primary-800: var(--theme-primary-8);
   --theme-primary-900: var(--theme-primary-9);
-  --theme-primary-text-100: var(--theme-white);
-  --theme-primary-text-200: var(--theme-white);
-  --theme-primary-text-300: var(--theme-white);
-  --theme-primary-text-400: var(--theme-white);
-  --theme-primary-text-500: var(--theme-black);
-  --theme-primary-text-600: var(--theme-black);
-  --theme-primary-text-700: var(--theme-black);
-  --theme-primary-text-800: var(--theme-black);
-  --theme-primary-text-900: var(--theme-black);
   --theme-secondary-100: var(--theme-secondary-1);
   --theme-secondary-200: var(--theme-secondary-2);
   --theme-secondary-300: var(--theme-secondary-3);
@@ -173,15 +114,6 @@
   --theme-secondary-700: var(--theme-secondary-7);
   --theme-secondary-800: var(--theme-secondary-8);
   --theme-secondary-900: var(--theme-secondary-9);
-  --theme-secondary-text-100: var(--theme-white);
-  --theme-secondary-text-200: var(--theme-white);
-  --theme-secondary-text-300: var(--theme-white);
-  --theme-secondary-text-400: var(--theme-white);
-  --theme-secondary-text-500: var(--theme-white);
-  --theme-secondary-text-600: var(--theme-black);
-  --theme-secondary-text-700: var(--theme-black);
-  --theme-secondary-text-800: var(--theme-black);
-  --theme-secondary-text-900: var(--theme-black);
   --theme-success-100: var(--theme-success-1);
   --theme-success-200: var(--theme-success-2);
   --theme-success-300: var(--theme-success-3);
@@ -191,15 +123,6 @@
   --theme-success-700: var(--theme-success-7);
   --theme-success-800: var(--theme-success-8);
   --theme-success-900: var(--theme-success-9);
-  --theme-success-text-100: var(--theme-white);
-  --theme-success-text-200: var(--theme-white);
-  --theme-success-text-300: var(--theme-white);
-  --theme-success-text-400: var(--theme-black);
-  --theme-success-text-500: var(--theme-black);
-  --theme-success-text-600: var(--theme-black);
-  --theme-success-text-700: var(--theme-black);
-  --theme-success-text-800: var(--theme-black);
-  --theme-success-text-900: var(--theme-black);
   --theme-danger-100: var(--theme-danger-1);
   --theme-danger-200: var(--theme-danger-2);
   --theme-danger-300: var(--theme-danger-3);
@@ -209,15 +132,91 @@
   --theme-danger-700: var(--theme-danger-7);
   --theme-danger-800: var(--theme-danger-8);
   --theme-danger-900: var(--theme-danger-9);
-  --theme-danger-text-100: var(--theme-white);
-  --theme-danger-text-200: var(--theme-white);
-  --theme-danger-text-300: var(--theme-white);
-  --theme-danger-text-400: var(--theme-white);
-  --theme-danger-text-500: var(--theme-white);
-  --theme-danger-text-600: var(--theme-black);
-  --theme-danger-text-700: var(--theme-black);
-  --theme-danger-text-800: var(--theme-black);
-  --theme-danger-text-900: var(--theme-black);
+}
+
+:root {
+  --theme-t: 0.5;
+  --theme-t-r: 0.2126;
+  --theme-t-g: 0.7152;
+  --theme-t-b: 0.0722;
+}
+
+.is-theme-light {
+  --theme-primary-text-100: 0, 0%, calc(((((var(--theme-primary-1-r) * var(--theme-t-r)) + (var(--theme-primary-1-g) * var(--theme-t-g)) + (var(--theme-primary-1-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-200: 0, 0%, calc(((((var(--theme-primary-2-r) * var(--theme-t-r)) + (var(--theme-primary-2-g) * var(--theme-t-g)) + (var(--theme-primary-2-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-300: 0, 0%, calc(((((var(--theme-primary-3-r) * var(--theme-t-r)) + (var(--theme-primary-3-g) * var(--theme-t-g)) + (var(--theme-primary-3-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-400: 0, 0%, calc(((((var(--theme-primary-4-r) * var(--theme-t-r)) + (var(--theme-primary-4-g) * var(--theme-t-g)) + (var(--theme-primary-4-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-500: 0, 0%, calc(((((var(--theme-primary-5-r) * var(--theme-t-r)) + (var(--theme-primary-5-g) * var(--theme-t-g)) + (var(--theme-primary-5-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-600: 0, 0%, calc(((((var(--theme-primary-6-r) * var(--theme-t-r)) + (var(--theme-primary-6-g) * var(--theme-t-g)) + (var(--theme-primary-6-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-700: 0, 0%, calc(((((var(--theme-primary-7-r) * var(--theme-t-r)) + (var(--theme-primary-7-g) * var(--theme-t-g)) + (var(--theme-primary-7-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-800: 0, 0%, calc(((((var(--theme-primary-8-r) * var(--theme-t-r)) + (var(--theme-primary-8-g) * var(--theme-t-g)) + (var(--theme-primary-8-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-900: 0, 0%, calc(((((var(--theme-primary-9-r) * var(--theme-t-r)) + (var(--theme-primary-9-g) * var(--theme-t-g)) + (var(--theme-primary-9-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-100: 0, 0%, calc(((((var(--theme-secondary-1-r) * var(--theme-t-r)) + (var(--theme-secondary-1-g) * var(--theme-t-g)) + (var(--theme-secondary-1-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-200: 0, 0%, calc(((((var(--theme-secondary-2-r) * var(--theme-t-r)) + (var(--theme-secondary-2-g) * var(--theme-t-g)) + (var(--theme-secondary-2-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-300: 0, 0%, calc(((((var(--theme-secondary-3-r) * var(--theme-t-r)) + (var(--theme-secondary-3-g) * var(--theme-t-g)) + (var(--theme-secondary-3-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-400: 0, 0%, calc(((((var(--theme-secondary-4-r) * var(--theme-t-r)) + (var(--theme-secondary-4-g) * var(--theme-t-g)) + (var(--theme-secondary-4-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-500: 0, 0%, calc(((((var(--theme-secondary-5-r) * var(--theme-t-r)) + (var(--theme-secondary-5-g) * var(--theme-t-g)) + (var(--theme-secondary-5-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-600: 0, 0%, calc(((((var(--theme-secondary-6-r) * var(--theme-t-r)) + (var(--theme-secondary-6-g) * var(--theme-t-g)) + (var(--theme-secondary-6-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-700: 0, 0%, calc(((((var(--theme-secondary-7-r) * var(--theme-t-r)) + (var(--theme-secondary-7-g) * var(--theme-t-g)) + (var(--theme-secondary-7-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-800: 0, 0%, calc(((((var(--theme-secondary-8-r) * var(--theme-t-r)) + (var(--theme-secondary-8-g) * var(--theme-t-g)) + (var(--theme-secondary-8-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-900: 0, 0%, calc(((((var(--theme-secondary-9-r) * var(--theme-t-r)) + (var(--theme-secondary-9-g) * var(--theme-t-g)) + (var(--theme-secondary-9-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-100: 0, 0%, calc(((((var(--theme-success-1-r) * var(--theme-t-r)) + (var(--theme-success-1-g) * var(--theme-t-g)) + (var(--theme-success-1-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-200: 0, 0%, calc(((((var(--theme-success-2-r) * var(--theme-t-r)) + (var(--theme-success-2-g) * var(--theme-t-g)) + (var(--theme-success-2-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-300: 0, 0%, calc(((((var(--theme-success-3-r) * var(--theme-t-r)) + (var(--theme-success-3-g) * var(--theme-t-g)) + (var(--theme-success-3-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-400: 0, 0%, calc(((((var(--theme-success-4-r) * var(--theme-t-r)) + (var(--theme-success-4-g) * var(--theme-t-g)) + (var(--theme-success-4-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-500: 0, 0%, calc(((((var(--theme-success-5-r) * var(--theme-t-r)) + (var(--theme-success-5-g) * var(--theme-t-g)) + (var(--theme-success-5-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-600: 0, 0%, calc(((((var(--theme-success-6-r) * var(--theme-t-r)) + (var(--theme-success-6-g) * var(--theme-t-g)) + (var(--theme-success-6-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-700: 0, 0%, calc(((((var(--theme-success-7-r) * var(--theme-t-r)) + (var(--theme-success-7-g) * var(--theme-t-g)) + (var(--theme-success-7-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-800: 0, 0%, calc(((((var(--theme-success-8-r) * var(--theme-t-r)) + (var(--theme-success-8-g) * var(--theme-t-g)) + (var(--theme-success-8-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-900: 0, 0%, calc(((((var(--theme-success-9-r) * var(--theme-t-r)) + (var(--theme-success-9-g) * var(--theme-t-g)) + (var(--theme-success-9-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-100: 0, 0%, calc(((((var(--theme-danger-1-r) * var(--theme-t-r)) + (var(--theme-danger-1-g) * var(--theme-t-g)) + (var(--theme-danger-1-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-200: 0, 0%, calc(((((var(--theme-danger-2-r) * var(--theme-t-r)) + (var(--theme-danger-2-g) * var(--theme-t-g)) + (var(--theme-danger-2-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-300: 0, 0%, calc(((((var(--theme-danger-3-r) * var(--theme-t-r)) + (var(--theme-danger-3-g) * var(--theme-t-g)) + (var(--theme-danger-3-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-400: 0, 0%, calc(((((var(--theme-danger-4-r) * var(--theme-t-r)) + (var(--theme-danger-4-g) * var(--theme-t-g)) + (var(--theme-danger-4-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-500: 0, 0%, calc(((((var(--theme-danger-5-r) * var(--theme-t-r)) + (var(--theme-danger-5-g) * var(--theme-t-g)) + (var(--theme-danger-5-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-600: 0, 0%, calc(((((var(--theme-danger-6-r) * var(--theme-t-r)) + (var(--theme-danger-6-g) * var(--theme-t-g)) + (var(--theme-danger-6-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-700: 0, 0%, calc(((((var(--theme-danger-7-r) * var(--theme-t-r)) + (var(--theme-danger-7-g) * var(--theme-t-g)) + (var(--theme-danger-7-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-800: 0, 0%, calc(((((var(--theme-danger-8-r) * var(--theme-t-r)) + (var(--theme-danger-8-g) * var(--theme-t-g)) + (var(--theme-danger-8-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-900: 0, 0%, calc(((((var(--theme-danger-9-r) * var(--theme-t-r)) + (var(--theme-danger-9-g) * var(--theme-t-g)) + (var(--theme-danger-9-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+}
+
+.is-theme-dark {
+  --theme-primary-text-100: 0, 0%, calc(((((var(--theme-primary-9-r) * var(--theme-t-r)) + (var(--theme-primary-9-g) * var(--theme-t-g)) + (var(--theme-primary-9-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-200: 0, 0%, calc(((((var(--theme-primary-8-r) * var(--theme-t-r)) + (var(--theme-primary-8-g) * var(--theme-t-g)) + (var(--theme-primary-8-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-300: 0, 0%, calc(((((var(--theme-primary-7-r) * var(--theme-t-r)) + (var(--theme-primary-7-g) * var(--theme-t-g)) + (var(--theme-primary-7-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-400: 0, 0%, calc(((((var(--theme-primary-6-r) * var(--theme-t-r)) + (var(--theme-primary-6-g) * var(--theme-t-g)) + (var(--theme-primary-6-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-500: 0, 0%, calc(((((var(--theme-primary-5-r) * var(--theme-t-r)) + (var(--theme-primary-5-g) * var(--theme-t-g)) + (var(--theme-primary-5-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-600: 0, 0%, calc(((((var(--theme-primary-4-r) * var(--theme-t-r)) + (var(--theme-primary-4-g) * var(--theme-t-g)) + (var(--theme-primary-4-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-700: 0, 0%, calc(((((var(--theme-primary-3-r) * var(--theme-t-r)) + (var(--theme-primary-3-g) * var(--theme-t-g)) + (var(--theme-primary-3-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-800: 0, 0%, calc(((((var(--theme-primary-2-r) * var(--theme-t-r)) + (var(--theme-primary-2-g) * var(--theme-t-g)) + (var(--theme-primary-2-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-primary-text-900: 0, 0%, calc(((((var(--theme-primary-1-r) * var(--theme-t-r)) + (var(--theme-primary-1-g) * var(--theme-t-g)) + (var(--theme-primary-1-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-100: 0, 0%, calc(((((var(--theme-secondary-9-r) * var(--theme-t-r)) + (var(--theme-secondary-9-g) * var(--theme-t-g)) + (var(--theme-secondary-9-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-200: 0, 0%, calc(((((var(--theme-secondary-8-r) * var(--theme-t-r)) + (var(--theme-secondary-8-g) * var(--theme-t-g)) + (var(--theme-secondary-8-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-300: 0, 0%, calc(((((var(--theme-secondary-7-r) * var(--theme-t-r)) + (var(--theme-secondary-7-g) * var(--theme-t-g)) + (var(--theme-secondary-7-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-400: 0, 0%, calc(((((var(--theme-secondary-6-r) * var(--theme-t-r)) + (var(--theme-secondary-6-g) * var(--theme-t-g)) + (var(--theme-secondary-6-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-500: 0, 0%, calc(((((var(--theme-secondary-5-r) * var(--theme-t-r)) + (var(--theme-secondary-5-g) * var(--theme-t-g)) + (var(--theme-secondary-5-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-600: 0, 0%, calc(((((var(--theme-secondary-4-r) * var(--theme-t-r)) + (var(--theme-secondary-4-g) * var(--theme-t-g)) + (var(--theme-secondary-4-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-700: 0, 0%, calc(((((var(--theme-secondary-3-r) * var(--theme-t-r)) + (var(--theme-secondary-3-g) * var(--theme-t-g)) + (var(--theme-secondary-3-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-800: 0, 0%, calc(((((var(--theme-secondary-2-r) * var(--theme-t-r)) + (var(--theme-secondary-2-g) * var(--theme-t-g)) + (var(--theme-secondary-2-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-secondary-text-900: 0, 0%, calc(((((var(--theme-secondary-1-r) * var(--theme-t-r)) + (var(--theme-secondary-1-g) * var(--theme-t-g)) + (var(--theme-secondary-1-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-100: 0, 0%, calc(((((var(--theme-success-9-r) * var(--theme-t-r)) + (var(--theme-success-9-g) * var(--theme-t-g)) + (var(--theme-success-9-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-200: 0, 0%, calc(((((var(--theme-success-8-r) * var(--theme-t-r)) + (var(--theme-success-8-g) * var(--theme-t-g)) + (var(--theme-success-8-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-300: 0, 0%, calc(((((var(--theme-success-7-r) * var(--theme-t-r)) + (var(--theme-success-7-g) * var(--theme-t-g)) + (var(--theme-success-7-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-400: 0, 0%, calc(((((var(--theme-success-6-r) * var(--theme-t-r)) + (var(--theme-success-6-g) * var(--theme-t-g)) + (var(--theme-success-6-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-500: 0, 0%, calc(((((var(--theme-success-5-r) * var(--theme-t-r)) + (var(--theme-success-5-g) * var(--theme-t-g)) + (var(--theme-success-5-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-600: 0, 0%, calc(((((var(--theme-success-4-r) * var(--theme-t-r)) + (var(--theme-success-4-g) * var(--theme-t-g)) + (var(--theme-success-4-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-700: 0, 0%, calc(((((var(--theme-success-3-r) * var(--theme-t-r)) + (var(--theme-success-3-g) * var(--theme-t-g)) + (var(--theme-success-3-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-800: 0, 0%, calc(((((var(--theme-success-2-r) * var(--theme-t-r)) + (var(--theme-success-2-g) * var(--theme-t-g)) + (var(--theme-success-2-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-success-text-900: 0, 0%, calc(((((var(--theme-success-1-r) * var(--theme-t-r)) + (var(--theme-success-1-g) * var(--theme-t-g)) + (var(--theme-success-1-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-100: 0, 0%, calc(((((var(--theme-danger-9-r) * var(--theme-t-r)) + (var(--theme-danger-9-g) * var(--theme-t-g)) + (var(--theme-danger-9-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-200: 0, 0%, calc(((((var(--theme-danger-8-r) * var(--theme-t-r)) + (var(--theme-danger-8-g) * var(--theme-t-g)) + (var(--theme-danger-8-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-300: 0, 0%, calc(((((var(--theme-danger-7-r) * var(--theme-t-r)) + (var(--theme-danger-7-g) * var(--theme-t-g)) + (var(--theme-danger-7-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-400: 0, 0%, calc(((((var(--theme-danger-6-r) * var(--theme-t-r)) + (var(--theme-danger-6-g) * var(--theme-t-g)) + (var(--theme-danger-6-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-500: 0, 0%, calc(((((var(--theme-danger-5-r) * var(--theme-t-r)) + (var(--theme-danger-5-g) * var(--theme-t-g)) + (var(--theme-danger-5-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-600: 0, 0%, calc(((((var(--theme-danger-4-r) * var(--theme-t-r)) + (var(--theme-danger-4-g) * var(--theme-t-g)) + (var(--theme-danger-4-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-700: 0, 0%, calc(((((var(--theme-danger-3-r) * var(--theme-t-r)) + (var(--theme-danger-3-g) * var(--theme-t-g)) + (var(--theme-danger-3-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-800: 0, 0%, calc(((((var(--theme-danger-2-r) * var(--theme-t-r)) + (var(--theme-danger-2-g) * var(--theme-t-g)) + (var(--theme-danger-2-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
+  --theme-danger-text-900: 0, 0%, calc(((((var(--theme-danger-1-r) * var(--theme-t-r)) + (var(--theme-danger-1-g) * var(--theme-t-g)) + (var(--theme-danger-1-b) * var(--theme-t-b))) / 255) - var(--theme-t)) * -10000000%);
 }
 
 :root {
@@ -228,11 +227,11 @@
 }
 
 .is-theme-light {
-  --theme-secondary-shadow: 0 2em 28em hsla(var(--theme-secondary-h), calc(var(--theme-secondary-s) * 1%), 50%, 0.5);
+  --theme-secondary-shadow: 0 2em 28em hsla(var(--theme-secondary-1-h), calc(var(--theme-secondary-1-s) * 1%), 50%, 0.5);
 }
 
 .is-theme-dark {
-  --theme-secondary-shadow: 0 2em 28em hsla(var(--theme-secondary-h), calc(var(--theme-secondary-s) * 1%), 0%, 0.5);
+  --theme-secondary-shadow: 0 2em 28em hsla(var(--theme-secondary-1-h), calc(var(--theme-secondary-1-s) * 1%), 0%, 0.5);
 }
 
 :root {
