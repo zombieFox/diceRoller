@@ -36,7 +36,7 @@ theme.variable.render = () => {
 
   for (var type in theme.state.color.range) {
     for (var i = 0; i < theme.state.color.lightness.shades; i++) {
-      let hsl = theme.state.color.range[type];
+      let hsl = JSON.parse(JSON.stringify(theme.state.color.range[type]));
 
       hsl.l = (shades * i) + theme.state.color.lightness.start;
 
