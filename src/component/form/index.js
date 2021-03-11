@@ -88,7 +88,7 @@ form.range = ({ id = false, min = false, max = false, value = false, classList =
   return input;
 };
 
-const ControlRange = function({ id = 'name', label = 'Name', value = false, defaultValue = false, min = false, max = false, classList = [], action = false} = {}) {
+const ControlRange = function({ id = 'name', label = 'Name', value = false, defaultValue = false, min = false, max = false, classList = [], action = false } = {}) {
   this.label = form.label({
     id: id,
     text: label
@@ -103,19 +103,23 @@ const ControlRange = function({ id = 'name', label = 'Name', value = false, defa
     action: action
   });
 
-  this.wrap = form.wrap([
-    this.label,
-    this.range
-  ]);
-
-  this.group = form.group([
-    form.wrap([
-      this.label
-    ], ['form__group-item-text']),
-    form.wrap([
+  this.wrap = () => {
+    return form.wrap([
+      this.label,
       this.range
-    ], ['form__group-item-grow'])
-  ]);
+    ]);
+  };
+
+  this.group = () => {
+    return form.group([
+      form.wrap([
+        this.label
+      ], ['form__group-item-text']),
+      form.wrap([
+        this.range
+      ], ['form__group-item-grow'])
+    ]);
+  };
 
   this.disable = () => {
     this.label.classList.add('disabled');

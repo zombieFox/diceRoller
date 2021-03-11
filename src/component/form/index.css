@@ -127,13 +127,13 @@ fieldset:not(:last-child):not(:only-child):after {
   margin-bottom: var(--form-wrap-space);
 }
 
-.form__group .form__wrap {
+.form__group>.form__wrap {
   display: flex;
   align-items: center;
 }
 
-.form__group .form__wrap:not(:first-child),
-.form__group .form__wrap:not(:last-child) {
+.form__group>.form__wrap:not(:first-child),
+.form__group>.form__wrap:not(:last-child) {
   margin-top: 0;
   margin-bottom: 0;
 }

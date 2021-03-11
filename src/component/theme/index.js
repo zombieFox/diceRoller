@@ -165,7 +165,7 @@ theme.control = {};
 theme.control.render = () => {
   const themePrimaryH = new ControlRange({
     id: 'theme-primary-h',
-    label: 'Hue',
+    label: 'Accent',
     value: theme.state.color.range.primary.h,
     min: 1,
     max: 360,
@@ -196,7 +196,7 @@ theme.control.render = () => {
 
   const themeSecondaryH = new ControlRange({
     id: 'theme-secondary-h',
-    label: 'Hue',
+    label: 'Color',
     value: theme.state.color.range.secondary.h,
     min: 1,
     max: 360,
@@ -268,29 +268,15 @@ theme.control.render = () => {
       theme.toggle.render()
     ]),
     form.fieldset([
-      contrast.group
+      themeSecondaryH.group(),
+      themeSecondaryS.group()
     ]),
     form.fieldset([
-      form.group([
-        node('p:Colour|class:label')
-      ]),
-      form.group([
-        form.indent([
-          themeSecondaryH.group,
-          themeSecondaryS.group
-        ])
-      ]),
+      themePrimaryH.group(),
+      themePrimaryS.group()
     ]),
     form.fieldset([
-      form.group([
-        node('p:Accent|class:label')
-      ]),
-      form.group([
-        form.indent([
-          themePrimaryH.group,
-          themePrimaryS.group
-        ])
-      ])
+      contrast.group()
     ]),
     form.fieldset([
       reset.button
