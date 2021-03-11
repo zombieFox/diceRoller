@@ -10,12 +10,12 @@
 
 .formula__body {
   background-color: hsl(var(--base-card-background));
+  border: var(--base-card-border);
   display: grid;
   grid-template-columns: 100%;
   z-index: 1;
   border-radius: calc(var(--theme-radius) * 8);
-  box-shadow: var(--theme-secondary-shadow);
-  transition: background-color var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
+  transition: background-color var(--layout-transition-extra-fast), border var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
 }
 
 .formula__control {
@@ -34,7 +34,7 @@
 }
 
 .formula__set:not(:last-child):not(:only-child) {
-  border-bottom: 1px solid hsl(var(--theme-secondary-800));
+  border-bottom: var(--base-card-border);
   transition: border-bottom var(--layout-transition-extra-fast);
 }
 

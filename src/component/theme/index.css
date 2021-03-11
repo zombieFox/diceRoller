@@ -228,7 +228,7 @@
 }
 
 .is__theme-light {
-  --theme-secondary-shadow: 0 2em 28em hsla(var(--theme-secondary-1-h), calc(var(--theme-secondary-1-s) * 1%), 50%, 0.5);
+  --theme-secondary-shadow: 0 2em 28em hsla(var(--theme-secondary-1-h), calc(var(--theme-secondary-1-s) * 1%), 25%, 0.5);
 }
 
 .is__theme-dark {

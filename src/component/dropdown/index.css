@@ -14,6 +14,7 @@
 .dropdown__panel {
   background-color: hsl(var(--base-card-background));
   padding: var(--layout-gutter);
+  border: var(--base-card-border);
   border-radius: calc(var(--theme-radius) * 4);
   min-width: 4em;
   min-height: 4em;
@@ -26,7 +27,7 @@
   display: flex;
   z-index: var(--zindex-dropdown);
   transform-origin: center;
-  transition: background-color var(--layout-transition-extra-fast), opacity var(--layout-transition-extra-fast), transform var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
+  transition: background-color var(--layout-transition-extra-fast), border var(--layout-transition-extra-fast), opacity var(--layout-transition-extra-fast), transform var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
 }
 
 @media (min-width: 800px) {
