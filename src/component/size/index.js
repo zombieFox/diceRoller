@@ -51,12 +51,12 @@ size.render = (state, id) => {
 
   select.addEventListener('touchstart', (event) => {
     currentIndex = select.selectedIndex;
-    select.focus();
+    // select.focus();
   }, { passive: true });
 
   select.addEventListener('touchend', (event) => {
     currentIndex = null;
-    select.blur();
+    // select.blur();
   }, { passive: true });
 
   select.addEventListener('touchmove', (event) => {
