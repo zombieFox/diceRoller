@@ -268,9 +268,7 @@ theme.control.render = () => {
       theme.toggle.render()
     ]),
     form.fieldset([
-      form.group([
-        contrast.group,
-      ])
+      contrast.group
     ]),
     form.fieldset([
       form.group([
@@ -295,9 +293,7 @@ theme.control.render = () => {
       ])
     ]),
     form.fieldset([
-      form.group([
-        reset.button
-      ])
+      reset.button
     ])
   ])
 };
