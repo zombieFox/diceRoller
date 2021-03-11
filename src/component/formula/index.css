@@ -1,6 +1,6 @@
 :root {
   --formula-size: 2.5em;
-  --formula-input-height: 2.5em;
+  --formula-input-height: var(--formula-size);
 }
 
 .formula {
@@ -112,6 +112,16 @@
   }
 }
 
+.formula__size-text {
+  font-size: var(--formula-size);
+  line-height: calc(var(--formula-input-height) / 2);
+  height: calc(var(--formula-input-height) / 2);
+  font-family: var(--font-display-name);
+  font-weight: var(--font-weight-extra-light);
+  font-style: var(--font-display-style);
+  border-radius: calc(var(--theme-radius) / 2);
+}
+
 .formula__size-icon {
   font-size: 0.75em;
 }
@@ -158,19 +168,6 @@
   text-align: left;
 }
 
-@media (min-width: 800px) {
-
-  .formula__count-input,
-  .formula__count-input[type=number],
-  .formula__count-input[type=text],
-  .formula__modifier-input,
-  .formula__modifier-input[type=number],
-  .formula__modifier-input[type=text] {
-    font-size: 3em;
-  }
-}
-
-.formula__size-text,
 .formula__count-input,
 .formula__count-input[type=number],
 .formula__count-input[type=text],
@@ -178,8 +175,7 @@
 .formula__modifier-input[type=number],
 .formula__modifier-input[type=text] {
   font-size: var(--formula-size);
-  line-height: var(--formula-input-height);
-  height: var(--formula-input-height);
+  line-height: calc(var(--formula-input-height) / 2);
   font-family: var(--font-display-name);
   font-weight: var(--font-weight-extra-light);
   font-style: var(--font-display-style);
