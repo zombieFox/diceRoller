@@ -109,9 +109,9 @@ result.full.render = () => {
   const html = document.querySelector('html');
 
   if (result.state.full) {
-    html.classList.add('is-result-full');
+    html.classList.add('is__result-full');
   } else {
-    html.classList.remove('is-result-full');
+    html.classList.remove('is__result-full');
   };
 };
 

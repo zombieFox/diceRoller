@@ -149,7 +149,7 @@
 }
 
 .layout__result {
-  background-color: hsl(var(--theme-secondary-700));
+  background-color: hsl(var(--base-card-background));
   overflow-y: auto;
   width: 100%;
   height: var(--layout-result-height);
@@ -163,8 +163,7 @@
 }
 
 @media (max-width: 800px) {
-  .is-result-full .layout__result {
-    background-color: hsl(var(--theme-secondary-800));
+  .is__result-full .layout__result {
     height: calc(100% - var(--layout-toolbar-height));
   }
 }
