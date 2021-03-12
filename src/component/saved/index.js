@@ -80,6 +80,7 @@ saved.update = () => {
 
   if (saved.state.current.length > 0) {
     saved.state.current.forEach((item, i) => {
+      console.log(item);
       savedBody.appendChild(saved.savedItem(item, i));
     });
   };
@@ -112,31 +113,36 @@ saved.savedItem = (savedData, id) => {
 
   const savedNameLabel = node(`label:Saved formula name|class:saved__name-label sr__only,for:saved__name-${id}`);
 
-  const savedNameInput = node(`input|class:saved__name-input input__small,id:saved__name-${id},type:text,value:${savedData.name},placeholder:Saved formula name,autocomplete:off,autocorrect:off,autocapitalize:off,spellcheck:false`);
+  const savedNameInput = node(`input|class:saved__name-input input__small,id:saved__name-${id},type:text,value:${savedData.name},placeholder:Unnamed formula,autocomplete:off,autocorrect:off,autocapitalize:off,spellcheck:false`);
 
   savedNameInput.addEventListener('input', () => {
     savedData.name = savedNameInput.value;
     data.state.save();
   });
 
-  const savedFormula = node('div|class:saved__formula');
-
   const savedControls = node('div|class:saved__controls');
+
+  const savedFormula = node('div|class:saved__formula');
 
   savedData.formula.forEach((item, i) => {
     const formulaDice = node('div|class:saved__formula-dice');
 
     let diceString = '';
+
     if (item.dice.count > 1) {
       diceString = diceString + item.dice.count;
     };
+
     diceString = diceString + ' d' + item.dice.size;
+
     if (item.dice.modifier > 0) {
       diceString = diceString + ' +' + item.dice.modifier;
     } else if (item.dice.modifier < 0) {
       diceString = diceString + ' ' + item.dice.modifier;
     };
+
     formulaDice.textContent = diceString;
+
 
     savedFormula.appendChild(formulaDice);
   });
@@ -208,7 +214,7 @@ saved.savedItem = (savedData, id) => {
     classList: ['saved__roll'],
     func: () => {
 
-      result.history.add(dice.roll(savedData));
+      result.history.add(dice.roll(JSON.parse(JSON.stringify(savedData))));
       data.state.save();
       result.update();
 
