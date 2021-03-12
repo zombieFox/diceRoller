@@ -80,7 +80,6 @@ saved.update = () => {
 
   if (saved.state.current.length > 0) {
     saved.state.current.forEach((item, i) => {
-      console.log(item);
       savedBody.appendChild(saved.savedItem(item, i));
     });
   };
