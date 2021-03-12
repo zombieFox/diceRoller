@@ -17,13 +17,21 @@ theme.default = {
       danger: { h: 345, s: 75 }
     },
     lightness: {
+      contrast: {
+        current: 8,
+        min: 0,
+        max: 40
+      },
       shades: 9,
-      contrast: 8,
-      start: 8,
-      end: 92
+      start: null,
+      end: null
     }
   }
 };
+
+theme.default.color.lightness.start = theme.default.color.lightness.contrast.current;
+
+theme.default.color.lightness.end = 100 - theme.default.color.lightness.contrast.current;
 
 theme.state = JSON.parse(JSON.stringify(theme.default));
 
@@ -171,11 +179,11 @@ theme.control.render = () => {
     max: 360,
     classList: ['input__hue-spectrum'],
     action: () => {
-
       theme.state.color.range.primary.h = parseInt(themePrimaryH.range.value, 10);
-      data.state.save();
-      theme.variable.render();
 
+      data.state.save();
+
+      theme.variable.render();
     }
   });
 
@@ -186,11 +194,11 @@ theme.control.render = () => {
     min: 0,
     max: 100,
     action: () => {
-
       theme.state.color.range.primary.s = parseInt(themePrimaryS.range.value, 10);
-      data.state.save();
-      theme.variable.render();
 
+      data.state.save();
+
+      theme.variable.render();
     }
   });
 
@@ -202,11 +210,11 @@ theme.control.render = () => {
     max: 360,
     classList: ['input__hue-spectrum'],
     action: () => {
-
       theme.state.color.range.secondary.h = parseInt(themeSecondaryH.range.value, 10);
-      data.state.save();
-      theme.variable.render();
 
+      data.state.save();
+
+      theme.variable.render();
     }
   });
 
@@ -217,28 +225,33 @@ theme.control.render = () => {
     min: 0,
     max: 100,
     action: () => {
-
       theme.state.color.range.secondary.s = parseInt(themeSecondaryS.range.value, 10);
-      data.state.save();
-      theme.variable.render();
 
+      data.state.save();
+
+      theme.variable.render();
     }
   });
 
   const contrast = new ControlRange({
     id: 'theme-contrast',
     label: 'Contrast',
-    value: theme.state.color.lightness.contrast,
-    min: 0,
-    max: 45,
+    value: theme.state.color.lightness.contrast.max - theme.state.color.lightness.contrast.current,
+    min: theme.state.color.lightness.contrast.min,
+    max: theme.state.color.lightness.contrast.max,
+    reverse: true,
     action: () => {
+      const newValue = theme.state.color.lightness.contrast.max - parseInt(contrast.range.value, 10);
 
-      theme.state.color.lightness.contrast = parseInt(contrast.range.value, 10);
-      theme.state.color.lightness.start = theme.state.color.lightness.contrast;
-      theme.state.color.lightness.end = 100 - theme.state.color.lightness.contrast;
+      theme.state.color.lightness.contrast.current = newValue;
+
+      theme.state.color.lightness.start = newValue;
+
+      theme.state.color.lightness.end = 100 - newValue;
+
       data.state.save();
-      theme.variable.render();
 
+      theme.variable.render();
     }
   });
 
@@ -247,19 +260,27 @@ theme.control.render = () => {
     ring: true,
     type: 'primary',
     func: () => {
-
       theme.state = JSON.parse(JSON.stringify(theme.default));
-      data.state.save();
-      theme.variable.render();
-      theme.style.toggle(theme.state.style);
-      theme.style.render();
-      theme.toggle.update();
-      themePrimaryH.update(theme.state.color.range.primary.h);
-      themePrimaryS.update(theme.state.color.range.primary.s);
-      themeSecondaryH.update(theme.state.color.range.secondary.h);
-      themeSecondaryS.update(theme.state.color.range.secondary.s);
-      contrast.update(theme.state.color.lightness.contrast);
 
+      data.state.save();
+
+      theme.variable.render();
+
+      theme.style.toggle(theme.state.style);
+
+      theme.style.render();
+
+      theme.toggle.update();
+
+      themePrimaryH.update(theme.state.color.range.primary.h);
+
+      themePrimaryS.update(theme.state.color.range.primary.s);
+
+      themeSecondaryH.update(theme.state.color.range.secondary.h);
+
+      themeSecondaryS.update(theme.state.color.range.secondary.s);
+
+      contrast.update(theme.state.color.lightness.contrast.max - theme.state.color.lightness.contrast.current);
     }
   });
 
