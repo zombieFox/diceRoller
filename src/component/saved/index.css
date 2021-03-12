@@ -28,16 +28,16 @@
   grid-template-columns: auto 1fr auto;
   justify-content: stretch;
   align-items: start;
-  gap: 0.5em 1em;
+  gap: 0.5em 0.5em;
   grid-template-areas:
     'controls name roll'
-    'controls formula roll';
+    'formula formula formula';
 }
 
 @media (min-width: 1200px) {
   .saved__item {
     grid-template-columns: auto 1fr auto auto;
-    align-items: center;
+    gap: 0.5em 1em;
     grid-template-areas:
       'controls name formula roll';
   }
@@ -59,13 +59,16 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.25em;
+  justify-self: start;
+  margin-left: -0.5em;
 }
 
-.saved__remove {}
-
-.saved__up {}
-
-.saved__down {}
+@media (min-width: 1200px) {
+  .saved__controls {
+    justify-self: initial;
+    margin-left: initial;
+  }
+}
 
 .saved__roll {
   grid-area: roll;
@@ -76,7 +79,6 @@
 }
 
 .saved__formula {
-  padding: 0 1.25em;
   font-size: 0.75em;
   color: hsl(var(--theme-primary-300));
   font-weight: var(--font-weight-bold);
@@ -89,8 +91,8 @@
 
 @media (min-width: 1200px) {
   .saved__formula {
-    padding: 0;
     justify-content: flex-end;
+    align-self: center;
     max-width: 15vw;
   }
 }
