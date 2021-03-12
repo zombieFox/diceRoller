@@ -8,17 +8,8 @@ export const Dropdown = function({ text = false, iconName = false, content = fal
     open: false
   };
 
-  this.state.toggle = () => {
-    if (this.state.open) {
-      this.state.open = false;
-    } else {
-      this.state.open = true;
-    };
-  };
-
   this.element = {
     app: document.querySelector('.app'),
-    dropdown: node('div|class:dropdown'),
     panel: node('div|class:dropdown__panel'),
     toggle: new Button({
       text: text || false,
@@ -27,40 +18,24 @@ export const Dropdown = function({ text = false, iconName = false, content = fal
       size: 'small',
       classList: ['dropdown__toggle'],
       iconName: iconName || false,
-      func: () => {
-        this.state.toggle();
-        this.render.dropdown();
-        this.render.panel();
-      }
+      func: () => { this.toggle(); }
     })
   };
 
   this.render = {};
 
-  this.render.node = {};
-
-  this.render.node.toggle = () => {
-    this.element.dropdown.appendChild(this.element.toggle.button);
-  };
-
-  this.render.node.panel = () => {
+  this.render.content = () => {
     if (content) {
       this.element.panel.appendChild(content);
     };
   };
 
-  this.render.node.dropdown = () => {
-    this.element.dropdown.appendChild(this.element.toggle.button);
-  };
-
-  this.render.dropdown = () => {
+  this.render.toggle = () => {
     if (this.state.open) {
-      this.element.dropdown.classList.add('is__dropdown-open');
-      this.element.dropdown.classList.remove('is__dropdown-closed');
+      this.element.toggle.button.classList.add('is__dropdown-open');
       this.element.toggle.active();
     } else {
-      this.element.dropdown.classList.add('is__dropdown-closed');
-      this.element.dropdown.classList.remove('is__dropdown-open');
+      this.element.toggle.button.classList.remove('is__dropdown-open');
       this.element.toggle.deactive();
     };
   };
@@ -144,13 +119,35 @@ export const Dropdown = function({ text = false, iconName = false, content = fal
     };
   };
 
-  this.render.node.toggle();
+  this.open = () => {
+    this.state.open = true;
+    this.render.toggle();
+    this.render.panel();
+  };
 
-  this.render.node.panel();
+  this.close = () => {
+    this.state.open = false;
+    this.render.toggle();
+    this.render.panel();
+  };
 
-  this.render.node.dropdown();
+  this.toggle = (state) => {
+    if (state && state === 'open') {
+      this.open();
+    } else if (state && state === 'close') {
+      this.close();
+    } else {
+      if (this.state.open) {
+        this.close();
+      } else {
+        this.open();
+      };
+    };
+  };
 
-  this.render.dropdown();
+  this.render.content();
 
-  this.dropdown = this.element.dropdown;
+  this.button = this.element.toggle.button;
+
+  this.panel = this.element.panel;
 };

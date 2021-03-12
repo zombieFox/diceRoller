@@ -53,7 +53,7 @@ toolbar.render = () => {
 
   toolbar.element.appendChild(clearResultHistory.button);
 
-  toolbar.element.appendChild(themeDropdown.dropdown);
+  toolbar.element.appendChild(themeDropdown.button);
 
   return toolbar.element;
 };

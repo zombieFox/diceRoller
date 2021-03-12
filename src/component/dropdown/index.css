@@ -4,10 +4,10 @@
 }
 
 .dropdown__toggle .button__icon {
-  transition: transform var(--layout-transition-fast);
+  transition: transform var(--layout-transition-extra-fast);
 }
 
-.is__dropdown-open .dropdown__toggle .button__icon {
+.is__dropdown-open.dropdown__toggle .button__icon {
   transform: rotate(180deg);
 }
 
