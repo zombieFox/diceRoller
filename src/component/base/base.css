@@ -21,7 +21,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   min-width: 100vw;
-  color: rgb(var(--theme-text));
+  color: hsl(var(--theme-secondary-text-800));
   font-family: var(--font-ui-name);
   font-weight: var(--font-weight-medium);
   font-style: var(--font-ui-style);

@@ -148,15 +148,19 @@ result.resultItem = (resultData) => {
     const formulaDice = node('div|class:result__formula-dice');
 
     let diceString = '';
+
     if (item.dice.count > 1) {
       diceString = diceString + item.dice.count;
     };
+
     diceString = diceString + ' d' + item.dice.size;
+
     if (item.dice.modifier > 0) {
       diceString = diceString + ' +' + item.dice.modifier;
     } else if (item.dice.modifier < 0) {
       diceString = diceString + ' ' + item.dice.modifier;
     };
+
     formulaDice.textContent = diceString;
 
     formula.appendChild(formulaDice);

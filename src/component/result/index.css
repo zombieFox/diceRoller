@@ -88,7 +88,6 @@
 
 .result__details {
   font-size: 0.75em;
-  color: hsl(var(--theme-secondary-200));
   font-weight: var(--font-weight-bold);
   display: grid;
   grid-template-columns: 1fr;
@@ -97,14 +96,19 @@
 
 .result__formula {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: minmax(7em, auto) 1fr;
+  align-items: start;
+  justify-items: start;
   gap: 0.5em;
 }
 
 .result__formula-dice {
-  color: hsl(var(--theme-primary-300));
-  min-width: 7em;
+  background-color: hsl(var(--theme-primary-900));
+  border-radius: var(--theme-radius);
+  padding: 0 1em;
+  color: hsl(var(--theme-primary-text-900));
   white-space: nowrap;
+  transition: background-color var(--layout-transition-extra-fast);
 }
 
 .result__rolls {
@@ -122,14 +126,13 @@
 }
 
 .result__name {
-  color: hsl(var(--theme-secondary-100));
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 .result__timestamp {
-  color: hsl(var(--theme-secondary-300));
+  color: hsl(var(--theme-secondary-200));
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

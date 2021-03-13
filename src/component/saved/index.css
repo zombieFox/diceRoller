@@ -59,13 +59,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.25em;
-  margin-left: -0.5em;
-}
-
-@media (min-width: 1200px) {
-  .saved__controls {
-    margin-left: initial;
-  }
 }
 
 .saved__roll {
@@ -85,6 +78,16 @@
   flex-wrap: wrap;
   gap: 0.25em 0.75em;
   grid-area: formula;
+}
+
+.saved__formula-dice {
+  background-color: hsl(var(--theme-primary-900));
+  border-radius: var(--theme-radius);
+  padding: 0 1em;
+  color: hsl(var(--theme-primary-text-900));
+  line-height: 2em;
+  white-space: nowrap;
+  transition: background-color var(--layout-transition-extra-fast);
 }
 
 @media (min-width: 1200px) {
