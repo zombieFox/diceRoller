@@ -1,5 +1,6 @@
 :root {
   --button-height: 2.5em;
+  --button-round-height: 3em;
 }
 
 .button__primary {
@@ -261,9 +262,9 @@ button:disabled:active,
 
 .button__round {
   padding: 0;
-  width: var(--button-height);
-  height: var(--button-height);
-  min-height: var(--button-height);
+  width: var(--button-round-height);
+  height: var(--button-round-height);
+  min-height: var(--button-round-height);
 }
 
 button .icon,

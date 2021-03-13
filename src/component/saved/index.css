@@ -27,7 +27,7 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   justify-content: stretch;
-  align-items: start;
+  align-items: center;
   gap: 0.5em 0.5em;
   grid-template-areas:
     'controls name roll'
@@ -59,13 +59,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.25em;
-  justify-self: start;
   margin-left: -0.5em;
 }
 
 @media (min-width: 1200px) {
   .saved__controls {
-    justify-self: initial;
     margin-left: initial;
   }
 }
