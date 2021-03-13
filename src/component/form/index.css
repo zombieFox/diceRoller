@@ -47,6 +47,20 @@
   --form-range-thumb-background-disabled: var(--theme-secondary-700);
   --form-range-thumb-border: var(--theme-secondary-100);
   --form-range-thumb-border-disabled: var(--theme-secondary-700);
+  --form-range-hue: linear-gradient(to right,
+      hsl(0, 100%, 50%),
+      hsl(30, 100%, 50%),
+      hsl(60, 100%, 50%),
+      hsl(90, 100%, 50%),
+      hsl(120, 100%, 50%),
+      hsl(150, 100%, 50%),
+      hsl(180, 100%, 50%),
+      hsl(210, 100%, 50%),
+      hsl(240, 100%, 50%),
+      hsl(270, 100%, 50%),
+      hsl(300, 100%, 50%),
+      hsl(330, 100%, 50%),
+      hsl(360, 100%, 50%));
 }
 
 form {
@@ -508,20 +522,7 @@ input[type="range"]:disabled:focus::-webkit-slider-thumb {
 }
 
 input[type="range"].input__hue-spectrum::-webkit-slider-runnable-track {
-  background-image: linear-gradient(to right,
-      hsl(0, 100%, 50%),
-      hsl(30, 100%, 50%),
-      hsl(60, 100%, 50%),
-      hsl(90, 100%, 50%),
-      hsl(120, 100%, 50%),
-      hsl(150, 100%, 50%),
-      hsl(180, 100%, 50%),
-      hsl(210, 100%, 50%),
-      hsl(240, 100%, 50%),
-      hsl(270, 100%, 50%),
-      hsl(300, 100%, 50%),
-      hsl(330, 100%, 50%),
-      hsl(360, 100%, 50%));
+  background-image: var(--form-range-hue);
 }
 
 input[type="range"]:disabled.input__hue-spectrum::-webkit-slider-runnable-track {
@@ -581,20 +582,7 @@ input[type="range"]:disabled:focus::-moz-range-thumb {
 }
 
 input[type="range"].input__hue-spectrum::-moz-range-track {
-  background-image: linear-gradient(to right,
-      hsl(0, 100%, 50%),
-      hsl(30, 100%, 50%),
-      hsl(60, 100%, 50%),
-      hsl(90, 100%, 50%),
-      hsl(120, 100%, 50%),
-      hsl(150, 100%, 50%),
-      hsl(180, 100%, 50%),
-      hsl(210, 100%, 50%),
-      hsl(240, 100%, 50%),
-      hsl(270, 100%, 50%),
-      hsl(300, 100%, 50%),
-      hsl(330, 100%, 50%),
-      hsl(360, 100%, 50%));
+  background-image: var(--form-range-hue);
 }
 
 input[type="range"]:disabled.input__hue-spectrum::-moz-range-track {
