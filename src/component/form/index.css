@@ -37,6 +37,18 @@
   --form-wrap-space: calc(var(--layout-gutter) / 2);
 }
 
+:root {
+  --form-range-track-background: var(--theme-secondary-800);
+  --form-range-track-background-hover: var(--theme-secondary-700);
+  --form-range-track-background-focus: var(--theme-secondary-700);
+  --form-range-track-background-disabled: var(--theme-secondary-800);
+  --form-range-thumb-size: 1.5em;
+  --form-range-thumb-background: var(--theme-secondary-900);
+  --form-range-thumb-background-disabled: var(--theme-secondary-700);
+  --form-range-thumb-border: var(--theme-secondary-100);
+  --form-range-thumb-border-disabled: var(--theme-secondary-700);
+}
+
 form {
   display: grid;
   gap: calc(var(--layout-gutter) * 2);
@@ -420,16 +432,6 @@ input[type="text"]:disabled:focus::placeholder {
   color: hsl(var(--form-placeholder-disabled));
 }
 
-:root {
-  --form-range-track-background: var(--theme-secondary-700);
-  --form-range-track-background-hover: var(--theme-secondary-600);
-  --form-range-track-background-focus: var(--theme-secondary-600);
-  --form-range-track-background-disabled: var(--theme-secondary-700);
-  --form-range-thumb-size: 1.5em;
-  --form-range-thumb-background: var(--theme-secondary-100);
-  --form-range-thumb-background-disabled: var(--theme-secondary-600);
-}
-
 input[type="range"] {
   background-color: transparent;
   padding: 0;
@@ -480,7 +482,7 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: hsl(var(--form-range-thumb-background));
   margin: 0;
   padding: 0;
-  border: 0;
+  border: var(--layout-line-width) solid hsl(var(--form-range-thumb-border));
   border-radius: 100%;
   width: var(--form-range-thumb-size);
   height: var(--form-range-thumb-size);
@@ -488,10 +490,9 @@ input[type="range"]::-webkit-slider-thumb {
   transform: translateY(-50%);
   position: relative;
   cursor: pointer;
-  box-shadow: var(--theme-shadow-bottom-large);
   box-sizing: border-box;
   -webkit-appearance: none;
-  transition: background-color var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
+  transition: background-color var(--layout-transition-extra-fast), border var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
 }
 
 input[type="range"]:focus::-webkit-slider-thumb {
@@ -502,7 +503,30 @@ input[type="range"]:disabled::-webkit-slider-thumb,
 input[type="range"]:disabled:hover::-webkit-slider-thumb,
 input[type="range"]:disabled:focus::-webkit-slider-thumb {
   background-color: hsl(var(--form-range-thumb-background-disabled));
+  border-color: hsl(var(--form-range-thumb-border-disabled));
   box-shadow: none;
+}
+
+input[type="range"].input__hue-spectrum::-webkit-slider-runnable-track {
+  background-image: linear-gradient(to right,
+      hsl(0, 100%, 50%),
+      hsl(30, 100%, 50%),
+      hsl(60, 100%, 50%),
+      hsl(90, 100%, 50%),
+      hsl(120, 100%, 50%),
+      hsl(150, 100%, 50%),
+      hsl(180, 100%, 50%),
+      hsl(210, 100%, 50%),
+      hsl(240, 100%, 50%),
+      hsl(270, 100%, 50%),
+      hsl(300, 100%, 50%),
+      hsl(330, 100%, 50%),
+      hsl(360, 100%, 50%));
+}
+
+input[type="range"]:disabled.input__hue-spectrum::-webkit-slider-runnable-track {
+  background-image: none;
+  background-color: hsl(var(--form-range-track-background-disabled));
 }
 
 input[type="range"]::-moz-range-track {
@@ -533,13 +557,12 @@ input[type="range"]::-moz-range-thumb {
   background-color: hsl(var(--form-range-thumb-background));
   margin: 0;
   padding: 0;
-  border: 0;
+  border: var(--layout-line-width) solid hsl(var(--form-range-thumb-border));
   border-radius: 100%;
   width: var(--form-range-thumb-size);
   height: var(--form-range-thumb-size);
   position: relative;
   cursor: pointer;
-  box-shadow: var(--theme-shadow-bottom-large);
   box-sizing: border-box;
   -webkit-appearance: none;
   transition: background-color var(--layout-transition-extra-fast), box-shadow var(--layout-transition-extra-fast);
@@ -553,10 +576,11 @@ input[type="range"]:disabled::-moz-range-thumb,
 input[type="range"]:disabled:hover::-moz-range-thumb,
 input[type="range"]:disabled:focus::-moz-range-thumb {
   background-color: hsl(var(--form-range-thumb-background-disabled));
+  border-color: hsl(var(--form-range-thumb-border-disabled));
   box-shadow: none;
 }
 
-input[type="range"].input__hue-spectrum::-webkit-slider-runnable-track {
+input[type="range"].input__hue-spectrum::-moz-range-track {
   background-image: linear-gradient(to right,
       hsl(0, 100%, 50%),
       hsl(30, 100%, 50%),
@@ -573,21 +597,9 @@ input[type="range"].input__hue-spectrum::-webkit-slider-runnable-track {
       hsl(360, 100%, 50%));
 }
 
-input[type="range"]:disabled.input__hue-spectrum::-webkit-slider-runnable-track {
-  background-image: linear-gradient(to right,
-      hsl(0, 10%, 50%),
-      hsl(30, 10%, 50%),
-      hsl(60, 10%, 50%),
-      hsl(90, 10%, 50%),
-      hsl(120, 10%, 50%),
-      hsl(150, 10%, 50%),
-      hsl(180, 10%, 50%),
-      hsl(210, 10%, 50%),
-      hsl(240, 10%, 50%),
-      hsl(270, 10%, 50%),
-      hsl(300, 10%, 50%),
-      hsl(330, 10%, 50%),
-      hsl(360, 10%, 50%));
+input[type="range"]:disabled.input__hue-spectrum::-moz-range-track {
+  background-image: none;
+  background-color: hsl(var(--form-range-track-background-disabled));
 }
 
 select {
