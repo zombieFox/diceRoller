@@ -4,6 +4,7 @@ import { ControlFormulaSet } from './ControlFormulaSet';
 import { global } from './global';
 import { base } from './base';
 import { data } from './data';
+import { card } from './card';
 import { form } from './form';
 import { ControlRange } from './form';
 import { theme } from './theme';
@@ -27,6 +28,7 @@ export const component = {
   global,
   base,
   data,
+  card,
   form,
   ControlRange,
   theme,

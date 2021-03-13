@@ -1,0 +1,17 @@
+.card {
+  font-size: 1rem;
+  position: relative;
+}
+
+.card__body {
+  background-color: hsl(var(--base-card-background));
+  padding: var(--layout-gutter);
+  border: var(--base-card-border);
+  border-radius: calc(var(--theme-radius) * 4);
+  min-width: 4em;
+  min-height: 4em;
+  box-shadow: var(--theme-secondary-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: background-color var(--layout-transition-extra-fast), border var(--layout-transition-extra-fast);
+}
