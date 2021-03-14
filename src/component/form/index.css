@@ -65,7 +65,7 @@
 
 form {
   display: grid;
-  gap: calc(var(--layout-gutter) * 2);
+  gap: calc(var(--form-wrap-space) * 4);
   position: relative;
   width: 100%;
 }
@@ -78,8 +78,8 @@ fieldset {
 }
 
 fieldset:not(:last-child):not(:only-child):after {
-  border-bottom: var(--base-card-border);
   content: "";
+  border-bottom: var(--card-border);
   position: absolute;
   bottom: calc(var(--layout-gutter) * -1);
   left: 0;

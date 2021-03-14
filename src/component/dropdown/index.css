@@ -12,9 +12,9 @@
 }
 
 .dropdown__panel {
-  background-color: hsl(var(--base-card-background));
+  background-color: hsl(var(--card-background));
   padding: var(--layout-gutter);
-  border: var(--base-card-border);
+  border: var(--card-border);
   border-radius: calc(var(--theme-radius) * 4);
   min-width: 4em;
   min-height: 4em;

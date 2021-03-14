@@ -20,6 +20,6 @@
 
 @media (max-width: 800px) {
   .is__result-full .toolbar {
-    background-color: hsl(var(--base-card-background));
+    background-color: hsl(var(--card-background));
   }
 }

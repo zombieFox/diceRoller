@@ -149,7 +149,7 @@
 }
 
 .layout__result {
-  background-color: hsl(var(--base-card-background));
+  background-color: hsl(var(--card-background));
   overflow-y: auto;
   width: 100%;
   height: var(--layout-result-height);

@@ -1,12 +1,17 @@
+:root {
+  --card-background: var(--theme-secondary-900);
+  --card-border: 1px solid hsl(var(--theme-secondary-700));
+}
+
 .card {
   font-size: 1rem;
   position: relative;
 }
 
 .card__body {
-  background-color: hsl(var(--base-card-background));
+  background-color: hsl(var(--card-background));
   padding: var(--layout-gutter);
-  border: var(--base-card-border);
+  border: var(--card-border);
   border-radius: calc(var(--theme-radius) * 4);
   min-width: 4em;
   min-height: 4em;
