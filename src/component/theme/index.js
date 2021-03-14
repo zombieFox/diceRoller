@@ -12,7 +12,7 @@ theme.default = {
   color: {
     range: {
       primary: { h: 210, s: 75 },
-      secondary: { h: 225, s: 20 },
+      secondary: { h: 225, s: 30 },
       success: { h: 150, s: 75 },
       danger: { h: 345, s: 75 }
     },
