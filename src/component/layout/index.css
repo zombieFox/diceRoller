@@ -153,6 +153,7 @@
   overflow-y: auto;
   width: 100%;
   height: var(--layout-result-height);
+  min-height: 15em;
   position: absolute;
   bottom: 0;
   left: 0;

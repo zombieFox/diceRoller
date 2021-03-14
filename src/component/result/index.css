@@ -13,7 +13,7 @@
   font-size: 1rem;
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: calc(var(--layout-gutter) / 2);
+  gap: var(--layout-gutter);
 }
 
 @media (min-width: 800px) {
@@ -24,7 +24,7 @@
 
 .result__history {
   display: grid;
-  align-items: start;
+  grid-auto-rows: min-content;
   gap: var(--result-gutter);
 }
 
