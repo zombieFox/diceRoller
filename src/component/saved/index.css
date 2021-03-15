@@ -70,9 +70,6 @@
 }
 
 .saved__formula {
-  font-size: 0.75em;
-  color: hsl(var(--theme-primary-300));
-  font-weight: var(--font-weight-bold);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -85,7 +82,9 @@
   border: var(--card-border);
   border-radius: 10em;
   padding: 0 1em;
-  color: hsl(var(--theme-primary-text-900));
+  font-size: 0.75em;
+  font-weight: var(--font-weight-bold);
+  color: hsl(var(--card-text));
   line-height: 2em;
   white-space: nowrap;
   transition: background-color var(--layout-transition-extra-fast), border var(--layout-transition-extra-fast);

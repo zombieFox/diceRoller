@@ -1,6 +1,7 @@
 :root {
   --card-background: var(--theme-secondary-900);
   --card-border: 1px solid hsl(var(--theme-secondary-700));
+  --card-text: var(--theme-secondary-text-900);
 }
 
 .card {

@@ -103,7 +103,7 @@
   border: var(--card-border);
   border-radius: 10em;
   padding: 0 1em;
-  color: hsl(var(--theme-primary-text-900));
+  color: hsl(var(--card-text));
   white-space: nowrap;
   transition: background-color var(--layout-transition-extra-fast), border var(--layout-transition-extra-fast);
 }
