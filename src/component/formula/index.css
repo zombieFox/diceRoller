@@ -1,12 +1,6 @@
 :root {
-  --formula-size: 2em;
+  --formula-size: 2.5em;
   --formula-input-height: var(--formula-size);
-}
-
-@media (min-width: 1000px) {
-  :root {
-    --formula-size: 2.5em;
-  }
 }
 
 .formula {
