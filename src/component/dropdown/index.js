@@ -3,7 +3,7 @@ import { node } from '../../utilities/node';
 import { icon } from '../icon';
 import { Button } from '../button';
 
-export const Dropdown = function({ text = false, iconName = false, content = false, position = false } = {}) {
+export const Dropdown = function({ text = false, iconName = false, iconRotate = false, content = false, position = false, buttonSize = false } = {}) {
   this.state = {
     open: false
   };
@@ -15,7 +15,7 @@ export const Dropdown = function({ text = false, iconName = false, content = fal
       text: text || false,
       ring: true,
       type: 'link',
-      size: 'small',
+      size: buttonSize,
       classList: ['dropdown__toggle'],
       iconName: iconName || false,
       func: () => { this.toggle(); }
@@ -32,10 +32,14 @@ export const Dropdown = function({ text = false, iconName = false, content = fal
 
   this.render.toggle = () => {
     if (this.state.open) {
-      this.element.toggle.button.classList.add('is__dropdown-open');
+      if (iconRotate) {
+        this.element.toggle.button.classList.add('is__dropdown-open');
+      };
       this.element.toggle.active();
     } else {
-      this.element.toggle.button.classList.remove('is__dropdown-open');
+      if (iconRotate) {
+        this.element.toggle.button.classList.remove('is__dropdown-open');
+      };
       this.element.toggle.deactive();
     };
   };

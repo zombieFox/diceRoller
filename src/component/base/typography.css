@@ -98,8 +98,8 @@ hr {
 }
 
 hr:not(:only-child) {
-  margin-top: calc(var(--layout-gutter) / 2);
-  margin-bottom: calc(var(--layout-gutter) / 2);
+  margin-top: var(--layout-gutter);
+  margin-bottom: var(--layout-gutter);
 }
 
 b,
