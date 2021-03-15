@@ -18,6 +18,10 @@ export const Button = function({ text = false, type = false, round = false, bloc
   };
 
   switch (type) {
+    case 'primary':
+      this.button.classList.add('button__primary');
+      break;
+
     case 'secondary':
       this.button.classList.add('button__secondary');
       break;
@@ -39,7 +43,7 @@ export const Button = function({ text = false, type = false, round = false, bloc
       break;
 
     default:
-      this.button.classList.add('button__primary');
+      this.button.classList.add('button__secondary');
       break;
   };
 
