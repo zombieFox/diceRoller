@@ -6,6 +6,7 @@
 :root {
   --base-font-size: 16px;
   --base-background: var(--theme-secondary-800);
+  --base-text: var(--theme-secondary-text-800);
   --base-border: 1px solid hsl(var(--theme-secondary-700));
 }
 
@@ -20,7 +21,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   min-width: 100vw;
-  color: hsl(var(--theme-secondary-text-800));
+  color: hsl(var(--base-text));
   font-family: var(--font-ui-name);
   font-weight: var(--font-weight-medium);
   font-style: var(--font-ui-style);
