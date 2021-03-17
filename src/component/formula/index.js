@@ -99,6 +99,7 @@ formula.update = () => {
     iconName: 'plus',
     round: true,
     ring: true,
+    type: 'primary',
     size: 'small',
     sr: 'Add formula',
     classList: ['formula__add'],
