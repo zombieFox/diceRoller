@@ -78,7 +78,7 @@
 @media (min-width: 800px) {
   .result__total {
     min-width: 3em;
-    line-height: 1.4;
+    line-height: 1.35;
   }
 }
 
