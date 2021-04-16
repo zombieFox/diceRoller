@@ -67,12 +67,12 @@ modifier.render = (state, id) => {
   input.addEventListener('touchstart', (event) => {
     currentValue = parseInt(input.value, 10);
     // input.focus();
-  }, { passive: true });
+  }, { passive: false });
 
   input.addEventListener('touchend', (event) => {
     currentValue = null;
     // input.blur();
-  }, { passive: true });
+  }, { passive: false });
 
   input.addEventListener('touchmove', (event) => {
     event.preventDefault();
@@ -84,7 +84,7 @@ modifier.render = (state, id) => {
     input.value = prefixValue(state.modifier);
 
     data.state.save();
-  }, { passive: true });
+  }, { passive: false });
 
   input.addEventListener('keydown', (event) => {
     // arrow up

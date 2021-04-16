@@ -52,12 +52,12 @@ size.render = (state, id) => {
   select.addEventListener('touchstart', (event) => {
     currentIndex = select.selectedIndex;
     // select.focus();
-  }, { passive: true });
+  }, { passive: false });
 
   select.addEventListener('touchend', (event) => {
     currentIndex = null;
     // select.blur();
-  }, { passive: true });
+  }, { passive: false });
 
   select.addEventListener('touchmove', (event) => {
     event.preventDefault();
@@ -79,7 +79,7 @@ size.render = (state, id) => {
     formulaSizeText.textContent = 'd' + state.size;
 
     data.state.save();
-  }, { passive: true });
+  }, { passive: false });
 
   formulaSize.appendChild(label);
 
