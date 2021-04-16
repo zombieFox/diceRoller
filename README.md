@@ -1,5 +1,5 @@
 # Dice Roller
-A dice roller for RPGs or table top game
+A dice roller for RPGs or table top games
 
 ## [See it in action](https://zombiefox.github.io/diceRoller/)
 
