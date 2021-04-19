@@ -457,6 +457,7 @@ input[type="range"] {
   position: relative;
   border: 0;
   cursor: pointer;
+  touch-action: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-appearance: none;
 }
