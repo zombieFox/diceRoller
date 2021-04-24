@@ -118,7 +118,7 @@ theme.toggle.element = {
 theme.toggle.render = () => {
   const themeStyleLabel = node('label|class:theme__style-label button button__light button__ring,for:theme__style-input,for:theme__style-input', [
     node('span|class:theme__style-icon'),
-    node('span|class:theme__style-text', [
+    node('span|class:theme__style-text button__text', [
       node('span:Light mode|class:theme__style-text-light'),
       node('span:Dark mode|class:theme__style-text-dark')
     ])

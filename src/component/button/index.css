@@ -47,17 +47,7 @@
   --button-text-disabled: var(--theme-secondary-600);
 }
 
-.button__light {
-  --button-background: var(--theme-secondary-700);
-  --button-background-focus-hover: var(--theme-secondary-700);
-  --button-background-active: var(--theme-secondary-700);
-  --button-background-disabled: var(--theme-secondary-700);
-  --button-text: var(--theme-secondary-text-700);
-  --button-text-focus-hover: var(--theme-secondary-text-700);
-  --button-text-active: var(--theme-secondary-text-700);
-  --button-text-disabled: var(--theme-secondary-600);
-}
-
+.button__light,
 .button__link {
   --button-background: var(--theme-secondary-700);
   --button-background-focus-hover: var(--theme-secondary-700);
@@ -154,7 +144,7 @@ button:disabled:active,
 }
 
 .button__light {
-  background-color: hsla(var(--button-background), 0.25);
+  background-color: hsla(var(--button-background), 0.5);
 }
 
 .button__light:disabled,

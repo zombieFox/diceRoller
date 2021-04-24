@@ -200,25 +200,6 @@ label.disabled {
   color: hsl(var(--form-label-disabled));
 }
 
-input[type="radio"]:focus+label.button,
-input[type="radio"]:hover+label.button,
-input[type="checkbox"]:focus+label.button,
-input[type="checkbox"]:hover+label.button {
-  background-color: hsl(var(--button-background-focus-hover));
-  color: rgb(var(--button-text-focus-hover));
-  outline: none;
-  text-decoration: none;
-}
-
-input[type="radio"]:active+label.button,
-input[type="checkbox"]:active+label.button {
-  background-color: hsl(var(--button-background-active));
-  color: rgb(var(--button-text-active));
-  outline: none;
-  text-decoration: none;
-  transition: none;
-}
-
 input[type="radio"]:disabled+label.button,
 input[type="radio"]:disabled+label.button:hover,
 input[type="radio"]:disabled+label.button:focus,
@@ -227,60 +208,8 @@ input[type="checkbox"]:disabled+label.button,
 input[type="checkbox"]:disabled+label.button:hover,
 input[type="checkbox"]:disabled+label.button:focus,
 input[type="checkbox"]:disabled+label.button:active {
-  background-color: hsl(var(--button-background-disabled));
+  background-color: transparent;
   color: hsl(var(--button-text-disabled));
-  cursor: default;
-  text-decoration: none;
-}
-
-input[type="radio"]:focus+label.button__ring.button__primary,
-input[type="checkbox"]:focus+label.button__ring.button__primary {
-  box-shadow: var(--theme-focus-primary);
-}
-
-input[type="radio"]:active+label.button__ring.button__primary,
-input[type="checkbox"]:active+label.button__ring.button__primary {
-  box-shadow: var(--theme-focus-primary);
-}
-
-input[type="radio"]:focus+label.button__ring.button__secondary,
-input[type="checkbox"]:focus+label.button__ring.button__secondary {
-  box-shadow: var(--theme-focus-secondary);
-}
-
-input[type="radio"]:active+label.button__ring.button__secondary,
-input[type="checkbox"]:active+label.button__ring.button__secondary {
-  box-shadow: var(--theme-focus-secondary);
-}
-
-input[type="radio"]:focus+label.button__ring.button__danger,
-input[type="checkbox"]:focus+label.button__ring.button__danger {
-  box-shadow: var(--theme-focus-danger);
-}
-
-input[type="radio"]:active+label.button__ring.button__danger,
-input[type="checkbox"]:active+label.button__ring.button__danger {
-  box-shadow: var(--theme-focus-danger);
-}
-
-input[type="radio"]:focus+label.button__ring.button__success,
-input[type="checkbox"]:focus+label.button__ring.button__success {
-  box-shadow: var(--theme-focus-success);
-}
-
-input[type="radio"]:active+label.button__ring.button__success,
-input[type="checkbox"]:active+label.button__ring.button__success {
-  box-shadow: var(--theme-focus-success);
-}
-
-input[type="radio"]:focus+label.button__ring.button__link,
-input[type="checkbox"]:focus+label.button__ring.button__link {
-  box-shadow: var(--theme-focus-secondary);
-}
-
-input[type="radio"]:active+label.button__ring.button__link,
-input[type="checkbox"]:active+label.button__ring.button__link {
-  box-shadow: var(--theme-focus-secondary);
 }
 
 input[type="radio"]:disabled+label.button__ring,
@@ -300,7 +229,6 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="text"] {
-  /* background-color: hsl(var(--form-input-background)); */
   background-color: transparent;
   padding: 0 1.25em;
   margin: 0;
@@ -344,7 +272,6 @@ input[type="password"]:hover,
 input[type="search"]:hover,
 input[type="tel"]:hover,
 input[type="text"]:hover {
-  /* background-color: hsl(var(--form-input-background-hover)); */
   background-color: transparent;
   color: hsl(var(--form-input-text-hover));
   outline: none;
@@ -362,7 +289,6 @@ input[type="tel"]:focus,
 input[type="tel"]:active,
 input[type="text"]:focus,
 input[type="text"]:active {
-  /* background-color: hsl(var(--form-input-background-focus-active)); */
   background-color: transparent;
   color: hsl(var(--form-input-text-focus-active));
   outline: none;
