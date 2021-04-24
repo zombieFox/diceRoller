@@ -52,9 +52,9 @@
   --button-background-focus-hover: var(--theme-secondary-700);
   --button-background-active: var(--theme-secondary-700);
   --button-background-disabled: var(--theme-secondary-700);
-  --button-text: var(--theme-text);
-  --button-text-focus-hover: var(--theme-text);
-  --button-text-active: var(--theme-text);
+  --button-text: var(--theme-secondary-text-700);
+  --button-text-focus-hover: var(--theme-secondary-text-700);
+  --button-text-active: var(--theme-secondary-text-700);
   --button-text-disabled: var(--theme-secondary-600);
 }
 
@@ -63,34 +63,10 @@
   --button-background-focus-hover: var(--theme-secondary-700);
   --button-background-active: var(--theme-secondary-700);
   --button-background-disabled: var(--theme-secondary-700);
-  --button-text: var(--theme-text);
-  --button-text-focus-hover: var(--theme-text);
-  --button-text-active: var(--theme-text);
+  --button-text: var(--theme-secondary-text-700);
+  --button-text-focus-hover: var(--theme-secondary-text-700);
+  --button-text-active: var(--theme-secondary-text-700);
   --button-text-disabled: var(--theme-secondary-600);
-}
-
-.is__theme-light .button__primary,
-.is__theme-light .button__secondary,
-.is__theme-light .button__danger,
-.is__theme-light .button__success {
-  --theme-text: var(--theme-white);
-}
-
-.is__theme-dark .button__primary,
-.is__theme-dark .button__secondary,
-.is__theme-dark .button__danger,
-.is__theme-dark .button__success {
-  --theme-text: var(--theme-black);
-}
-
-.is__theme-light .button__light,
-.is__theme-light .button__link {
-  --theme-text: var(--theme-black);
-}
-
-.is__theme-dark .button__light,
-.is__theme-dark .button__link {
-  --theme-text: var(--theme-white);
 }
 
 button,

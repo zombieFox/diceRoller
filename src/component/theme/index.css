@@ -281,7 +281,6 @@
 :root {
   --theme-toggle-size: 1em;
   --theme-toggle-border: 2px;
-  --theme-toggle-text: var(--theme-text);
 }
 
 .theme__style-toggle {
@@ -323,7 +322,7 @@
 }
 
 .theme__style-icon {
-  background-color: rgb(var(--theme-toggle-text));
+  background-color: hsl(var(--button-text));
   border-radius: 100%;
   width: var(--theme-toggle-size);
   height: var(--theme-toggle-size);
@@ -348,7 +347,7 @@
 
 .theme__style-icon:after {
   content: "";
-  background-color: rgb(var(--theme-toggle-text));
+  background-color: hsl(var(--button-text));
   width: var(--theme-toggle-size);
   height: var(--theme-toggle-size);
   position: absolute;

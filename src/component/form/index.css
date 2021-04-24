@@ -1,8 +1,8 @@
 :root {
-  --form-label: var(--theme-text);
-  --form-label-hover: var(--theme-text);
-  --form-label-focus-active: var(--theme-text);
-  --form-label-checked: var(--theme-text);
+  --form-label: var(--theme-secondary-text-800);
+  --form-label-hover: var(--theme-secondary-text-800);
+  --form-label-focus-active: var(--theme-secondary-text-800);
+  --form-label-checked: var(--theme-secondary-text-800);
   --form-label-disabled: var(--theme-secondary-600);
 }
 
@@ -187,7 +187,7 @@ fieldset:not(:last-child):not(:only-child):after {
 label {
   padding: 0;
   margin-bottom: 0;
-  color: rgb(var(--form-label));
+  color: hsl(var(--form-label));
   font-size: 1em;
   font-family: var(--font-ui-name);
   font-weight: var(--font-weight-bold);

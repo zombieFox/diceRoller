@@ -5,8 +5,16 @@
 }
 
 .card {
+  --form-label: var(--card-text);
+  --form-label-hover: var(--card-text);
+  --form-label-focus-active: var(--card-text);
+  --form-label-checked: var(--card-text);
+}
+
+.card {
   font-size: 1rem;
   position: relative;
+  color: hsl(var(--card-text));
 }
 
 .card__body {

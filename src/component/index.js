@@ -1,8 +1,8 @@
 import { Button } from './button';
 import { Dropdown } from './dropdown';
 import { ControlFormulaSet } from './ControlFormulaSet';
-import { global } from './global';
 import { base } from './base';
+import { global } from './global';
 import { data } from './data';
 import { card } from './card';
 import { form } from './form';

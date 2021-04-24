@@ -12,10 +12,18 @@
 }
 
 .dropdown__panel {
+  --form-label: var(--card-text);
+  --form-label-hover: var(--card-text);
+  --form-label-focus-active: var(--card-text);
+  --form-label-checked: var(--card-text);
+}
+
+.dropdown__panel {
   background-color: hsl(var(--card-background));
   padding: var(--layout-gutter);
   border: var(--card-border);
   border-radius: calc(var(--theme-radius) * 4);
+  color: hsl(var(--card-text));
   min-width: 4em;
   min-height: 4em;
   width: 90vw;

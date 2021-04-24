@@ -6,8 +6,8 @@
 :root {
   --base-font-size: 16px;
   --base-background: var(--theme-secondary-800);
-  --base-text: var(--theme-secondary-text-800);
   --base-border: 1px solid hsl(var(--theme-secondary-700));
+  --base-text: var(--theme-secondary-text-800);
 }
 
 html {
